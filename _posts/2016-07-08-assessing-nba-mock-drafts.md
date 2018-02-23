@@ -57,7 +57,7 @@ print('r: ', stats.pearsonr(X,Y)[0])
 
     X:  [22 57 68  8 17 49 15  4 53 56]
     Y:  [-16 -30 -40  29  -7 -37  13  22 -28 -19]
-    r:  -0.902473138512
+    r:  -0.9024731385120117
 
 
 Both [Spearman's $\rho$](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient) and [Kendall's $\tau$](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) are known as [rank correlation coefficients](https://en.wikipedia.org/wiki/Rank_correlation) and are nonparametric methods. They remove an underlying normality assumption present in Pearson's method. In essence, these methods are intended to answer the following question: As $X$ increases, does $Y$ tend to increase, *regardless of that increase being linear*? 
@@ -94,7 +94,7 @@ def spearman(x, y, raw = True):
 print("Spearman's Rho:", spearman(X, Y))
 ```
 
-    Spearman's Rho: -0.90303030303
+    Spearman's Rho: -0.9030303030303031
 
 
 On the other hand, to compute Kendall's $\tau$, we calculate:
