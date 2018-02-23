@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Site Makeover"
+title: "Site Redesign"
 date:   2018-02-22
 categories: Misc
 ---

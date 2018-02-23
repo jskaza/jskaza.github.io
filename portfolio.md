@@ -27,19 +27,18 @@ Series*
 # Presentations
 
 
-Skaza, J. (2017). Git/GitHub Guide. In *Biostatistics for Social Impact Group*, University of Michigan, Ann Arbor, MI  
-<a href="{filename}/docs/pres/git-slash-github.pdf">Slides</a>
+Skaza, J. (2017). Git/GitHub Guide. In *Biostatistics for Social Impact Group*, University of Michigan, Ann Arbor, MI   
+[Slides](/assets/git-slash-github.pdf)
 
 Skaza, J. (2016). Technical Typesetting: An Overview of LaTeX. In *University of Michigan Biostatistics Student Association Computing Workshop Series*, Ann Arbor, MI  
-<a href="{filename}/docs/pres/technical-typesetting.pdf">Slides</a>
+[Slides](/assets/technical-typesetting.pdf)
 
 Skaza, J. and Blais, B. (2015). Mathematical modeling of trending topics on Twitter. In *Bryant University Honors Colloquium*, Smithfield, RI  
-<a href="{filename}/docs/pres/twitter-modeling.pdf">Slides</a>
+[Slides](/assets/twitter-modeling.pdf)
 <a href="https://www.youtube.com/watch?v=4jsj-F8uP1E">Video</a>
 
 Skaza, J. (2014). Quantifying the impact of switch-hitting. In *Sabermetrics, Scouting, and the Science of Baseball*, Boston, MA  
-<a href="{filename}/docs/pres/quantifying-switch-hitting.pdf">Poster</a>
-
+[Poster](/assets/quantifying-switch-hitting.pdf)
 
 Eichmann, V., Fischer-Messier, B., Pernia, A., and Skaza, J. (2014). *Does Earth have a limited carrying capacity?* In Bryant University REDay, Smithfield, RI
 
@@ -52,7 +51,7 @@ Skaza, J. (2014). Socioeconomic determinants of obesity in the United States. In
 Skaza, J. and Blais, B. (2014). The relationship between environmental degradation and
 economic growth: exploring models and questioning the existence of an Environmental Kuznets
 Curve. In *Issues in Political Economy at Eastern Economic Association’s Annual Meetings*, Boston, MA  
-<a href="{filename}/docs/pres/kuznets.pdf">Slides</a>
+[Slides](/assets/kuznets.pdf)
 
 # Projects
 
