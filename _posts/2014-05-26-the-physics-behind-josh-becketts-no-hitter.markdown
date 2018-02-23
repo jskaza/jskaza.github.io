@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Site Makeover
-date:   2018-02-23 20:56
-categories: Misc
+title:  "The Physics Behind Josh Beckett's No-Hitter"
+date:   2014-05-26 20:56
+categories: Sports
+tags: beckett, no-hitter, physics, pitchf/x, wordpress
 ---
 
 [Josh
