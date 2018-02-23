@@ -1,0 +1,42 @@
+---
+layout: post
+title: 2016 NCAAF Recruiting Geographic Breakdown
+date: 2016-06-04 19:30
+category: Sports
+tags: data-analysis, ncaaf, data-viz
+---
+
+
+
+With college football less than 100 days away, here is a look at just how far 250 of the nation's top incoming prospects have to travel to get to their chosen colleges.
+
+The prospect data come courtesy of [Rivals](https://n.rivals.com/prospect_rankings/rivals250/2016), while I obtained school location data from [Wikipedia](https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_FBS_football_programs).
+
+The small blue dots represent hometowns and the larger black stars represent colleges and universities.
+
+R Code is included below while my data wrangling code is posted to my [GitHub](https://github.com/jskaza/jskaza.github.io/tree/source/content/supps/Recruiting/recruits_data.ipynb).
+
+
+```r
+library(maps)
+library(geosphere)
+
+master = read.csv("../data/recruiting-geography/master.csv")
+col = rgb(7, 7, 7, 50, maxColorValue = 255)
+
+xlim <- c(-125, -65)
+ylim <- c(24, 50)
+
+map("world", col="#f2f2f2", fill=TRUE, bg="white", lwd=0.05, xlim=xlim, ylim=ylim)
+for (i in 1:length(master$X)) {
+inter = gcIntermediate(c(master[i,]$home_lng, master[i,]$home_lat),
+                       c(master[i,]$school_lng, master[i,]$school_lat), n=100, addStartEnd=TRUE)
+   
+lines(inter, col=col, lwd=1)
+}
+
+points(master$home_lng, master$home_lat, col='blue', cex=.25, pch=16)
+points(master$school_lng, master$school_lat, col='black', cex=.5, pch=8)
+```
+
+<img src="{{ site.url }}/images/recruiting-geography-recruits_map-1.png" title="plot of chunk recruits_map" alt="plot of chunk recruits_map" width="100%" />
