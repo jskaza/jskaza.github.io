@@ -6,6 +6,7 @@ category: Superheroes
 tags: blob, box-plots, data-analysis, heroes, joker, logistic-regression, superheroes, supervillains, traits, villains, wordpress
 ---
 
+
 Building off my [previous
 post](http://jskaza.wordpress.com/2014/07/24/superhero-statistics-pt-i/ "Super(hero) Statistics, Pt. I"), in which I introduced a neat superhero dataset and presented graphical
 descriptions of the data, in this post I would like to address

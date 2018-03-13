@@ -10,6 +10,13 @@ tags: madden, nfl, data-viz, video-games
 knitr::opts_chunk$set(fig.path='{{ site.url }}/images/madden-ratings-', message = FALSE, warning=FALSE)
 ```
 
+```{r}
+library(RCurl)
+library(ggplot2)
+library(dplyr)
+library(wordcloud)
+```
+
 The *Madden NFL 16* video game was released last Tuesday. To [build hype](https://www.easports.com/madden-nfl/player-ratings) for the release of its new product, EA Sports featured a series of [ratings reveals](https://www.easports.com/madden-nfl/player-ratings) (i.e., ratings of players and teams to be featured in the new game). In addition to new gameplay features, ratings are highly anticipated year after year. EA Sports actually posted a [segment](https://www.youtube.com/watch?v=DAlCsvugCvE) in which  viewers can watch NFL rookies [react to their ratings for the first time](https://www.youtube.com/watch?v=DAlCsvugCvE). 
 
 At the conclusion of its ratings series, EA Sports posted a [spreasheet](https://www.easports.com/madden-nfl/news/2015/player-ratings) containing all player and team ratings. In addition to overall ratings, it includes skill ratings as well&mdash;things like speed, throw power, block shedding, route running, tackling, etc.
@@ -21,8 +28,8 @@ I decided that it may be interesting to address some questions concerning the NF
 First things first, I read the [Ratings Spreasheet](https://www.easports.com/madden-nfl/news/2015/player-ratings) (as two .csv files) into R and cleaned up the dataset.
 
 ```{r mr_madden_data}
-players = read.csv("../data/madden-ratings/Base Set Players-Table 1.csv")
-teams = read.csv("../data/madden-ratings/Teams-Table 1.csv")
+players = read.csv(text=getURL("https://raw.githubusercontent.com/jskaza/data/master/madden-ratings/Base%20Set%20Players-Table%201.csv"))
+teams = read.csv(text=getURL("https://raw.githubusercontent.com/jskaza/data/master/madden-ratings/Teams-Table%201.csv"))
 # painless data cleanup
 # returns string w/o trailing whitespace
 trim.trailing = function (x) sub("\\s+$", "", x)
@@ -50,7 +57,6 @@ This is a question that is adressed in sports all of the time. In basketball, th
 The *Madden* data presents an interesting way to tackle this question in the context of the NFL. Namely, there are overall team ratings and overall player ratings. I am not sure how the [*Madden* ratings czar](http://fivethirtyeight.com/features/madden/#) determines overall team ratings&mdash;and, specifically, whether or not they are a function of the individual player ratings&mdash;but if the best teams are the ones with the most talent, there should be a direct relationship between team rating and average player rating. While the plot below suggests that there is a positive correlation between these two metrics, it is not perfect ($r$ = `r format(round(cor(teams$OVR, teams$TEAM.OVR, method="pearson"), 3), nsmall=3)`). 
 
 ```{r mr_madden_text}
-library(ggplot2)
 # the base plot
 p1 = ggplot(data=teams, aes(OVR,TEAM.OVR)) + geom_point(alpha=.5, size=4) + xlab("Mean Player Rating") + ylab("Team Rating") + theme_bw()
 # add linear fit and select labels 
@@ -93,8 +99,6 @@ Answering this question just gave me a reason to test out the ``wordcloud`` pack
 
 
 ```{r mr_names}
-library(dplyr)
-library(wordcloud)
 pal = brewer.pal(9,"BuGn")
 pal = pal[-(1:4)]
 name_count = count(players, First.Name)

@@ -6,6 +6,16 @@ category: Sports
 tags: madden, nfl, data-viz, video-games
 ---
 
+
+
+
+```r
+library(RCurl)
+library(ggplot2)
+library(dplyr)
+library(wordcloud)
+```
+
 The *Madden NFL 16* video game was released last Tuesday. To [build hype](https://www.easports.com/madden-nfl/player-ratings) for the release of its new product, EA Sports featured a series of [ratings reveals](https://www.easports.com/madden-nfl/player-ratings) (i.e., ratings of players and teams to be featured in the new game). In addition to new gameplay features, ratings are highly anticipated year after year. EA Sports actually posted a [segment](https://www.youtube.com/watch?v=DAlCsvugCvE) in which  viewers can watch NFL rookies [react to their ratings for the first time](https://www.youtube.com/watch?v=DAlCsvugCvE). 
 
 At the conclusion of its ratings series, EA Sports posted a [spreasheet](https://www.easports.com/madden-nfl/news/2015/player-ratings) containing all player and team ratings. In addition to overall ratings, it includes skill ratings as well&mdash;things like speed, throw power, block shedding, route running, tackling, etc.
@@ -18,8 +28,8 @@ First things first, I read the [Ratings Spreasheet](https://www.easports.com/mad
 
 
 ```r
-players = read.csv("../data/madden-ratings/Base Set Players-Table 1.csv")
-teams = read.csv("../data/madden-ratings/Teams-Table 1.csv")
+players = read.csv(text=getURL("https://raw.githubusercontent.com/jskaza/data/master/madden-ratings/Base%20Set%20Players-Table%201.csv"))
+teams = read.csv(text=getURL("https://raw.githubusercontent.com/jskaza/data/master/madden-ratings/Teams-Table%201.csv"))
 # painless data cleanup
 # returns string w/o trailing whitespace
 trim.trailing = function (x) sub("\\s+$", "", x)
@@ -48,7 +58,6 @@ The *Madden* data presents an interesting way to tackle this question in the con
 
 
 ```r
-library(ggplot2)
 # the base plot
 p1 = ggplot(data=teams, aes(OVR,TEAM.OVR)) + geom_point(alpha=.5, size=4) + xlab("Mean Player Rating") + ylab("Team Rating") + theme_bw()
 # add linear fit and select labels 
@@ -120,39 +129,6 @@ print(subset(players_athletic, select = c(Team, First.Name, Last.Name, Position,
 Answering this question just gave me a reason to test out the ``wordcloud`` package. The interpretation of the wordcloud is straightforward: larger text means more prevalent name. For what it's worth, the most popular names in the game (at least at the time of its release) are Chris and Brandon.
 
 
-
-```r
-library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
-library(wordcloud)
-```
-
-```
-## Loading required package: methods
-```
-
-```
-## Loading required package: RColorBrewer
-```
 
 ```r
 pal = brewer.pal(9,"BuGn")
