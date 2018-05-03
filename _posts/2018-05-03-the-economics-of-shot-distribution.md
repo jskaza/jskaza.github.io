@@ -221,7 +221,7 @@ lorenz_gini2$Team = factor(lorenz_gini2$Team, levels=unique(lorenz_gini2$Team[or
 
 ggplot(data = lorenz_gini2, aes(x=100*p, y=100*L, group = Team)) + geom_line(col='blue') +
   geom_segment(aes(x = 0, y = 0, xend = 100, yend = 100)) + theme_bw() + labs(title = "NBA Lorenz Curves",
-       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA") + facet_wrap(~Team)
+       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA", subtitle = "Min. 41 GP") + facet_wrap(~Team)
 ```
 
 <img src="{{ site.url }}/images/fga-dist-unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
@@ -313,7 +313,7 @@ lorenz_gini3$Team = factor(lorenz_gini3$Team, levels=unique(lorenz_gini3$Team[or
 
 ggplot(data = lorenz_gini3, aes(x=100*p, y=100*L, group = Team)) + geom_line(col='blue') +
   geom_segment(aes(x = 0, y = 0, xend = 100, yend = 100)) + theme_bw() + labs(title = "NBA Lorenz Curves",
-       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA") + facet_wrap(~Team)
+       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA", subtitle = "82 Game Extrapolation") + facet_wrap(~Team)
 ```
 
 <img src="{{ site.url }}/images/fga-dist-unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" />

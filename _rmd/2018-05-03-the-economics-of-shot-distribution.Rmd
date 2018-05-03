@@ -123,7 +123,7 @@ lorenz_gini2$Team = factor(lorenz_gini2$Team, levels=unique(lorenz_gini2$Team[or
 
 ggplot(data = lorenz_gini2, aes(x=100*p, y=100*L, group = Team)) + geom_line(col='blue') +
   geom_segment(aes(x = 0, y = 0, xend = 100, yend = 100)) + theme_bw() + labs(title = "NBA Lorenz Curves",
-       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA") + facet_wrap(~Team)
+       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA", subtitle = "Min. 41 GP") + facet_wrap(~Team)
 ```
 
 OKC and their big three now become the team with the least equitable shot distribution. We can visualize how the Gini coefficients shift after implementing the minimum games requirement.
@@ -172,7 +172,7 @@ lorenz_gini3$Team = factor(lorenz_gini3$Team, levels=unique(lorenz_gini3$Team[or
 
 ggplot(data = lorenz_gini3, aes(x=100*p, y=100*L, group = Team)) + geom_line(col='blue') +
   geom_segment(aes(x = 0, y = 0, xend = 100, yend = 100)) + theme_bw() + labs(title = "NBA Lorenz Curves",
-       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA") + facet_wrap(~Team)
+       caption = "Source: Basketball Reference", x = "Cumulative % of Team", y = "Cumulative % of FGA", subtitle = "82 Game Extrapolation") + facet_wrap(~Team)
 ```
 
 Again, OKC emerges as the team with the least equitable shot distribution.
