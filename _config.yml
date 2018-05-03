@@ -30,6 +30,8 @@ plugins:
   - jekyll-feed
 
 google_analytics: UA—65998850-2
+disqus:
+    shortname: jskaza
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
