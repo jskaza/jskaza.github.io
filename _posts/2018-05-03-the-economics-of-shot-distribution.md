@@ -4,7 +4,6 @@ title: The Economics of Shot Distribution
 date: 2018-05-03
 category: Sports
 tags: nba, basketball, data-viz, fga
-comments: true
 ---
 
 
