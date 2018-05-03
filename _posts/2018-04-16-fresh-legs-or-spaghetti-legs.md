@@ -38,7 +38,7 @@ ggplot(df, aes(x=Team,y=Min,group=Pos,fill=Team)) +
        x = "", y = "Minutes") 
 ```
 
-![plot of chunk plot]({{ site.url }}/images/nba-minutes-plot-1.png)
+<img src="{{ site.url }}/images/nba-minutes-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%" />
 
 We can see that LeBron is leading a cast without many regular season minutes. We will see if this indicates fresh legs or inexpereince and rustiness. Additionally, we see that the Timberwolves have relied most heavily on their starting five. Heavy workloads for starters is of course a trademark of Tom Thibodeau-coached teams.  
 

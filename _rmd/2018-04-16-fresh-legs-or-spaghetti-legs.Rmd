@@ -8,7 +8,7 @@ tags: nba, basketball, data-viz
 The NBA playoffs are in full swing. I saw an [interesting graphic](https://fansided.com/2018/04/13/nylon-calculus-playoffs-west-talent-advantage/) that compared the star power among the 16 playoff teams. I thought it would be interesting to modify this graphic to look at which teams rely most heavily on their starters. After an 82 game regular season, minutes played start to add up and can take a toll on players' bodies. In the figure below, we can see the total minutes played for each playoff starter. Note that the plot reflects starting lineups from Game 1 of the playoffs, so Curry and Embiid are not represented in the graphic. 
 
 ```{r, echo=FALSE}
-knitr::opts_chunk$set(fig.path='{{ site.url }}/images/nba-minutes-', message = FALSE, warning=FALSE)
+knitr::opts_chunk$set(fig.path='{{ site.url }}/images/nba-minutes-', message = FALSE, warning=FALSE, out.width="100%", dpi = 500)
 ```
 
 ```{r plot}
