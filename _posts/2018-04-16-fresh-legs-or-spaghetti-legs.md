@@ -4,6 +4,7 @@ title: Fresh Legs or Spaghetti Legs?
 date: 2018-04-16
 category: Sports
 tags: nba, basketball, data-viz
+comments: true
 ---
 The NBA playoffs are in full swing. I saw an [interesting graphic](https://fansided.com/2018/04/13/nylon-calculus-playoffs-west-talent-advantage/) that compared the star power among the 16 playoff teams. I thought it would be interesting to modify this graphic to look at which teams rely most heavily on their starters. After an 82 game regular season, minutes played start to add up and can take a toll on players' bodies. In the figure below, we can see the total minutes played for each playoff starter. Note that the plot reflects starting lineups from Game 1 of the playoffs, so Curry and Embiid are not represented in the graphic. 
 
