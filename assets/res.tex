@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.1 (8/1/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\profilepic{} % Profile picture
+
+\cvname{Jonathan Skaza} % Your name
+%\cvjobtitle{Data Scientist} % Job title/career
+
+\cvaddress{} % Short address/location, use \newline if more than 1 line is required
+\cvnumberphone{{(508) 282-1066}} % Phone number
+\cvsite{\href{https://jskaza.github.io/}{https://jskaza.github.io/}} % Personal website
+\cvmail{\href{mailto:jonathan.skaza@gmail.com}{jonathan.skaza@gmail.com}} % Email address
+\cvlinkedin{\href{https://www.linkedin.com/in/jonathanskaza/}{/in/jonathanskaza}} % 
+
+\cvtwitter{\href{https://twitter.com/skazasays}{@SkazaSays}} 
+
+\cvgithub{\href{https://github.com/jskaza}{jskaza}} 
+% 
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	 ABOUT ME
+%----------------------------------------------------------------------------------------
+
+\aboutme{I am a Senior Analyst at Panalgo, a software company headquartered in Boston, MA. I use my background in statistics and data science to contribute to several phases of the software development cycle, most notably new feature development and customer support.}% To have no About Me section, just remove all the text and leave \aboutme{}
+
+%----------------------------------------------------------------------------------------
+%	 SKILLS
+%----------------------------------------------------------------------------------------
+
+% Skill bar section, each skill must have a value between 0 an 6 (float)
+\skills{}
+
+%------------------------------------------------
+
+% Skill text section, each skill must have a value between 0 an 6
+\skillstext{
+Python \textbullet{} R \textbullet{} 
+Julia \textbullet{} Instant Health Data (IHD) \textbullet{}
+\LaTeX{} \textbullet{} Git
+}
+
+
+\intereststext{
+Statistical Computing \textbullet{} Machine Learning \textbullet{} Reproducible Research \textbullet{} Bayesian Inference \textbullet{} Data Analysis \textbullet{} Statistical Analysis of Big Data \textbullet{} RWE \textbullet{} HEOR \textbullet{} Statistics in Sports % \textbullet{} Basketball Analytics
+}
+
+\awardstext{
+\begin{twentyshort} % Environment for a short list with no descriptions
+	\twentyitemshort{2018}{Gupta Family Hackathon Winner}
+	\twentyitemshort{2015}{SAS Certificate in Data Mining}
+	\twentyitemshort{2015}{SAS Institute Award}
+	\twentyitemshort{2015}{Excellence in Economics Award}
+	%\twentyitemshort{<dates>}{<title/description>}
+\end{twentyshort}
+}
+
+%----------------------------------------------------------------------------------------
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 Experience
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{twenty}
+     \twentyitem{2018-Pres.}{Panalgo}{Boston, MA}{\textbf{Sr. Analyst, Analyst II} \\
+    Answer customer support tickets on a variety of topics, including basic configuration troubleshooting, statistical model debugging, API workflows, and protocol implementation. Work with software engineering to develop new features for the IHD platform.}
+	\twentyitem{2017-2018}{University of Michigan}{Ann Arbor, MI}{\textbf{Data Scientist} \\
+    Conducted statistical research involving longitudinal data analysis, functional data analysis, Bayesian hierarchical modeling, data visualization, and data wrangling. Collaborations with University of Michigan Department of Psychiatry and Drexel University Urban Health Collaborative.}
+    \twentyitem{2015-2017}{University of Michigan}{Ann Arbor, MI}{\textbf{Graduate Student Research Assistant} \\
+    Developed statistical methods and applications in modeling cortisol, a biomarker of stress, as part of a large psychiatric study. Member of Biostatistics for Social Impact lab.}
+    \twentyitem{2014}{Bryant University}{Smithfield, RI}{\textbf{Undergraduate Research Assistant} \\
+    Implemented econometric analyses concerning the economic impact of children, the education system, and the defense industry in the state of Rhode Island.}
+    \twentyitem{2014}{NC State University}{Raleigh, NC}{\textbf{Summer Institute in Biostatistics} \\
+    Explored the field of biostatistics through lectures, statistical computing labs, and data analysis project. Sponsored by NHLBI and NCATS.}
+      
+    %   \twentyitem{2013}{Zeptometrix Corporation}{Franklin, MA}{\textbf{Manufacturing Lab Intern} \\
+    %   Performed a series of tasks in the process of infectious disease diagnostic development.}
+    %   \twentyitem{2012}{State Street Corporation}{Boston, MA}{\textbf{US Investment Services Intern} \\ Worked as a fund accountant within the Money Markets Division.}
+\end{twenty}
+
+
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem{2017}{University of Michigan}{Ann Arbor, MI}{M.S., Biostatistics}
+	\twentyitem{2015}{Bryant University}{Smithfield, RI}{B.S., Applied Mathematics \& Statistics, Applied Economics \\ \emph{Summa Cum Laude}}
+
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Publications}
+
+Mayer et al. (2019) How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function? Psychoneuroendocrinology
+
+Abelson et al. (2019). Daily diurnal salivary curves: Are they too noisy to be useful? Psychoneuroendocrinology
+
+Abelson et al. (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans? Psychoneuroendocrinology
+
+Wang, J. et al. (2018). The Advantage of Doubling: A Deep Reinforcement Learning Approach to Studying the Double Team in the NBA. MIT Sloan Sports Analytics Conference
+	
+Skaza, J. and Blais, B. (2016). Modeling the Infectiousness of Twitter Hashtags. Physica A
+	
+Beaudin, L. and Skaza, J. (2015). Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI. Applied Economics
+	
+Skaza, J. and Blais, B. (2013). The relationship between environmental degradation and economic growth: exploring models and questioning the existence of an Environmental Kuznets Curve. Bryant University Center for Global and Regional Economic Development Working Paper Series
+
+%----------------------------------------------------------------------------------------
+%	 AWARDS
+%----------------------------------------------------------------------------------------
+
+
+
+\end{document} 
