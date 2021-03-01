@@ -1,0 +1,48 @@
+I"�<p>I recently completed a small project in which I analyzed the popularity
+of teams that compete in the four major sports. In the analysis, I
+looked at metropolitan areas that have at least <a href="http://en.wikipedia.org/wiki/U.S._cities_with_teams_from_four_major_league_sports" title="one team in each of the four major sports">one team in each of the
+four major
+sports</a>. Using
+<a href="http://www.google.com/trends/" title="Google Trends">Google Trends</a>, I
+gathered weekly data from 01/02/05 - 11/01/14 to assess the relative
+popularity of teams in cities that met the inclusion criteria. Each data
+point represents how frequently a team was queried on Google relative to
+the Miami Heat in the week of 06/16/13 – 06/22/13. This data point
+was set to 100. More importantly, higher numbers indicate a higher
+search frequency and, for all intents and purposes, greater popularity.
+Below, I’ve included a heat map that illustrates the contrasts in
+average popularity among city-sport combinations over the time period.
+Note that for cities home to more than one team in a given sport, I took
+the maximum team score each week. For instance, if the Yankees had a
+popularity score of 10 in one week and the Mets had a score of 5 in the
+same week, I would set the Yankees’ score to be the New York baseball
+score for that week.</p>
+
+<p><a href="https://jskaza.files.wordpress.com/2014/12/popularity.png"><img src="https://jskaza.files.wordpress.com/2014/12/popularity.png" alt="popularity" /></a></p>
+
+<p>R code I used to produce the heatmap (will require the <code class="language-plaintext highlighter-rouge">gplots</code> and
+<code class="language-plaintext highlighter-rouge">RColorBrewer</code> libraries):</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row.names</span><span class="p">(</span><span class="n">all.data</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">all.data</span><span class="o">$</span><span class="n">City</span><span class="w">
+</span><span class="n">all.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">all.data</span><span class="p">[,</span><span class="m">-1</span><span class="p">]</span><span class="w">
+</span><span class="n">scaleyellowred</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">colorRampPalette</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"lightyellow"</span><span class="p">,</span><span class="w"> </span><span class="s2">"red"</span><span class="p">),</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"rgb"</span><span class="p">)(</span><span class="m">100</span><span class="p">)</span><span class="w">
+</span><span class="n">heatmap.2</span><span class="p">(</span><span class="n">as.matrix</span><span class="p">(</span><span class="n">all.data</span><span class="p">),</span><span class="w"> </span><span class="n">Rowv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">Colv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scaleyellowred</span><span class="p">,</span><span class="w"> </span><span class="n">density.info</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w">
+          </span><span class="n">trace</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">cexRow</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">cexCol</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">margins</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">6</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In my statistical analysis, I used three-way between-subjects ANOVA
+(with a season variable as a block) to assess whether certain cities and
+sports attract significantly greater levels of interest. I performed
+this analysis using data only from the year 2013. Furthermore, to
+account for violations of the normality
+<a href="http://en.wikipedia.org/wiki/Analysis_of_variance#Assumptions_of_ANOVA" title="assumption">assumption</a>,
+I performed a log transformation on the data. This did not affect the
+interpretability of results because, as alluded to above, the numeric
+quantities themselves added little value to the analysis. Additionally,
+the ordinal relationships remained intact after the log transformation.
+Here
+are <a href="https://www.dropbox.com/s/l9q7zmvy9dn02cr/Analysis%20of%20Sports%20Teams%20in%20Four-Sport%20Cities.pdf?dl=0" title="slides">slides</a> with
+results from the project and the <a href="https://www.dropbox.com/s/9q9r43qmwrmkad7/City%20Data.zip?dl=0" title="raw data">raw
+data</a>
+from Google Trends.</p>
+:ET

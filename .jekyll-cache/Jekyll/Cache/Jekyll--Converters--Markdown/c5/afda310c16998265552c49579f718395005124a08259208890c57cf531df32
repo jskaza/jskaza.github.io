@@ -1,0 +1,173 @@
+I"t6<p>Today, I will post the first of several entries relating to a unique
+dataset that I’ve put together—a dataset that contains over 600 rows of
+data on a topic of great importance……………..superheroes and
+supervillains! Okay, analyzing superhero data may not be the most urgent
+matter that we as a society face, but:</p>
+
+<ol>
+  <li>I think that it is often useful to include entertaining applications
+when demonstrating what may otherwise be dry statistical methodology
+(though, admittedly, I sometimes find the “dry” statistics entertaining
+as well).</li>
+  <li>I find it fun to casually talk to friends about superheroes
+(especially those in recent movies) simply because, well, it’s just
+that: fun! And much like sabermetricians use statistics to challenge
+what is thought to be conventional baseball wisdom, I hope to use
+statistics to address pertinent topics relating to superheroes and
+supervillains (let’s call this discipline supermetrics?).</li>
+</ol>
+
+<p><strong>Setting the Stage</strong></p>
+
+<p>Before I get into the statistical analysis of the data, I must put a few
+things on the table.</p>
+
+<ol>
+  <li><strong>Disclaimer</strong> I <span style="text-decoration:underline;">do
+not </span>claim to be a superhero enthusiast, expert, or anything of
+the kind. I don’t think I have ever read a comic book in my life. I am,
+however, a fan of superhero movies (e.g., <em>Man of Steel</em>, <em>The Dark
+Knight</em>, <em>Captain America</em>, <em>The Avengers</em>, etc.) along with the
+television show, <em>Arrow.</em> So what does this tidbit have to do with
+anything? For one, with regard to my statistical analyses, it’s probably
+a good thing that I’m not a huge supporter of any given hero or villain.
+This should play a role in producing unbiased results. Additionally, my
+unfamiliarity with the comic book universe becomes a disadvantage in
+terms of data familiarity. Namely, I am fairly confident that I would
+not be able to recognize any superhero that is over- or underrated (more
+on the data below), making erroneous calculations more likely. With this
+in mind, if any comic book experts out there see any peculiar results,
+they are certainly welcome to leave a comment or drop me an email.</li>
+  <li><strong>Data</strong> The data in the dataset that I will use to conduct my
+analyses come courtesy of the <a href="http://www.superherodb.com/">Superhero
+Database</a>. This site houses a collection of
+information about 611 superheroes and villains. Each character (with
+data) is given a score between 0 and 100 (except in a few rare cases,
+where characters are deemed to be worthy of scores greater than 100) for
+six different traits: Intelligence, Strength, Speed, Durability, Power,
+and Combat. For example, here are the ratings for Batman:</li>
+</ol>
+
+<table align="center">
+<tr>
+<td><b>Intelligence</b></td> 
+<td><b>Strength</b></td>
+<td><b>Speed</b></td>
+<td><b>Durability</b></td>
+<td><b>Power</b></td>
+<td><b>Combat</b></td>
+</tr>
+<tr>
+<td>100</td> 
+<td>18</td>
+<td>27</td>
+<td>42</td>
+<td>37</td>
+<td>100</td>
+</tr>
+</table>
+
+<p>Correction. Each character actually has two sets of these ratings. One
+such set is attributable to the creation of the website (the website was
+created to log and rate superheroes) while the other set is an average
+of user ratings. I chose to use the site’s ratings (the first set)
+because it allowed for a more complete dataset (many heroes and villains
+were not rated by users). In the event that the users rated the
+character and the site itself did not, I simply used the users’ ratings.
+After using this strategy, I came out with 440 superheroes/villains on
+which to perform analyses (171 subjects without usable ratings from
+either the site or its users).</p>
+
+<p>I have one final note on the data. It is obviously highly subjective.
+When a human being is rating anything, there is always an element of
+subjectivity. Superheroes pose a particular challenge because they are
+fictional (so we are assigning subjective ratings to characters that
+were developed based on an author’s subjectivity). So please do not take
+the analyses too seriously, but certainly have fun critiquing and
+debating them! (Note: I do like how ratings can take on any discrete
+value between 0 and 100. This large range allows raters to address
+subtle differences among superheroes/villains.)</p>
+
+<p><strong>Visualizing Differences in Superhero Traits</strong></p>
+
+<p>The first items that I will present in analyzing this dataset are
+heatmaps.</p>
+
+<p><strong>Heroes</strong></p>
+
+<p>I created a non-random sample of superheroes to include big names. I did
+this using my opinions of which superheroes are popular and by surfing
+the web for lists of popular superheroes. After I had a list of about 20
+heroes, I generated a heat matrix using R that color-coded the six
+attributes for each hero.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">#source used: http://flowingdata.com/2010/01/21/how-to-make-a-heatmap-a-quick-and-easy-solution/  </span><span class="w">
+</span><span class="c1">#will need to install ggplot2 and RColorBrewer</span><span class="w">
+</span><span class="c1">#generate heatmap for select, non-random, heroes  </span><span class="w">
+</span><span class="n">super</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"../data/superhero-stats/select.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="c1">#read-in CSV file; insert appropriate path  </span><span class="w">
+</span><span class="n">super</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">super</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="n">super</span><span class="o">$</span><span class="n">Name</span><span class="p">),]</span><span class="w"> </span><span class="c1">#sort heroes alphabetically  </span><span class="w">
+</span><span class="n">row.names</span><span class="p">(</span><span class="n">super</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">super</span><span class="o">$</span><span class="n">Name</span><span class="w">  
+</span><span class="n">super</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">super</span><span class="p">[,</span><span class="m">3</span><span class="o">:</span><span class="m">8</span><span class="p">]</span><span class="w"> </span><span class="c1">#using these 6 columns for analysis  </span><span class="w">
+</span><span class="n">super_matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data.matrix</span><span class="p">(</span><span class="n">super</span><span class="p">)</span><span class="w">  
+</span><span class="n">super_heatmap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heatmap</span><span class="p">(</span><span class="n">super_matrix</span><span class="p">,</span><span class="w"> </span><span class="n">Rowv</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">Colv</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="w">  
+</span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colorRampPalette</span><span class="p">(</span><span class="n">brewer.pal</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="s2">"Greens"</span><span class="p">))(</span><span class="m">1000</span><span class="p">),</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="s2">"column"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/superhero-stats-i-hero_map-1.png" alt="plot of chunk hero_map" /></p>
+
+<p>I really like this form of visualization. One is able to view 126
+individual data points in this graphic and I can assure you that it is
+easier to gain a grasp of the data using colors in the matrix rather
+than numeric values. Does anything stand out to you? Martian Manhunter,
+Superman, and Thor all have relatively high ratings across the board.
+And as we saw above, while Batman is exceptionally intelligent and
+excels in combat, he could use work in the other four departments.</p>
+
+<p><strong>Villains</strong></p>
+
+<p>I replicated the heatmap visualization using popular supervillains in
+place of superheroes. (Note: This graphic is probably a bit biased
+toward Batman villains, because those are the most familiar to me and I
+felt compelled to include them!)</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#generate heatmap for select, non-random, villains</span><span class="w">
+</span><span class="n">vill</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"../data/superhero-stats/selectvill.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="c1">#read-in CSV file; insert appropriate path</span><span class="w">
+</span><span class="n">vill</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vill</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="n">vill</span><span class="o">$</span><span class="n">Name</span><span class="p">),]</span><span class="w"> </span><span class="c1">#sort villains alphabetically</span><span class="w">
+</span><span class="n">row.names</span><span class="p">(</span><span class="n">vill</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vill</span><span class="o">$</span><span class="n">Name</span><span class="w">
+</span><span class="n">vill</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vill</span><span class="p">[,</span><span class="m">3</span><span class="o">:</span><span class="m">8</span><span class="p">]</span><span class="w"> </span><span class="c1">#using these 6 columns for analysis</span><span class="w">
+</span><span class="n">vill_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.matrix</span><span class="p">(</span><span class="n">vill</span><span class="p">)</span><span class="w">
+</span><span class="n">vill_heatmap</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">heatmap</span><span class="p">(</span><span class="n">vill_matrix</span><span class="p">,</span><span class="w"> </span><span class="n">Rowv</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">Colv</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="w">
+                         </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colorRampPalette</span><span class="p">(</span><span class="n">brewer.pal</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="s2">"Reds"</span><span class="p">))(</span><span class="m">1000</span><span class="p">),</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="s2">"column"</span><span class="p">,</span><span class="w">
+                         </span><span class="n">margins</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">10</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/superhero-stats-i-vill_map-1.png" alt="plot of chunk vill_map" /></p>
+
+<p>Here we can see that General Zod — who you may have recently seen in <em>Man
+of Steel</em> — is, for lack of a better term, a beast. He possesses an
+attribute score of at least 94 in each of the six categories.
+Interestingly, it becomes apparent that many of the famous Batman
+villains (e.g., Joker, Penguin, Riddler, and Two-Face) rely on a high
+level of intellect to challenge Batman. Then, however, we have Ra’s Al
+Ghul and Bane; both villains possess extraordinary combat ratings.</p>
+
+<p><strong>Closing Remarks</strong></p>
+
+<p>This post was devoted to introducing the superhero/villain dataset with
+which I will be working in subsequent posts. Additionally, I took a
+first step in statistically analyzing the data by visualizing
+differences in characteristics among heroes and villains. I’d be
+interested to hear whether anything jumps out to you when studying those
+graphics!</p>
+
+<p>In future posts, I aim to move beyond visualizing the data by applying
+various statistical methods to the data. Hopefully you find the
+superhero data and the relevant questions that can be addressed both fun
+and entertaining, but also of practical importance with regard to the
+statistical methods being employed.</p>
+
+<p><em>Download the data (.xls):</em> <a href="https://jskaza.files.wordpress.com/2014/07/hero_vill_data.xls">Superhero &amp; Supervillain
+Data</a></p>
+:ET

@@ -1,6 +1,13 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: page
 ---
+
+I am a member of the Health Analytic Solutions team at [Panalgo](https://panalgo.com/), where I help develop and support our IHD software. My contributions fall into three primary buckets:
+
+- Providing technical support and guidance for users
+- Developing new features for the platform
+- Streamlining and automating internal workflows and business analytics reporting
+
+I received my MS in Biostatistics from the University of Michigan and BS in Applied Economics and Applied Mathematics &amp; Statistics from Bryant University.
+
+A copy of my resume can be found [here](/assets/res.pdf).

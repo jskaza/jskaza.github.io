@@ -1,0 +1,72 @@
+I"�<p><a href="http://mlb.mlb.com/team/player.jsp?player_id=277417#gameType='R'&amp;sectionType=career&amp;statType=2&amp;season=2014&amp;level='ALL'">Josh
+Beckett</a> of
+the Los Angeles Dodgers tossed the first no-hitter of the 2014 MLB
+season on Sunday. Over 9 innings of work, the 6’5”, 230 lb. righthander
+threw 128 pitches, striking out 6 Phillies’ batters and facing 30
+batters in all, just 3 over the minimum.</p>
+
+<p><a href="http://mlb.mlb.com/mlb/gameday/index.jsp?gid=2014_05_25_lanmlb_phimlb_1&amp;mode=box&amp;c_id=la">Boxscore</a> statistics can
+only tell us so much about Beckett’s gem. Here are some graphics that
+can help us in analyzing the underpinnings of Beckett’s success on
+Sunday:</p>
+
+<p><a href="http://jskaza.files.wordpress.com/2014/05/speed.png"><img src="http://jskaza.files.wordpress.com/2014/05/speed.png?w=625" alt="speed" /></a></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p><a href="http://jskaza.files.wordpress.com/2014/05/horiz-movement.png"><img src="http://jskaza.files.wordpress.com/2014/05/horiz-movement.png?w=625" alt="horiz
+movement" /></a></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p><a href="http://jskaza.files.wordpress.com/2014/05/vert-pitch-location.png"><img src="http://jskaza.files.wordpress.com/2014/05/vert-pitch-location.png?w=625" alt="vert pitch
+location" /></a></p>
+
+<p>All of the data used in producing these graphics were retrieved from the
+excellent baseball research
+resource, <a href="http://www.brooksbaseball.net/">http://www.brooksbaseball.net</a>.
+The site lists Beckett as having featured a fourseam fastball, sinker,
+changeup, curveball, cutter, and splitter at at least one point or
+another throughout the 2014 campaign (note, however, that Beckett did
+not throw his splitter during his no-hitter).</p>
+
+<p><strong>Interpreting the Graphs</strong></p>
+
+<p>During the no-hitter, Beckett’s average velocity on each of his pitches
+was essentially the same as it has been all season. He garnered more
+horizontal movement on each of his pitches though, which leads me to
+believe that both his “stuff” and command were sharper than normal. It
+is neat that analyzing this type of data can allow one to quantify
+abstract ideas such as the effectiveness of a pitcher’s “stuff” and the
+command which he holds over his pitches. Perhaps the most telltale sign
+that Beckett was at the top if his game is that he was keeping his
+pitches down in the zone, which is illustrated in the third plot. Notice
+that the average location of each of Beckett’s pitches (except for the
+cutter, which he threw only 8 times on Sunday) was noticeably lower than
+it has been all season.</p>
+
+<p><strong>Further Reading</strong></p>
+
+<p>I have only scratched the surface on what can be done with this sort of
+<a href="http://en.wikipedia.org/wiki/PITCHf/x">PITCHf/x</a> data. <a href="http://baseball.physics.illinois.edu/">Dr. Alan
+Nathan</a> has developed volumes of
+neat research on the physics of baseball.
+<a href="http://www.fangraphs.com/">FanGraphs</a> has a lot of statistics and
+graphics that are developed using PITCHf/x data. Finally, as I mentioned
+above, <a href="http://www.brooksbaseball.net/">BrooksBaseball</a> is also a
+tremendous resource.</p>
+
+<p> </p>
+:ET

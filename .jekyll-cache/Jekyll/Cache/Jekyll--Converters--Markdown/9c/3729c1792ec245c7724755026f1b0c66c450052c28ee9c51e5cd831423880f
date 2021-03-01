@@ -1,0 +1,60 @@
+I"Ë&<p>The NBA playoffs are in full swing. I saw an <a href="https://fansided.com/2018/04/13/nylon-calculus-playoffs-west-talent-advantage/">interesting graphic</a> that compared the star power among the 16 playoff teams. I thought it would be interesting to modify this graphic to look at which teams rely most heavily on their starters. After an 82 game regular season, minutes played start to add up and can take a toll on playersâ€™ bodies. In the figure below, we can see the total minutes played for each playoff starter. Note that the plot reflects starting lineups from Game 1 of the playoffs, so Curry and Embiid are not represented in the graphic.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">RCurl</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggthemes</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">getURL</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/jskaza/data/master/nba-minutes/minutes.csv"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">df</span><span class="o">$</span><span class="n">Team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"TOR"</span><span class="p">,</span><span class="s2">"BOS"</span><span class="p">,</span><span class="s2">"PHI"</span><span class="p">,</span><span class="s2">"CLE"</span><span class="p">,</span><span class="w">
+                                     </span><span class="s2">"IND"</span><span class="p">,</span><span class="s2">"MIA"</span><span class="p">,</span><span class="s2">"MIL"</span><span class="p">,</span><span class="s2">"WAS"</span><span class="p">,</span><span class="w">
+                                     </span><span class="s2">"MIN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SAS"</span><span class="p">,</span><span class="s2">"NOP"</span><span class="p">,</span><span class="s2">"UTA"</span><span class="p">,</span><span class="w">
+                                     </span><span class="s2">"OKC"</span><span class="p">,</span><span class="s2">"POR"</span><span class="p">,</span><span class="s2">"GSW"</span><span class="p">,</span><span class="s2">"HOU"</span><span class="p">))</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">Pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">Pos</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"PG"</span><span class="p">,</span><span class="s2">"SG"</span><span class="p">,</span><span class="s2">"SF"</span><span class="p">,</span><span class="s2">"PF"</span><span class="p">,</span><span class="s2">"C"</span><span class="p">))</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Team</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">Min</span><span class="p">,</span><span class="n">group</span><span class="o">=</span><span class="n">Pos</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">Team</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="o">=</span><span class="n">position_dodge</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">coord_polar</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_solarized</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"#BA0C2F"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#007A33"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#003DA5"</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"#6F263D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#FFCD00"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#862633"</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"#00471B"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#0C2340"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#005083"</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"#C6CFD4"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#85714D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#FFA300"</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"#0072CE"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#C8102E"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#FFC72C"</span><span class="p">,</span><span class="w">
+                              </span><span class="s2">"#BA0C2F"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Minutes Played by Starting 5, Playoff Teams"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> 
+       </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Minutes"</span><span class="p">)</span><span class="w"> 
+</span></code></pre></div></div>
+
+<p><img src="/images/nba-minutes-plot-1.png" title="plot of chunk plot" alt="plot of chunk plot" width="100%" /></p>
+
+<p>We can see that LeBron is leading a cast without many regular season minutes. We will see if this indicates fresh legs or inexpereince and rustiness. Additionally, we see that the Timberwolves have relied most heavily on their starting five. Heavy workloads for starters is of course a trademark of Tom Thibodeau-coached teams.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">summarise</span><span class="p">(</span><span class="n">Total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">Min</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">arrange</span><span class="p">(</span><span class="o">-</span><span class="n">Total</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## # A tibble: 16 x 2
+##      Team Total
+##    &lt;fctr&gt; &lt;int&gt;
+##  1    MIN 13098
+##  2    OKC 12001
+##  3    MIL 12000
+##  4    POR 11787
+##  5    IND 11477
+##  6    NOP 11439
+##  7    UTA 11439
+##  8    HOU 10982
+##  9    WAS 10862
+## 10    PHI 10861
+## 11    TOR 10522
+## 12    MIA 10426
+## 13    BOS 10420
+## 14    SAS 10128
+## 15    CLE  9933
+## 16    GSW  9355
+</code></pre></div></div>
+:ET

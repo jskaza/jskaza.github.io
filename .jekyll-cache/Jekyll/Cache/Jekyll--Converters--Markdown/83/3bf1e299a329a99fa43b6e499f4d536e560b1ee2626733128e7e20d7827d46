@@ -1,0 +1,333 @@
+I"5<p>Building off my <a href="http://jskaza.wordpress.com/2014/07/24/superhero-statistics-pt-i/" title="Super(hero) Statistics, Pt. I">previous
+post</a>, in which I introduced a neat superhero dataset and presented graphical
+descriptions of the data, in this post I would like to address
+differences in traits between superheroes and supervillains.</p>
+
+<p><strong>1. Descriptive Statistics</strong></p>
+
+<p>Below, I’ve included mean ratings for both superheroes and
+supervillains.</p>
+
+<table align="center">
+<tr>
+<td><b>Variable</b></td> 
+<td><b>Mean for Supervillains (n=123)</b></td>
+<td><b>Mean for Superheroes (n=304)</b></td>
+</tr>
+<tr>
+<td>Intelligence</td> 
+<td>67.46</td>
+<td>60.22</td>
+</tr>
+<tr>
+<td>Strength</td> 
+<td>46.11</td>
+<td>38.17</td>
+</tr>
+<tr>
+<td>Speed</td> 
+<td>37.03</td>
+<td>38.26</td>
+</tr>
+<tr>
+<td>Durability</td> 
+<td>62.00</td>
+<td>56.28</td>
+</tr>
+<tr>
+<td>Power</td> 
+<td>59.67</td>
+<td>55.48</td>
+</tr>
+<tr>
+<td>Combat</td> 
+<td>59.87</td>
+<td>60.50</td>
+</tr>
+<tr>
+<td>Total</td> 
+<td>332.15</td>
+<td>308.91</td>
+</tr>
+<tr>
+<td colspan="3">Source: &lt;a href=http://www.superherodb.com&gt;http://www.superherodb.com&lt;/a&gt;</td>
+</tr>
+</table>
+
+<p>Surprisingly, we can see that, on average, the villains possess higher
+total ratings (sum of the six ratings) than do the heroes. However, we
+(or at least I) typically think of superheroes as being <em>superior</em> to
+their rivals. On the other hand, creating villains to be more
+extraordinary creatures than their counterparts makes the heroes’
+ultimate triumphs even more impressive. This makes for good underdog
+stories.</p>
+
+<p>Now, let’s add variance into the equation and look at boxplots of the
+data.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#create a panel of boxplots; separate by alignment</span><span class="w">
+</span><span class="n">hero_vill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"../data/superhero-stats/hero_vill.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span><span class="n">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">))</span><span class="w">
+</span><span class="n">boxplot</span><span class="p">(</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Intelligence</span><span class="o">~</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Alignment</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="n">rainbow</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"Intelligence Ratings"</span><span class="p">)</span><span class="w">
+</span><span class="n">boxplot</span><span class="p">(</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Strength</span><span class="o">~</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Alignment</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="n">rainbow</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"Strength Ratings"</span><span class="p">)</span><span class="w">
+</span><span class="n">boxplot</span><span class="p">(</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Speed</span><span class="o">~</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Alignment</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="n">rainbow</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"Speed Ratings"</span><span class="p">)</span><span class="w">
+</span><span class="n">boxplot</span><span class="p">(</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Durability</span><span class="o">~</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Alignment</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="n">rainbow</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"Durability Ratings"</span><span class="p">)</span><span class="w">
+</span><span class="n">boxplot</span><span class="p">(</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Power</span><span class="o">~</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Alignment</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="n">rainbow</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"Power Ratings"</span><span class="p">)</span><span class="w">
+</span><span class="n">boxplot</span><span class="p">(</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Combat</span><span class="o">~</span><span class="n">hero_vill</span><span class="o">$</span><span class="n">Alignment</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="n">rainbow</span><span class="p">(</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"Combat Ratings"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/superhero-stats-ii-supe_box-1.png" alt="plot of chunk supe_box" /></p>
+
+<p>Without any formal discussion, I’ll make a quick remark about the spread
+of the ratings. There is more spread (as measured by standard deviation)
+in ratings for villains in 5 of the 6 categories (all but combat).
+Practically, this leads me to believe that villains are more diverse in
+makeup than heroes. For an anecdotal example, Joker is a very different
+villain than Blob.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Intelligence</th>
+      <th>Strength</th>
+      <th>Speed</th>
+      <th>Durability</th>
+      <th>Power</th>
+      <th>Combat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Joker</td>
+      <td>100</td>
+      <td>10</td>
+      <td>12</td>
+      <td>56</td>
+      <td>22</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>Blob</td>
+      <td>10</td>
+      <td>83</td>
+      <td>23</td>
+      <td>95</td>
+      <td>26</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Difference</td>
+      <td>90</td>
+      <td>-73</td>
+      <td>-11</td>
+      <td>-39</td>
+      <td>-4</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p><strong>2. Incorporating Uncertainty</strong></p>
+
+<p>From the analysis so far, one can easily see that there are differences
+in the average scores between villains and heroes. Now, I was tempted to
+take these differences as “real” but, upon further consideration,
+second-guessed myself.</p>
+
+<p>I faced a statistical conundrum which statisticians working with real
+world data rarely, if ever, face. The reason I was tempted to say, for
+instance, that villains are about 4 points more powerful than heroes is
+because I thought my sample was essentially the population. Upon further
+examination, however, I recalled that I had cut 171 subjects from my
+sample because of missing values and that there are probably superheroes
+and supervillains out there not included in the superhero database. So,
+since my sample is just that, a sample, I decided to incorporate some
+uncertainty into my estimates. (Now, if this were a real world problem,
+I would need to be sure that my missing data were missing at random to
+assure that I was working with a random sample. In this case, I will
+make that assumption and proceed, though it is probably not valid. I
+think that the results will still be interesting and worthy of
+discussion).</p>
+
+<p>Below are estimated ranges for the true differences between
+supervillains and superheroes for each of the six ratings categories.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>95% CI of Mean (Villain-Hero)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intelligence</td>
+      <td>(2.5336, 11.9591)</td>
+    </tr>
+    <tr>
+      <td>Strength</td>
+      <td>(1.2240, 14.6616)</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td>(-6.0548, 3.5935)</td>
+    </tr>
+    <tr>
+      <td>Durability</td>
+      <td>(-0.5996, 12.0338)</td>
+    </tr>
+    <tr>
+      <td>Power</td>
+      <td>(-1.5122, 9.8915)</td>
+    </tr>
+    <tr>
+      <td>Combat</td>
+      <td>(-5.4797, 4.2130)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>After incorporating uncertainty, we only detect significant disparities
+in two (intelligence and strength) of the six categories. If I were to
+account for <a href="http://en.wikipedia.org/wiki/Multiple_comparisons_problem">multiple
+comparisons</a>,
+then only intelligence would differ significantly between the two
+groups.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>**3. P (Hero</td>
+      <td>Characteristics)**</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Now that we have been exposed to at least some evidence to suggest that
+there are detectable differences in traits between superheroes and
+supervillains, I am interested in answering the following question:</p>
+
+<p><em>Given that a character possesses a particular set of ratings, can we
+predict if that character will be a hero or a villain? </em></p>
+
+<p>“Practically”, this would allow one to predict the alignment of a new
+member to the world of superheroes and supervillains.</p>
+
+<p>To address this question, I created a logistic regression model.
+Overall, I would say that the model does not do a great job of
+predicting alignment (perhaps due to the considerable amount of
+variability among both heroes and villains), but there is still some
+useful information which I will share.  I’ll present these results in
+terms of odds ratios.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Point Estimate</th>
+      <th>95% Wald Confidence Limits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intelligence</td>
+      <td>0.982</td>
+      <td>(0.971, 0.993)</td>
+    </tr>
+    <tr>
+      <td>Strength</td>
+      <td>0.992</td>
+      <td>(0.982, 1.001)</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td>1.012</td>
+      <td>(1, 1.023)</td>
+    </tr>
+    <tr>
+      <td>Durability</td>
+      <td>0.998</td>
+      <td>(0.987, 1.008)</td>
+    </tr>
+    <tr>
+      <td>Power</td>
+      <td>0.998</td>
+      <td>(0.989, 1.008)</td>
+    </tr>
+    <tr>
+      <td>Combat</td>
+      <td>1.008</td>
+      <td>(0.998, 1.019)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>When controlling for other ratings, intelligence and speed play a
+significant role in predicting alignment. Here are their
+interpretations:</p>
+
+<ul>
+  <li>Holding other factors fixed, a one unit increase in intelligence
+rating <em>decreases</em> the odds that a character is a superhero by 1.8%.</li>
+  <li>Holding other factors fixed, a one unit increase in speed rating
+<em>increases </em>the odds that a character is a superhero by 1.2%.</li>
+</ul>
+
+<p><strong>4. Conclusions</strong></p>
+
+<p>In my mind, the biggest takeaway from this analysis is the role that
+intelligence plays in distinguishing superheroes from supervillains. The
+villains possess significantly <em>higher </em>levels of intelligence than
+their enemies, the heroes. I guess it makes for a good story when the
+good guy outwits the evil mastermind.</p>
+
+<p><em>As in Pt. I, I was working with</em> <a href="https://jskaza.files.wordpress.com/2014/08/hero_vill_data.xls"><em>this
+dataset</em></a>.</p>
+
+<p><em>SAS code for t-tests &amp; logistic regression:</em></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*data processing;
+data hero_vill;
+infile "~/Blog/hero_vill_1.csv" dlm=',' dsd missover;
+input Name :$32. Alignment $ Intelligence Strength Speed Durability Power Combat Total;
+if Alignment='good' then Hero=1;
+else if Alignment='bad' then Hero=0;
+else delete;
+run;
+*t-tests;
+proc ttest data=hero_vill plots=none;
+class alignment;
+var intelligence;
+run;
+proc ttest data=hero_vill plots=none;
+class alignment;
+var strength;
+run;
+proc ttest data=hero_vill plots=none;
+class alignment;
+var speed;
+run;
+proc ttest data=hero_vill plots=none;
+class alignment;
+var durability;
+run;
+proc ttest data=hero_vill plots=none;
+class alignment;
+var power;
+run;
+proc ttest data=hero_vill plots=none;
+class alignment;
+var combat;
+run;
+*logistic regression;
+proc logistic data=hero_vill;
+model Hero(event='1')=Intelligence Strength Speed Durability Power Combat;
+run;
+</code></pre></div></div>
+:ET

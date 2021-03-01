@@ -1,0 +1,20 @@
+I"J<p>I recently completed a small project in which I analyzed the popularity
+of teams that compete in the four major sports. In the analysis, I
+looked at metropolitan areas that have at least <a href="http://en.wikipedia.org/wiki/U.S._cities_with_teams_from_four_major_league_sports" title="one team in each of the four major sports">one team in each of the
+four major
+sports</a>. Using
+<a href="http://www.google.com/trends/" title="Google Trends">Google Trends</a>, I
+gathered weekly data from 01/02/05 - 11/01/14 to assess the relative
+popularity of teams in cities that met the inclusion criteria. Each data
+point represents how frequently a team was queried on Google relative to
+the Miami Heat in the week of 06/16/13 – 06/22/13. This data point
+was set to 100. More importantly, higher numbers indicate a higher
+search frequency and, for all intents and purposes, greater popularity.
+Below, I’ve included a heat map that illustrates the contrasts in
+average popularity among city-sport combinations over the time period.
+Note that for cities home to more than one team in a given sport, I took
+the maximum team score each week. For instance, if the Yankees had a
+popularity score of 10 in one week and the Mets had a score of 5 in the
+same week, I would set the Yankees’ score to be the New York baseball
+score for that week.</p>
+:ET
