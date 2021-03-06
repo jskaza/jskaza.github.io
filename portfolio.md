@@ -6,13 +6,13 @@ permalink: /portfolio/
 
 # Publications
 
-Mayer et al. (2019) How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function? *Psychoneuroendocrinology*
+Mayer et al. (2019) How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function? *Psychoneuroendocrinology*   
 [Link](https://www.researchgate.net/publication/334532237_How_does_hair_cortisol_assessment_correspond_to_saliva_measures_and_to_lab-based_probes_of_HPA_axis_regulatory_function)
 
-Abelson et al. (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans? *Psychoneuroendocrinology*
+Abelson et al. (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans? *Psychoneuroendocrinology*  
 [Link](https://www.researchgate.net/publication/334525890_Does_salivary_cortisol_reflect_key_regulatory_control_aspects_HPA_axis_functioning_in_healthy_humans)
 
-Abelson et al. (2019). Daily diurnal salivary curves: Are they too noisy to be useful? *Psychoneuroendocrinology*
+Abelson et al. (2019). Daily diurnal salivary curves: Are they too noisy to be useful? *Psychoneuroendocrinology*  
 [Link](https://www.researchgate.net/publication/334532366_Daily_diurnal_salivary_curves_Are_they_too_noisy_to_be_useful)
 
 
@@ -38,7 +38,7 @@ Series*
 
 # Presentations
 
-<!--Bryant 10 tips for graduating seniors and Double Teaming--> 
+<!--Bryant 10 tips for graduating seniors and Double Teaming-->
 
 Skaza, J. (2017). Git/GitHub Guide. In *Biostatistics for Social Impact Group*, University of Michigan, Ann Arbor, MI   
 [Slides](/assets/git-slash-github.pdf)
