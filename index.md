@@ -12,3 +12,5 @@ I am an Associate Director of Product Management at [Panalgo](https://panalgo.co
 I received my MS in Biostatistics from the University of Michigan and BS in Applied Economics and Applied Mathematics &amp; Statistics from Bryant University.
 
 A copy of my resume can be found [here](/assets/res.pdf).
+
+Check out [this site](https://jskaza.github.io/my-foster-dogs/) I made about one of my new passions, fostering dogs!
