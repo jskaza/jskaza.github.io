@@ -199,7 +199,7 @@
         \profilesection{Interests}
 		\intereststext
         
-                					             \profilesection{Miscellaneous}
+                					             \profilesection{Awards}
 		\awardstext
 			
 	\end{textblock}
