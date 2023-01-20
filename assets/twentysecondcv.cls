@@ -78,6 +78,7 @@
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
+\newcommand{\cvhome}[1]{\renewcommand{\cvhome}{#1}}
 
 \newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}}
 \newcommand{\cvtwitter}[1]{\renewcommand{\cvtwitter}{#1}}
@@ -162,9 +163,10 @@
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
         
 \ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\faPhone} & \cvnumberphone\\}
-            
+               	\ifthenelse{\equal{\cvhome}{}}{}{\textsc{\Large\faMapPin} & {\cvhome} \\}
 
 			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\Large\faEnvelope} & {\cvmail} \\}
+
    
         			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\faGlobe} & \cvsite\\}
                     
