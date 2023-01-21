@@ -18,7 +18,7 @@
 \RequirePackage{pgffor}
 \RequirePackage{marvosym}
 \RequirePackage{parskip}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 \RequirePackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 
 
@@ -82,6 +82,9 @@
 
 \newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}}
 \newcommand{\cvtwitter}[1]{\renewcommand{\cvtwitter}{#1}}
+\newcommand{\cvstackoverflow}[1]{\renewcommand{\cvstackoverflow}{#1}}
+\newcommand{\cvkaggle}[1]{\renewcommand{\cvkaggle}{#1}}
+
 \newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}}
 
 % Command for printing the contact information icons
@@ -174,7 +177,11 @@
             
 \ifthenelse{\equal{\cvlinkedin}{}}{}{\textsc{\Large\faLinkedin} & {\cvlinkedin}\\}
 
-\ifthenelse{\equal{\cvtwitter}{}}{}{\textsc{\Large\faTwitter} & {\cvtwitter}\\}			
+\ifthenelse{\equal{\cvtwitter}{}}{}{\textsc{\Large\faTwitter} & {\cvtwitter}\\}	
+
+\ifthenelse{\equal{\cvstackoverflow}{}}{}{\textsc{\Large\faStackOverflow} & {\cvstackoverflow}\\}
+
+\ifthenelse{\equal{\cvkaggle}{}}{}{\textsc{\Large\faKaggle} & {\cvkaggle}\\}
  
             
 		\end{tabular}
