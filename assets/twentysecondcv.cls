@@ -208,7 +208,7 @@
         \profilesection{Interests}
 		\intereststext
         
-                					             \profilesection{Awards}
+                					             \profilesection{Credentials}
 		\awardstext
 			
 	\end{textblock}
