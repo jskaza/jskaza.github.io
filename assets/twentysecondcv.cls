@@ -84,6 +84,7 @@
 \newcommand{\cvtwitter}[1]{\renewcommand{\cvtwitter}{#1}}
 \newcommand{\cvstackoverflow}[1]{\renewcommand{\cvstackoverflow}{#1}}
 \newcommand{\cvkaggle}[1]{\renewcommand{\cvkaggle}{#1}}
+\newcommand{\cvscholar}[1]{\renewcommand{\cvscholar}{#1}}
 
 \newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}}
 
@@ -182,6 +183,8 @@
 \ifthenelse{\equal{\cvstackoverflow}{}}{}{\textsc{\Large\faStackOverflow} & {\cvstackoverflow}\\}
 
 \ifthenelse{\equal{\cvkaggle}{}}{}{\textsc{\Large\faKaggle} & {\cvkaggle}\\}
+
+\ifthenelse{\equal{\cvscholar}{}}{}{\textsc{\Large\faGraduationCap} & {\cvscholar}\\}
  
             
 		\end{tabular}
