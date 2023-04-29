@@ -129,6 +129,13 @@
 	}
 }
 
+\newcommand\coursestext[1]{ 
+	\renewcommand{\coursestext}{
+		\begin{flushleft}
+			{#1}
+		\end{flushleft}
+	}
+}
 %----------------------------------------------------------------------------------------
 %	 SIDEBAR LAYOUT
 %----------------------------------------------------------------------------------------
@@ -210,6 +217,10 @@
         
         \profilesection{Interests}
 		\intereststext
+
+  	\profilesection{Coursework}
+		\coursestext
+			
         
                 					             \profilesection{Credentials}
 		\awardstext
