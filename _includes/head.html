@@ -39,4 +39,17 @@
   {% if jekyll.environment == 'production' and site.google_analytics %}
   {% include google-analytics.html %}
   {% endif %}
+
+<!-- Include jQuery (you can replace this URL with a local path) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#menu-icon").click(function() {
+      $("#menu").toggleClass("active");
+    });
+  });
+</script>
+
+
 </head>
