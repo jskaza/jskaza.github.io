@@ -28,7 +28,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-google_analytics: UA—65998850-2
+# google_analytics: 
 # disqus:
 #    shortname: jonathan-skaza
 
