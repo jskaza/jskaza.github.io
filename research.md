@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Portfolio
-permalink: /portfolio/
+layout: default
+title: Research
+permalink: /research/
 ---
 
 # Publications
