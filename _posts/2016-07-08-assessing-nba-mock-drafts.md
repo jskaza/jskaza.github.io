@@ -102,8 +102,8 @@ On the other hand, to compute Kendall's $\tau$, we calculate:
 $$\tau_{XY} = \frac{C-D}{C+D}$$
 
 where:
-- C = $\#$ of concordant pairs
-- D = $\#$ of discordant pairs
+- C = # of concordant pairs
+- D = # of discordant pairs
 
 Pairs of obsevations are said to be concordant if the ranks for both elements agree. This idea of concordance is best illustrated by example, as in the YouTube videos embedded below.
 
@@ -118,13 +118,13 @@ YouTubeVideo("oXVxaSoY94k")
 
 
 
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/oXVxaSoY94k"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/oXVxaSoY94k"
+    frameborder="0"
+    allowfullscreen
+></iframe>
         
 
 
@@ -139,14 +139,14 @@ YouTubeVideo("V4MgE43SrgM")
 
 
 
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/V4MgE43SrgM"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-        
+  <iframe
+      width="400"
+      height="300"
+      src="https://www.youtube.com/embed/V4MgE43SrgM"
+      frameborder="0"
+      allowfullscreen
+  ></iframe>
+  
 
 
 
