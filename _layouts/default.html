@@ -55,9 +55,9 @@
           {% if site.logo %}
           <a href="/"><img class="img-circle" src="{{site.logo | relative_url}}" alt="Logo"></a>
           {% endif %}
-
+          <br>
           {% if site.blank_title %}
-            <center><h1>{{ site.title | default: site.github.repository_name }}</h1></center>
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
           {% else %}
             <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
           {% endif %}
