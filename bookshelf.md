@@ -6,7 +6,7 @@ permalink: /bookshelf/
 
 # Bookshelf
 
-Some books that have inspired me and/or sparked interests
+Some texts that have inspired me and/or sparked interests
 
 [What Makes Us Smart: The Computational Logic of Human Cognition](https://www.amazon.com/What-Makes-Smart-Computational-Cognition/dp/069120571X) by Sam Gershman
 
@@ -19,6 +19,5 @@ Some books that have inspired me and/or sparked interests
 [Computer Age Statistical Inference: Algorithms, Evidence, and Data Science](https://www.amazon.com/Computer-Age-Statistical-Inference-Mathematical/dp/1107149894) by Bradley Efron and Trevor Hastie
 
 
-
-
+[Building Machines That Learn and Think Like People](https://arxiv.org/abs/1604.00289) by Brenden Lake, Tomer Ullman, Josh Tenenbaum, and Sam Gershman
 
