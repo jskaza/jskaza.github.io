@@ -8,7 +8,7 @@ permalink: /bookshelf/
 
 Some texts that have inspired me and/or sparked interests
 
-[Natural General Intelligence: How understanding the brain can help us build AI](https://www.amazon.com/Natural-General-Intelligence-understanding-brain-ebook/dp/B0BNZ983Q6) by Christopher Summerfield
+[Natural General Intelligence: How Understanding the Brain Can Help Us Build AI](https://www.amazon.com/Natural-General-Intelligence-understanding-brain-ebook/dp/B0BNZ983Q6) by Christopher Summerfield
 
 [Thinking, Fast and Slow](https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555) by Daniel Kahneman
 
