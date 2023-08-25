@@ -18,7 +18,7 @@ github: jskaza
 # phone: "+353 1 408 4800"
 web: jskaza.github.io
 linkedin: jonathanskaza
-updated: no
+updated: yes
 
 keywords: R Markdown, academic CV, template
 

@@ -201,7 +201,7 @@ $if(fontawesome)$\usepackage{fontawesome5}$endif$
 \rhead{}
 \lfoot{
 \cfoot{\scriptsize  $author-meta$ - $title$ }}
-\rfoot{\scriptsize \thepage/{\hypersetup{linkcolor=black}\pageref{LastPage}}}
+% \rfoot{\scriptsize \thepage/{\hypersetup{linkcolor=black}\pageref{LastPage}}}
 
 % Always load hyperref last.
 \usepackage{hyperref}
@@ -245,7 +245,7 @@ $endif$
 
 $if(jobtitle)$\moveleft.5\hoffset\centerline{$jobtitle$}$endif$
 $if(address)$\moveleft.5\hoffset\centerline{$address$}$endif$
-\moveleft.5\hoffset\centerline{ $if(email)$$if(fontawesome)$\faEnvelope \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email$} \hspace{1 mm}$endif$ $if(phone)$$if(fontawesome)$ \faPhone \hspace{1 mm}$else$\emph{Phone:}$endif$  $phone$  \hspace{1 mm} $endif$ $if(github)$$if(fontawesome)$\faGithub \hspace{1 mm}$else$\emph{Github:}$endif$ \href{http://github.com/$github$}{\tt $github$} \hspace{1 mm} $endif$  $if(twitter)$$if(fontawesome)$\faTwitter \hspace{1 mm}$else$\emph{Twitter:}$endif$ \href{https:/twitter.com/$twitter$}{\tt $twitter$} \hspace{1 mm} $endif$ $if(osf)$$if(fontawesome)$\faUnlock \hspace{1 mm}$else$\emph{osf:}$endif$ \href{https:/osf.io/$osf$}{\tt osf.io/$osf$} \hspace{1 mm} $endif$ $if(web)$$if(fontawesome)$\faGlobe \hspace{1 mm}$else$\emph{Web:}$endif$ \href{http://$web$}{\tt $web$} \hspace{1 mm} $endif$ $if(updated)$ | \emph{Updated:} \apstylekinda\today$endif$ $if(linkedin)$$if(fontawesome)$\faLinkedin \hspace{1 mm}$else$\emph{Linkedin:}$endif$ \href{http://www.linkedin.com/in/$linkedin$}{\tt $linkedin$}  $endif$} 
+\moveleft.5\hoffset\centerline{ $if(email)$$if(fontawesome)$\faEnvelope \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\tt $email$} \hspace{1 mm}$endif$ $if(phone)$$if(fontawesome)$ \faPhone \hspace{1 mm}$else$\emph{Phone:}$endif$  $phone$  \hspace{1 mm} $endif$ $if(github)$$if(fontawesome)$\faGithub \hspace{1 mm}$else$\emph{Github:}$endif$ \href{http://github.com/$github$}{\tt $github$} \hspace{1 mm} $endif$  $if(twitter)$$if(fontawesome)$\faTwitter \hspace{1 mm}$else$\emph{Twitter:}$endif$ \href{https:/twitter.com/$twitter$}{\tt $twitter$} \hspace{1 mm} $endif$ $if(osf)$$if(fontawesome)$\faUnlock \hspace{1 mm}$else$\emph{osf:}$endif$ \href{https:/osf.io/$osf$}{\tt osf.io/$osf$} \hspace{1 mm} $endif$ $if(web)$$if(fontawesome)$\faGlobe \hspace{1 mm}$else$\emph{Web:}$endif$ \href{http://$web$}{\tt $web$} \hspace{1 mm} $endif$ $if(linkedin)$$if(fontawesome)$\faLinkedin \hspace{1 mm}$else$\emph{Linkedin:}$endif$ \href{http://www.linkedin.com/in/$linkedin$}{\tt $linkedin$}  $endif$} 
 
 \vspace{2 mm}
 
@@ -275,5 +275,6 @@ $for(include-after)$
 $include-after$
 
 $endfor$
+$if(updated)$\vfill \emph{Updated:} \apstylekinda\today$endif$
 \end{document}
 
