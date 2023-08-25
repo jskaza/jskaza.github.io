@@ -1,0 +1,142 @@
+---
+output: 
+  pdf_document:
+    latex_engine: pdflatex
+    template: svm-latex-cv.tex
+geometry: margin=1in
+
+title: "CV"
+author: Jonathan Skaza
+
+# jobtitle: "Chief Brewer, Arthur Guinness & Son"
+# address: "Boston, MA"
+fontawesome: yes
+email: jonathan.skaza@gmail.com
+github: jskaza
+# twitter: stevenvmiller
+#osf: "Enter 5 digit osf string here"
+# phone: "+353 1 408 4800"
+web: jskaza.github.io
+linkedin: jonathanskaza
+updated: no
+
+keywords: R Markdown, academic CV, template
+
+fontfamily: mathpazo
+fontfamilyoptions: sc, osf
+fontsize: 11pt
+linkcolor: blue
+urlcolor: blue
+---
+
+# Education
+
+*University of Michigan*, M.S. Biostatistics \hfill 2017
+
+Advisor: Brisa Sanchez
+
+*Bryant University*, B.S. Applied Mathematics/Statistics, Applied Economics, *summa cum laude*  \hfill 2015
+
+Advisor: Brian Blais
+
+
+# Experience
+
+**Cold Spring Harbor Laboratory** \hfill Cold Spring Harbor, NY
+
+*Computational Science Developer* \hfill 2023-
+
+Computational neuroscience research group led by Benjamin Cowley.
+
+**Panalgo** \hfill Boston, MA
+
+*Associate Director, Product* \hfill 2022-2023
+
+*Lead Analyst* \hfill 2022
+
+*Senior Analyst* \hfill 2020-2022
+
+*Analyst II* \hfill 2018-2020
+
+Panalgo develops software for Real-World Evidence (RWE) studies. The company maps massive healthcare claims and EHR datasets into a data model and provides a web application to drastically simplify and accelerate patient-level analysis. I have worked with clients to implement various types of healthcare studies, engineers to enhance the product, machine learning experts to implement new algorithms, product leaders to develop roadmaps, and business analysts to understand user behavior.
+
+**University of Michigan** \hfill Ann Arbor, MI
+
+*Data Scientist* \hfill 2017-2018
+
+Conducted research involving longitudinal data analysis, functional data analysis, Bayesian hierarchical modeling, data visualization, and data wrangling. Collaborations with University of Michigan Department of Psychiatry and Drexel University Urban Health Collaborative.
+
+**University of Michigan** \hfill Ann Arbor, MI
+
+*Graduate Student Research Assistant* \hfill 2015-2017
+
+Developed statistical methods and applications in modeling cortisol, a biomarker of stress, as part of a psychoneuroendocrinology study. Member of Biostatistics for Social Impact lab.
+
+**Bryant University** \hfill Smithfield, RI
+
+*Undergraduate Research Assistant* \hfill 2014
+
+Implemented econometric analyses concerning the economic impact of children, the education system, and the defense industry in the state of Rhode Island.
+
+
+*North Carolina State University \& Duke University* \hfill Raleigh, NC
+
+**Summer Institute in Biostatistics** \hfill 2014
+
+Explored the field of biostatistics through lectures, statistical computing labs, and data analysis project. Sponsored by NHLBI and NCATS.
+
+
+# Publications
+
+Mayer et al. (2019) How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function? *Psychoneuroendocrinology*
+
+Abelson et al. (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans? *Psychoneuroendocrinology*
+
+Abelson et al. (2019). Daily diurnal salivary curves: Are they too noisy to be useful? *Psychoneuroendocrinology*
+
+Wang, J. et al. (2018). The Advantage of Doubling: A Deep Reinforcement Learning Approach to Studying the Double Team in the NBA. *MIT Sloan Sports Analytics Conference*
+	
+Skaza, J. and Blais, B. (2016). Modeling the Infectiousness of Twitter Hashtags. *Physica A*
+	
+Beaudin, L. and Skaza, J. (2015). Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI. *Applied Economics*
+	
+Skaza, J. and Blais, B. (2013). The relationship between environmental degradation and economic growth: exploring models and questioning the existence of an Environmental Kuznets Curve. *Bryant University Center for Global and Regional Economic Development Working Paper Series*
+
+# Certifications
+
+LangChain for LLM Application Development (DeepLearning.AI)  \hfill 2023
+
+ChatGPT Prompt Engineering for Developers (DeepLearning.AI)  \hfill 2023
+
+Practical Deep Learning for Coders (fast.ai) \hfill 2023
+
+Introduction to SQL (Coursera) \hfill 2023
+
+2022 Programming with Google Go Specialization (Coursera) \hfill 2022
+
+2015 SAS Certificate in Data Mining (Bryant University & SAS Institute) \hfill 2015
+
+# Awards
+
+Sanjay Gupta Family Hackathon Winner \hfill 2018
+
+2015 SAS Institute Award (Top Applied Math Undergrad) \hfill 2015
+
+2015 Excellence in Economics Award (Top Econ Undergrad)  \hfill 2015
+
+# Skills
+
+Python (NumPy, Pandas, scikit-learn, Keras), R (tidyverse), Go, Julia, Nim, Jupyter, Git, SQL, MongoDB, \LaTeX{}, Notion, Jira
+
+
+# Interests
+
+Computational Cognitive Science, Biologically-Plausible AI, NeuroAI, Intelligible Intelligence, Reproducible Research
+
+# Select Coursework
+
+Statistical Computing, Machine Learning, Bayesian Inference, GLMs, Longitudinal Analysis, Survival Analysis, Probability, Neuroscience, Cognitive Psychology
+
+# References
+
+Available upon request
