@@ -11,7 +11,7 @@ author: Jonathan Skaza
 # jobtitle: "Chief Brewer, Arthur Guinness & Son"
 # address: "Boston, MA"
 fontawesome: yes
-email: jonathan.skaza@gmail.com
+email: skaza@cshl.edu
 github: jskaza
 # twitter: stevenvmiller
 #osf: "Enter 5 digit osf string here"
@@ -46,7 +46,9 @@ Advisor: Brian Blais
 
 *Computational Science Developer* \hfill 2023-
 
-Computational neuroscience research group led by Benjamin Cowley.
+Supervisor: Ben Cowley
+
+Computational neuroscience and neuroAI research group led by Ben Cowley. Using connectome-constrained DNNs to understand visual processing.
 
 **Panalgo** \hfill Boston, MA
 
@@ -131,7 +133,7 @@ Python (NumPy, Pandas, scikit-learn, Keras), R (tidyverse), Go, Julia, Nim, Jupy
 
 # Interests
 
-Computational Cognitive Science, Biologically-Plausible AI, NeuroAI, Intelligible Intelligence, Reproducible Research
+Computational Cognitive Science, Biologically-Plausible AI, NeuroAI, Intelligible Intelligence, Explainable AI, Reproducible Research
 
 # Select Coursework
 
