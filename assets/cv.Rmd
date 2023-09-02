@@ -133,7 +133,7 @@ Python (NumPy, Pandas, scikit-learn, Keras), R (tidyverse), Go, Julia, Nim, Jupy
 
 # Interests
 
-Computational Cognitive Science, Biologically-Plausible AI, NeuroAI, Intelligible Intelligence, Explainable AI, Reproducible Research
+Computational Cognitive Science, Biologically-Plausible AI, NeuroAI, XAI, Reproducible Research
 
 # Select Coursework
 
