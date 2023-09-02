@@ -11,7 +11,7 @@ author: Jonathan Skaza
 # jobtitle: "Chief Brewer, Arthur Guinness & Son"
 # address: "Boston, MA"
 fontawesome: yes
-email: skaza@cshl.edu
+email: jonathan.skaza@gmail.com
 github: jskaza
 # twitter: stevenvmiller
 #osf: "Enter 5 digit osf string here"
