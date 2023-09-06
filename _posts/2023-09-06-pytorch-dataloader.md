@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Custom Datasets & Dataloaders in PyTorch
+title: Custom Datasets & DataLoaders in PyTorch
 date: 2023-09-06
 category: AI
 tags: deep-learning, RAM, python, neural-networks, colab, pytorch
