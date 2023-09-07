@@ -48,7 +48,7 @@ Advisor: Brian Blais
 
 Supervisor: Ben Cowley
 
-Computational neuroscience and neuroAI research group led by Ben Cowley. Using connectome-constrained DNNs to understand visual processing.
+Computational neuroscience and neuroAI research group led by Ben Cowley. Constructing connectome-constrained DNNs to understand visual processing. Mentor a talented high school student interested in computational neuroscience.
 
 **Panalgo** \hfill Boston, MA
 

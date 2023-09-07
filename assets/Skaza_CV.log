@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.22)  2 SEP 2023 12:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.22)  6 SEP 2023 21:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**cv.tex
-(./cv.tex
+**Skaza_CV.tex
+(./Skaza_CV.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex
 /base/article.cls
@@ -415,8 +415,8 @@ put line 308.
 LaTeX Info: Redefining \today on input line 736.
 \dt@a=\toks31
 \dt@b=\toks32
-) (./cv.aux)
-\openout1 = `cv.aux'.
+) (./Skaza_CV.aux)
+\openout1 = `Skaza_CV.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
 LaTeX Font Info:    ... okay on input line 104.
@@ -514,9 +514,9 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 104.
-(./cv.out) (./cv.out)
+(./Skaza_CV.out) (./Skaza_CV.out)
 \@outlinefile=\write3
-\openout3 = `cv.out'.
+\openout3 = `Skaza_CV.out'.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
@@ -591,18 +591,18 @@ al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2023
 texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2023/te
 xmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}] [2] [3] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./cv.aux)
-Package rerunfilecheck Info: File `cv.out' has not changed.
+(./Skaza_CV.aux)
+Package rerunfilecheck Info: File `Skaza_CV.out' has not changed.
 (rerunfilecheck)             Checksum: 90DCEC84939C6C35717B8C1BAF16DC00;864.
  ) 
 Here is how much of TeX's memory you used:
  17514 strings out of 476025
- 299044 string characters out of 5790017
- 1860388 words of memory out of 5000000
+ 299151 string characters out of 5790017
+ 1861388 words of memory out of 5000000
  37493 multiletter control sequences out of 15000+600000
  553272 words of font info for 195 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,76p,1191b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,76p,1197b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
 me5Brands-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fo
 ntawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2023/texmf-dist/fonts
@@ -611,7 +611,7 @@ ublic/cm-super/sftt1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw
 /palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palati
 no/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr
 i8a.pfb>
-Output written on cv.pdf (3 pages, 119444 bytes).
+Output written on Skaza_CV.pdf (3 pages, 119521 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream
