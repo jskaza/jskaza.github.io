@@ -22,10 +22,10 @@ Some texts that have inspired me and/or sparked interests
 
 ### Papers
 
-Lake, B. M., Ullman, T. D., Tenenbaum, J. B., & Gershman, S. J. (2017). [Building Machines That Learn and Think Like People](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993). Behavioral and brain sciences, 40, e253.
+Lake, B. M., Ullman, T. D., Tenenbaum, J. B., & Gershman, S. J. (2017). [Building Machines That Learn and Think Like People](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993). *Behavioral and brain sciences*, 40, e253.
 
-Doerig, A., Sommers, R. P., Seeliger, K., Richards, B., Ismael, J., Lindsay, G. W., ... & Kietzmann, T. C. (2023). [The neuroconnectionist research programme](https://www.nature.com/articles/s41583-023-00705-w). Nature Reviews Neuroscience, 1-20.
+Doerig, A., Sommers, R. P., Seeliger, K., Richards, B., Ismael, J., Lindsay, G. W., ... & Kietzmann, T. C. (2023). [The neuroconnectionist research programme](https://www.nature.com/articles/s41583-023-00705-w). *Nature Reviews Neuroscience*, 1-20.
 
-Hassabis, D., Kumaran, D., Summerfield, C., & Botvinick, M. (2017). [Neuroscience-inspired artificial intelligence](https://www.cell.com/fulltext/S0896-6273(17)30509-3). Neuron, 95(2), 245-258.
+Hassabis, D., Kumaran, D., Summerfield, C., & Botvinick, M. (2017). [Neuroscience-inspired artificial intelligence](https://www.cell.com/fulltext/S0896-6273(17)30509-3). *Neuron*, 95(2), 245-258.
 
 
