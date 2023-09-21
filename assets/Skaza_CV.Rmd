@@ -114,17 +114,19 @@ Practical Deep Learning for Coders (fast.ai) \hfill 2023
 
 Introduction to SQL (Coursera) \hfill 2023
 
-2022 Programming with Google Go Specialization (Coursera) \hfill 2022
+Programming with Google Go Specialization (Coursera) \hfill 2022
 
-2015 SAS Certificate in Data Mining (Bryant University & SAS Institute) \hfill 2015
+SAS Certificate in Data Mining (Bryant University & SAS Institute) \hfill 2015
 
 # Awards
 
 Sanjay Gupta Family Hackathon Winner \hfill 2018
 
-2015 SAS Institute Award (Top Applied Math Undergrad) \hfill 2015
+SAS Institute Award (Top Applied Mathematics Undergrad) \hfill 2015
 
-2015 Excellence in Economics Award (Top Econ Undergrad)  \hfill 2015
+Excellence in Economics Award (Top Economics Undergrad)  \hfill 2015
+
+Undergraduate Research Grant  \hfill 2013
 
 # Skills
 
