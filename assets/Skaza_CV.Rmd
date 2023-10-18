@@ -60,7 +60,7 @@ Computational neuroscience and neuroAI research group led by Ben Cowley. Constru
 
 *Analyst II* \hfill 2018-2020
 
-Panalgo develops software for Real-World Evidence (RWE) studies. The company maps massive healthcare claims and EHR datasets into a data model and provides a web application to drastically simplify and accelerate patient-level analysis. I have worked with clients to implement various types of healthcare studies, engineers to enhance the product, machine learning experts to implement new algorithms, product leaders to develop roadmaps, and business analysts to understand user behavior.
+Panalgo develops software for Real-World Evidence (RWE) studies. The company maps massive healthcare claims and EHR datasets into a data model and provides a web application to drastically simplify and accelerate patient-level analysis. I worked with clients to implement various types of healthcare studies, engineers to enhance the product, machine learning experts to implement new algorithms, product leaders to develop roadmaps, and business analysts to understand user behavior.
 
 **University of Michigan** \hfill Ann Arbor, MI
 
@@ -104,6 +104,18 @@ Beaudin, L. and Skaza, J. (2015). Measuring the total impact of demographic and 
 	
 Skaza, J. and Blais, B. (2013). The relationship between environmental degradation and economic growth: exploring models and questioning the existence of an Environmental Kuznets Curve. *Bryant University Center for Global and Regional Economic Development Working Paper Series*
 
+# Awards
+
+Sanjay Gupta Family Hackathon Winner \hfill 2018
+
+SAS Institute Award (Top Applied Mathematics Undergrad) \hfill 2015
+
+Excellence in Economics Award (Top Economics Undergrad)  \hfill 2015
+
+Honors Program 2011-2015
+
+Undergraduate Research Grant  \hfill 2013
+
 # Certifications
 
 LangChain for LLM Application Development (DeepLearning.AI)  \hfill 2023
@@ -118,17 +130,6 @@ Programming with Google Go Specialization (Coursera) \hfill 2022
 
 SAS Certificate in Data Mining (Bryant University & SAS Institute) \hfill 2015
 
-# Awards
-
-Sanjay Gupta Family Hackathon Winner \hfill 2018
-
-SAS Institute Award (Top Applied Mathematics Undergrad) \hfill 2015
-
-Excellence in Economics Award (Top Economics Undergrad)  \hfill 2015
-
-Honors Program 2011-2015
-
-Undergraduate Research Grant  \hfill 2013
 
 # Skills
 
