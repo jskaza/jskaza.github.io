@@ -101,6 +101,8 @@ Wang, J. et al. (2018). The Advantage of Doubling: A Deep Reinforcement Learning
 Skaza, J. and Blais, B. (2017). Modeling the Infectiousness of Twitter Hashtags. *Physica A*
 	
 Beaudin, L. and Skaza, J. (2015). Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI. *Applied Economics*
+
+Skaza, J. (2014). Socioeconomic Determinants of Obesity in the United States. *Empirical Economic Bulletin, An Undergraduate Journal*
 	
 Skaza, J. and Blais, B. (2013). The relationship between environmental degradation and economic growth: exploring models and questioning the existence of an Environmental Kuznets Curve. *Bryant University Center for Global and Regional Economic Development Working Paper Series*
 
