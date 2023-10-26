@@ -90,21 +90,23 @@ Explored the field of biostatistics through lectures, statistical computing labs
 
 # Publications
 
-Mayer et al. (2019) How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function? *Psychoneuroendocrinology*
+Abelson, J., Kirschbaum, C., Herman, J., Skaza, J., & Sanchez, B. (2019). Daily diurnal salivary curves: Are they too noisy to be useful?. *Psychoneuroendocrinology*, 107, 51.
 
-Abelson et al. (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans? *Psychoneuroendocrinology*
+Mayer, S., Abelson, J., Briggs, H., Skaza, J., Kirschbaum, C., & Stalder, T. (2019). How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function?. *Psychoneuroendocrinology*, 107, 50–51.
 
-Abelson et al. (2019). Daily diurnal salivary curves: Are they too noisy to be useful? *Psychoneuroendocrinology*
+Abelson, J., Sanchez, B., Zhang, X., Liberzon, I., Briggs, H., & Skaza, J. (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans?. *Psychoneuroendocrinology*, 107, 50.
 
-Wang, J. et al. (2018). The Advantage of Doubling: A Deep Reinforcement Learning Approach to Studying the Double Team in the NBA. *MIT Sloan Sports Analytics Conference*
-	
-Skaza, J. and Blais, B. (2017). Modeling the Infectiousness of Twitter Hashtags. *Physica A*
-	
-Beaudin, L. and Skaza, J. (2015). Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI. *Applied Economics*
+Wang, J., Fox, I., Skaza, J., Linck, N., Singh, S., & Wiens, J. (2018). The advantage of doubling: A deep reinforcement learning approach to studying the double team in the NBA. *MIT Sloan Sports Analytics Conference*
 
-Skaza, J. (2014). Socioeconomic Determinants of Obesity in the United States. *Empirical Economic Bulletin, An Undergraduate Journal*
-	
-Skaza, J. and Blais, B. (2013). The relationship between environmental degradation and economic growth: exploring models and questioning the existence of an Environmental Kuznets Curve. *Bryant University Center for Global and Regional Economic Development Working Paper Series*
+Skaza, J., & Blais, B. (2017). Modeling the infectiousness of Twitter hashtags. *Physica A: Statistical Mechanics and its Applications*, 465, 289–296.
+
+Skaza, J. (2015). Mathematical modeling of trending topics on twitter. *Bryant University Honors Projects in Mathematics*.
+
+Beaudin, L., & Skaza, J. (2015). Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI. *Applied Economics*, 47(55), 6041–6053.
+
+Skaza, J. (2014). Socioeconomic Determinants of Obesity in the United States. *Empirical Economic Bulletin, An Undergraduate Journal*, 7(1), 2.
+
+Skaza, J., & Blais, B. (2013). The relationship between economic growth and environmental degradation: exploring models and questioning the existence of an environmental Kuznets curve. *The Center for Global and Economic Studies at Bryant University Working Paper*(2013-05).
 
 # Awards
 
