@@ -137,7 +137,7 @@ SAS Certificate in Data Mining (Bryant University & SAS Institute) \hfill 2015
 
 # Skills
 
-Python (NumPy, Pandas, scikit-learn, Keras), R (tidyverse), Go, Julia, Nim, Jupyter, Git, SQL, MongoDB, \LaTeX{}, Notion, Jira
+Python (NumPy, Pandas, scikit-learn, Keras, PyTorch), R (tidyverse), Go, Julia, Nim, Jupyter, Git, SQL, MongoDB, \LaTeX{}, Notion, Jira
 
 
 # Interests
