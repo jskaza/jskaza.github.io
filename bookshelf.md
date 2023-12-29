@@ -18,6 +18,8 @@ Some texts that have inspired me and/or sparked interests
 
 [Conscious: A Brief Guide to the Fundamental Mystery of the Mind](https://www.amazon.com/Conscious-Brief-Guide-Fundamental-Mystery/dp/0062906712) by Annaka Harris
 
+[Principles of Neural Design](https://www.amazon.com/Principles-Neural-Design-MIT-Press/dp/0262534681) by Peter Sterling and Simon Laughlin
+
 [Computer Age Statistical Inference: Algorithms, Evidence, and Data Science](https://www.amazon.com/Computer-Age-Statistical-Inference-Mathematical/dp/1107149894) by Bradley Efron and Trevor Hastie
 
 ### Papers
