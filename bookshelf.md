@@ -24,6 +24,8 @@ Some texts that have inspired me and/or sparked interests
 
 ### Papers
 
+Kanwisher, N., Khosla, M., & Dobs, K. [Using artificial neural networks to ask 'why' questions of minds and brains](https://www.cell.com/trends/neurosciences/fulltext/S0166-2236(22)00262-4). *Trends in Neurosciences*, 46(3), 250-254.
+
 Lake, B. M., Ullman, T. D., Tenenbaum, J. B., & Gershman, S. J. (2017). [Building Machines That Learn and Think Like People](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993). *Behavioral and brain sciences*, 40, e253.
 
 Doerig, A., Sommers, R. P., Seeliger, K., Richards, B., Ismael, J., Lindsay, G. W., ... & Kietzmann, T. C. (2023). [The neuroconnectionist research programme](https://www.nature.com/articles/s41583-023-00705-w). *Nature Reviews Neuroscience*, 1-20.
