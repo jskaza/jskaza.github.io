@@ -12,6 +12,8 @@ Some texts that have inspired me and/or sparked interests
 
 [Natural General Intelligence: How Understanding the Brain Can Help Us Build AI](https://www.amazon.com/Natural-General-Intelligence-understanding-brain-ebook/dp/B0BNZ983Q6) by Christopher Summerfield
 
+[A Thousand Brains](https://www.amazon.com/Thousand-Brains-New-Theory-Intelligence/dp/1541675797) by Jeff Hawkins
+
 [Thinking, Fast and Slow](https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555) by Daniel Kahneman
 
 [What We Owe the Future](https://www.amazon.com/What-Owe-Future-William-MacAskill/dp/1541618629) by William MacAskill
