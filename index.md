@@ -2,7 +2,7 @@
 layout: default
 ---
 
-I work as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). I am joining the [Vision and Image Understanding Lab at UCSB](https://viu.psych.ucsb.edu/) as a PhD Student.
+I work as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). I am joining the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/) at UC Santa Barbara as a PhD Student in [Dynamical Neuroscience](https://www.dyns.ucsb.edu/).
 
 Areas of interest: *cognitive computational neuroscience, biologically-plausible AI, neuroAI, XAI, reproducible research*
 
