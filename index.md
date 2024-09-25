@@ -2,11 +2,11 @@
 layout: default
 ---
 
-I work as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). I am joining the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/) at UC Santa Barbara as a PhD Student in [Dynamical Neuroscience](https://www.dyns.ucsb.edu/).
+I am a PhD student studying [Mind and Machine Intelligence](https://mind-machine.ucsb.edu) in the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/) and [Dynamical Neuroscience](https://www.dyns.ucsb.edu/) program at UC Santa Barbara.
 
 Areas of interest: *cognitive computational neuroscience, biologically-plausible AI, neuroAI, XAI, reproducible research*
 
-Previously, I served as a Solutions Analyst and subsequently Associate Director of Product at [Panalgo](https://panalgo.com/).
+Previously, I worked as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). Prior to that, I served as a Solutions Analyst and subsequently Associate Director of Product in industry at [Panalgo](https://panalgo.com/).
 
 <!-- - Creating and planning product enhancements while also triaging bugs
 - Developing, testing, and validating features and machine learning tools for the platform
