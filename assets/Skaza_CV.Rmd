@@ -17,7 +17,7 @@ github: jskaza
 #osf: "Enter 5 digit osf string here"
 # phone: "+353 1 408 4800"
 web: jskaza.github.io
-linkedin: jonathanskaza
+linkedin: jonskaza
 updated: yes
 
 keywords: R Markdown, academic CV, template
@@ -30,6 +30,10 @@ urlcolor: blue
 ---
 
 # Education
+
+*University of California, Santa Barbara*, PhD Student in Dynamical  Neuroscience \hfill Present
+
+Advisor: Miguel Eckstein
 
 *University of Michigan*, M.S. Biostatistics \hfill 2017
 
@@ -44,11 +48,11 @@ Advisor: Brian Blais
 
 **Cold Spring Harbor Laboratory** \hfill Cold Spring Harbor, NY
 
-*Computational Science Developer* \hfill 2023-
+*Computational Science Developer* \hfill 2023-2024
 
 Supervisor: Ben Cowley
 
-Computational neuroscience and neuroAI research group led by Ben Cowley. Constructing connectome-constrained DNNs to understand visual processing. Mentor a talented high school student interested in computational neuroscience.
+Computational neuroscience and neuroAI research group led by Ben Cowley. Building connectome-inspired DNNs to understand visual projection neurons (and the computations of visual processing in general) in *Drosophila*. Mentor a talented high school student interested in computational neuroscience.
 
 **Panalgo** \hfill Boston, MA
 
