@@ -4,7 +4,7 @@ layout: default
 
 I am a PhD student studying [Mind and Machine Intelligence](https://mind-machine.ucsb.edu) in the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/) and [Dynamical Neuroscience](https://www.dyns.ucsb.edu/) program at UC Santa Barbara.
 
-Areas of interest: *cognitive computational neuroscience, biologically-plausible AI, neuroAI, XAI, reproducible research*
+Areas of interest: *cognitive computational neuroscience, machine intelligence, neuroAI, XAI, reproducible research*
 
 Previously, I worked as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). Prior to that, I served as a Solutions Analyst and subsequently Associate Director of Product in industry at [Panalgo](https://panalgo.com/).
 
