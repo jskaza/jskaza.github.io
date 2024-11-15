@@ -4,7 +4,10 @@ title: Research
 permalink: /research/
 ---
 
-# Publications
+
+<script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FXZzfNpTkAYNHju7h8&noBootstrap=1&jsonp=1"></script>
+
+<!--# Publications
 
 Abelson, J., Kirschbaum, C., Herman, J., Skaza, J., & Sanchez, B. (2019). Daily diurnal salivary curves: Are they too noisy to be useful?. *Psychoneuroendocrinology*, 107, 51.
 [Link](https://www.researchgate.net/publication/334532366_Daily_diurnal_salivary_curves_Are_they_too_noisy_to_be_useful)
@@ -24,7 +27,7 @@ Skaza, J., & Blais, B. (2017). Modeling the infectiousness of Twitter hashtags. 
 
 Beaudin, L., & Skaza, J. (2015). Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI. *Applied Economics*, 47(55), 6041–6053.
 [Link](http://www.tandfonline.com/eprint/QUuqdIWAicuGi2EeEmBF/full)
-<!--Building upon previous studies that highlight considerable overlap in the influential factors of both obesity and depression, we employ a structural model to investigate the direct and indirect impacts of behavioural and demographic factors on obesity. We use new body mass index (BMI) to calculate the obesity status and find a significant relationship between an individual’s depression status and his/her obesity status. The results and simulations imply that demographic and behavioural factors can significantly influence the obesity status both directly and indirectly through their impact on depression. Therefore, this study suggests that models which do not account for these various pathways of influence are most likely misrepresenting the impact of these factors on obesity.-->
+Building upon previous studies that highlight considerable overlap in the influential factors of both obesity and depression, we employ a structural model to investigate the direct and indirect impacts of behavioural and demographic factors on obesity. We use new body mass index (BMI) to calculate the obesity status and find a significant relationship between an individual’s depression status and his/her obesity status. The results and simulations imply that demographic and behavioural factors can significantly influence the obesity status both directly and indirectly through their impact on depression. Therefore, this study suggests that models which do not account for these various pathways of influence are most likely misrepresenting the impact of these factors on obesity.
 
 Skaza, J., & Blais, B. (2013). The relationship between economic growth and environmental degradation: exploring models and questioning the existence of an environmental Kuznets curve. *The Center for Global and Economic Studies at Bryant University Working Paper*(2013-05).
 [Link](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2346173)
@@ -32,7 +35,7 @@ Skaza, J., & Blais, B. (2013). The relationship between economic growth and envi
 
 # Presentations
 
-<!--Bryant 10 tips for graduating seniors and Double Teaming-->
+Bryant 10 tips for graduating seniors and Double Teaming
 
 Skaza, J. (2017). Git/GitHub Guide. In *Biostatistics for Social Impact Group*, University of Michigan, Ann Arbor, MI   
 [Slides](/assets/git-slash-github.pdf)
@@ -60,7 +63,7 @@ economic growth: exploring models and questioning the existence of an Environmen
 Curve. In *Issues in Political Economy at Eastern Economic Association’s Annual Meetings*, Boston, MA  
 [Slides](/assets/kuznets.pdf)
 
-<!--# Projects
+# Projects
 
 <span style="font-size:150%">[Sports Viz App](https://jskaza.shinyapps.io/sports-viz-app/)</span>
 
