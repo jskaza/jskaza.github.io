@@ -63,8 +63,4 @@ economic growth: exploring models and questioning the existence of an Environmen
 Curve. In *Issues in Political Economy at Eastern Economic Association’s Annual Meetings*, Boston, MA  
 [Slides](/assets/kuznets.pdf)
 
-# Projects
-
-<span style="font-size:150%">[Sports Viz App](https://jskaza.shinyapps.io/sports-viz-app/)</span>
-
-> A [Shiny](http://shiny.rstudio.com/) app for visualizing select sports data. Visit the [GitHub repository](https://github.com/jskaza/shiny-sports-app).-->
+-->
