@@ -1,5 +1,5 @@
 # Update publications
-source(here::here("scripts", "update_publications.R"))
+source(here::here("RScripts", "update_publications.R"))
 
 # Render CV
 rmarkdown::render(
