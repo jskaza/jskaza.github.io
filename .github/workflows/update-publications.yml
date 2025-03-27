@@ -27,6 +27,7 @@ jobs:
     - name: Install R dependencies
       run: |
         Rscript -e 'install.packages(c("scholar", "tidyverse", "lubridate", "here"), repos="https://cloud.r-project.org")'
+        Rscript -e 'if(!all(c("scholar", "tidyverse", "lubridate", "here") %in% installed.packages())) stop("Package installation failed")'
     
     - name: Run R script
       run: |
