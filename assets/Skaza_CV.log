@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.27)  27 MAR 2025 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.27)  27 MAR 2025 23:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,7 +508,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  72i,12n,79p,1256b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/runner/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk></home/runner/.TinyTeX/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></home/runner/.TinyTeX/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb></home/runner/.TinyTeX/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></home/runner/.TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></home/runner/.TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></home/runner/.TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Skaza_CV.pdf (3 pages, 103103 bytes).
+Output written on Skaza_CV.pdf (3 pages, 103088 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  85 compressed objects within 1 object stream
