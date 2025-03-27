@@ -1,5 +1,10 @@
 source "https://rubygems.org"
 
+# GitHub Pages gem bundles most dependencies
+gem "github-pages", "232"
+
+
+
 # gem "github-pages", group: :jekyll_plugins
 
 gem "jekyll-seo-tag"

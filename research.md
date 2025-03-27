@@ -4,8 +4,9 @@ title: Research
 permalink: /research/
 ---
 
+{% include publications.html %}
 
-<script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FXZzfNpTkAYNHju7h8&noBootstrap=1&jsonp=1"></script>
+<!-- <script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FXZzfNpTkAYNHju7h8&noBootstrap=1&jsonp=1"></script> -->
 
 <!--# Publications
 
@@ -60,7 +61,7 @@ Skaza, J. (2014). Socioeconomic determinants of obesity in the United States. In
 
 Skaza, J. and Blais, B. (2014). The relationship between environmental degradation and
 economic growth: exploring models and questioning the existence of an Environmental Kuznets
-Curve. In *Issues in Political Economy at Eastern Economic Association’s Annual Meetings*, Boston, MA  
+Curve. In *Issues in Political Economy at Eastern Economic Association's Annual Meetings*, Boston, MA  
 [Slides](/assets/kuznets.pdf)
 
 -->
