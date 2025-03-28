@@ -11,7 +11,7 @@ author: Jonathan Skaza
 # jobtitle: "Chief Brewer, Arthur Guinness & Son"
 # address: "Boston, MA"
 fontawesome: yes
-email: jonathan.skaza@gmail.com
+email: skaza@ucsb.edu
 github: jskaza
 # twitter: stevenvmiller
 #osf: "Enter 5 digit osf string here"
@@ -54,7 +54,7 @@ Advisor: Brian Blais
 
 Supervisor: Ben Cowley
 
-Computational neuroscience and neuroAI research group led by Ben Cowley. Building connectome-inspired DNNs to understand visual projection neurons (and the computations of visual processing in general) in *Drosophila*. Mentor a talented high school student interested in computational neuroscience.
+Computational neuroscience and neuroAI research group led by Ben Cowley. Built connectome-inspired DNNs to understand visual projection neurons (and the computations of visual processing in general) in *Drosophila*. Mentored a talented high school student interested in computational neuroscience.
 
 **Panalgo** \hfill Boston, MA
 
