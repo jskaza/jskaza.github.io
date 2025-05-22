@@ -1,5 +1,3 @@
-**JS Skaza**, E Wong, A Matsliah, BR Cowley (2024). Data-driven deep neural network models of visual processing in Drosophila. *Cognitive Computational Neuroscience*
-
 SE Mayer, JL Abelson, H Briggs, **J Skaza**, C Kirschbaum, T Stalder (2019). How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function?. *Psychoneuroendocrinology*, 107, 50-51
 
 JL Abelson, B Sanchez, X Zhang, I Liberzon, H Briggs, **J Skaza** (2019). Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans?. *Psychoneuroendocrinology*, 107, 50

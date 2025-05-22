@@ -1,0 +1,51 @@
+{% assign conferences_by_year = site.data.conferences | group_by: 'date' | sort: 'name' | reverse %}
+
+{% for year_group in conferences_by_year %}
+<h3>{{ year_group.name }}</h3>
+<table class="publication-table"><tbody>
+{% for conference in year_group.items %}
+<tr><td>
+  {% assign author_count = conference.authors | size %}
+  {% assign last_author_index = author_count | minus: 1 %}
+  
+  {% for author in conference.authors %}
+    {% if author.last == "Skaza" %}
+      <b>{% if author.first == "Jonathan" %}J{% else %}{{ author.first | slice: 0 }}{% endif %} {{ author.last }}</b>
+    {% else %}
+      {{ author.first | slice: 0 }}{% if author.middle %}{{ author.middle | slice: 0 }}{% endif %} {{ author.last }}
+    {% endif %}
+    
+    {% unless forloop.last %}
+      {% if forloop.index0 == last_author_index | minus: 1 %}
+        & 
+      {% else %}
+        , 
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+  
+  ({{ conference.date }}) 
+  
+  {% if conference.poster_link %}
+    <a href="{{ conference.poster_link }}">{{ conference.title }}</a>
+  {% elsif conference.slides_link %}
+    <a href="{{ conference.slides_link }}">{{ conference.title }}</a>
+  {% elsif conference.video_link %}
+    <a href="{{ conference.video_link }}">{{ conference.title }}</a>
+  {% else %}
+    {{ conference.title }}
+  {% endif %}
+  
+  , <em>{{ conference.venue }}</em>, {{ conference.location }}
+  
+  {% if conference.poster_link and conference.slides_link %}
+    [<a href="{{ conference.slides_link }}">Slides</a>]
+  {% endif %}
+  
+  {% if conference.video_link and (conference.poster_link or conference.slides_link) %}
+    [<a href="{{ conference.video_link }}">Video</a>]
+  {% endif %}
+</td></tr>
+{% endfor %}
+</tbody></table>
+{% endfor %} 

@@ -31,7 +31,7 @@ urlcolor: blue
 
 # Education
 
-*University of California, Santa Barbara*, PhD Student in Dynamical  Neuroscience \hfill Present
+*University of California, Santa Barbara*, PhD Student in Computational Neuroscience \hfill Present
 
 Advisor: Miguel Eckstein
 
@@ -100,6 +100,14 @@ Explored the field of biostatistics through lectures, statistical computing labs
 # Read and render publications without page numbers
 pubs <- readLines('../_includes/cv_publications.md')
 cat(paste(pubs, collapse="\n\n"))
+```
+
+# Conference Presentations
+
+```{r, echo=FALSE, results='asis'}
+# Read and render conferences without page numbers
+confs <- readLines('../_includes/cv_conferences.md')
+cat(paste(confs, collapse="\n\n"))
 ```
 
 # Awards

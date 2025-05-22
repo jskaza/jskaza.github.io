@@ -2,13 +2,36 @@ library(scholar)
 library(tidyverse)
 library(glue)
 library(here)
+library(rvest)  # Add rvest for web scraping
 
 
 # Google Scholar ID from profile URL
 scholar_id <- "dAAMOqgAAAAJ"
 
-# pull from google
+# pull publication data from Google Scholar
 html_1 <- get_publications(scholar_id)
+
+# Scrape the actual links from Google Scholar profile
+get_scholar_links <- function(scholar_id) {
+  url <- glue("https://scholar.google.com/citations?hl=en&user={scholar_id}&view_op=list_works&sortby=pubdate")
+  page <- read_html(url)
+  
+  links <- page %>%
+    html_nodes(".gsc_a_at") %>%
+    html_attr("href") %>%
+    paste0("https://scholar.google.com", .)
+  
+  titles <- page %>%
+    html_nodes(".gsc_a_at") %>%
+    html_text()
+  
+  # Return a named vector of links
+  names(links) <- titles
+  return(links)
+}
+
+# Get direct links to publications
+publication_links <- get_scholar_links(scholar_id)
 
 # convert to html table
 html_2 <- html_1 %>%
@@ -18,10 +41,25 @@ html_2 <- html_1 %>%
     author=str_replace_all(author, ", \\.\\.\\.", " et al."),
     author=str_replace_all(author, "J Skaza", "<b>J Skaza</b>"), # make my name bold
     author=str_replace_all(author, "JS Skaza", "<b>JS Skaza</b>"), # make my name bold
-    # Create HTML citation with conditional parts
-    citation=pmap_chr(list(author, year, title, journal, number, cid), function(author, year, title, journal, number, cid) {
-      # Base citation with Google Scholar link
-      base <- glue('{author} ({year}) <a href="https://scholar.google.com/scholar?oi=bibs&cluster={cid}&btnI=1&hl=en">{title}</a>')
+    # Create HTML citation with direct links from scraping
+    citation=pmap_chr(list(author, year, title, journal, number), function(author, year, title, journal, number) {
+      # Find the direct link for this publication by matching title
+      # Use fuzzy matching to handle slight differences in title formatting
+      best_match <- which.min(adist(title, names(publication_links)))
+      link <- if(length(best_match) > 0 && adist(title, names(publication_links)[best_match]) < 10) {
+        publication_links[best_match]
+      } else {
+        # Fallback to a search query if no match found
+        search_title <- URLencode(title, reserved=TRUE)
+        glue("https://scholar.google.com/scholar?q={search_title}")
+      }
+      
+      # Create linked title
+      linked_title <- glue('<a href="{link}">{title}</a>')
+      
+      # Base citation with linked title
+      base <- glue('{author} ({year}) {linked_title}')
+      
       # Add journal if present
       if (!is.na(journal) && journal != "") {
         base <- glue("{base}, {journal}")
