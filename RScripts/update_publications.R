@@ -3,34 +3,87 @@ library(tidyverse)
 library(glue)
 library(here)
 library(rvest)  # Add rvest for web scraping
+library(httr)
 
 
 # Google Scholar ID from profile URL
 scholar_id <- "dAAMOqgAAAAJ"
 
-# pull publication data from Google Scholar
-html_1 <- get_publications(scholar_id)
-
-# Scrape the actual links from Google Scholar profile
-get_scholar_links <- function(scholar_id) {
-  url <- glue("https://scholar.google.com/citations?hl=en&user={scholar_id}&view_op=list_works&sortby=pubdate")
-  page <- read_html(url)
-  
-  links <- page %>%
-    html_nodes(".gsc_a_at") %>%
-    html_attr("href") %>%
-    paste0("https://scholar.google.com", .)
-  
-  titles <- page %>%
-    html_nodes(".gsc_a_at") %>%
-    html_text()
-  
-  # Return a named vector of links
-  names(links) <- titles
-  return(links)
+# Function to get publications with retries and rate limiting
+get_publications_with_retry <- function(scholar_id, max_attempts = 3) {
+  for (attempt in 1:max_attempts) {
+    tryCatch({
+      # Add delay between attempts
+      if (attempt > 1) {
+        Sys.sleep(30 * attempt)  # Exponential backoff
+      }
+      
+      # Set a realistic user agent
+      options(scholar_user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+      
+      # Get publications
+      pubs <- get_publications(scholar_id)
+      return(pubs)
+    }, error = function(e) {
+      if (attempt == max_attempts) {
+        stop("Failed to fetch publications after ", max_attempts, " attempts: ", e$message)
+      }
+      warning("Attempt ", attempt, " failed: ", e$message)
+    })
+  }
 }
 
-# Get direct links to publications
+# Function to get scholar links with retries and rate limiting
+get_scholar_links <- function(scholar_id, max_attempts = 3) {
+  for (attempt in 1:max_attempts) {
+    tryCatch({
+      # Add delay between attempts
+      if (attempt > 1) {
+        Sys.sleep(30 * attempt)  # Exponential backoff
+      }
+      
+      url <- glue("https://scholar.google.com/citations?hl=en&user={scholar_id}&view_op=list_works&sortby=pubdate")
+      
+      # Set headers to mimic a browser
+      response <- GET(url, 
+                     add_headers(
+                       "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+                       "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                       "Accept-Language" = "en-US,en;q=0.5",
+                       "Connection" = "keep-alive"
+                     ))
+      
+      if (status_code(response) != 200) {
+        stop("HTTP error: ", status_code(response))
+      }
+      
+      page <- read_html(response)
+      
+      links <- page %>%
+        html_nodes(".gsc_a_at") %>%
+        html_attr("href") %>%
+        paste0("https://scholar.google.com", .)
+      
+      titles <- page %>%
+        html_nodes(".gsc_a_at") %>%
+        html_text()
+      
+      # Return a named vector of links
+      names(links) <- titles
+      return(links)
+    }, error = function(e) {
+      if (attempt == max_attempts) {
+        stop("Failed to fetch scholar links after ", max_attempts, " attempts: ", e$message)
+      }
+      warning("Attempt ", attempt, " failed: ", e$message)
+    })
+  }
+}
+
+# pull publication data from Google Scholar with retries
+html_1 <- get_publications_with_retry(scholar_id)
+
+# Get direct links to publications with retries
 publication_links <- get_scholar_links(scholar_id)
 
 # convert to html table
