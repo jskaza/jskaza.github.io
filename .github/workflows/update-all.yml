@@ -11,6 +11,9 @@ on:
 jobs:
   update:
     runs-on: ubuntu-22.04  # Updated to Ubuntu 22.04 LTS
+    # This ensures this job runs before any Pages deployment
+    outputs:
+      completed: ${{ steps.set-output.outputs.completed }}
     
     steps:
     - uses: actions/checkout@v3
@@ -71,4 +74,8 @@ jobs:
           git push
         else
           echo "No changes to commit"
-        fi 
+        fi
+
+    - name: Set output
+      id: set-output
+      run: echo "completed=true" >> $GITHUB_OUTPUT 
