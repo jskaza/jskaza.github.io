@@ -62,7 +62,7 @@ html_2 <- html_1 %>%
       
       # Add journal if present
       if (!is.na(journal) && journal != "") {
-        base <- glue("{base}, {journal}")
+        base <- glue("{base}, *{journal}*")
         # Add number/pages if present
         if (!is.na(number) && number != "") {
           base <- glue("{base}, {number}")
