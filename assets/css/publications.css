@@ -49,4 +49,22 @@ small a {
 
 small a:hover {
     text-decoration: underline;
+}
+
+/* Dark mode text color improvements */
+@media (prefers-color-scheme: dark) {
+  /* Make headings more visible in dark mode */
+  h1, h2, h3, h4, h5, h6 {
+    color: #f5f8fa !important; /* Light gray-white color for better contrast */
+  }
+
+  /* Make author names more visible in dark mode */
+  .author {
+    color: #a7b6c2 !important; /* Slightly lighter gray for better readability */
+  }
+
+  /* Improve general text contrast */
+  p, li, span {
+    color: #e1e8ed !important; /* Light gray for better readability */
+  }
 } 
