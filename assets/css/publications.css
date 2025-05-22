@@ -59,8 +59,8 @@ small a:hover {
   }
 
   /* Make author names more visible in dark mode */
-  .author {
-    color: #ffffff !important; /* Slightly lighter gray for better readability */
+  .author, .publication-table b {
+    color: #ffffff !important; /* White color for better readability */
   }
 
   /* Improve general text contrast */
