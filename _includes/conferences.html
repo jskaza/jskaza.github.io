@@ -1,51 +1,11 @@
-{% assign conferences_by_year = site.data.conferences | group_by: 'date' | sort: 'name' | reverse %}
-
-{% for year_group in conferences_by_year %}
-<h3>{{ year_group.name }}</h3>
-<table class="publication-table"><tbody>
-{% for conference in year_group.items %}
-<tr><td>
-  {% assign author_count = conference.authors | size %}
-  {% assign last_author_index = author_count | minus: 1 %}
-  
-  {% for author in conference.authors %}
-    {% if author.last == "Skaza" %}
-      <b>{% if author.first == "Jonathan" %}J{% else %}{{ author.first | slice: 0 }}{% endif %} {{ author.last }}</b>
-    {% else %}
-      {{ author.first | slice: 0 }}{% if author.middle %}{{ author.middle | slice: 0 }}{% endif %} {{ author.last }}
-    {% endif %}
-    
-    {% unless forloop.last %}
-      {% if forloop.index0 == last_author_index | minus: 1 %}
-        & 
-      {% else %}
-        , 
-      {% endif %}
-    {% endunless %}
-  {% endfor %}
-  
-  ({{ conference.date }}) 
-  
-  {% if conference.poster_link %}
-    <a href="{{ conference.poster_link }}">{{ conference.title }}</a>
-  {% elsif conference.slides_link %}
-    <a href="{{ conference.slides_link }}">{{ conference.title }}</a>
-  {% elsif conference.video_link %}
-    <a href="{{ conference.video_link }}">{{ conference.title }}</a>
-  {% else %}
-    {{ conference.title }}
-  {% endif %}
-  
-  , <em>{{ conference.venue }}</em>, {{ conference.location }}
-  
-  {% if conference.poster_link and conference.slides_link %}
-    [<a href="{{ conference.slides_link }}">Slides</a>]
-  {% endif %}
-  
-  {% if conference.video_link and (conference.poster_link or conference.slides_link) %}
-    [<a href="{{ conference.video_link }}">Video</a>]
-  {% endif %}
-</td></tr>
-{% endfor %}
+<h3>2025</h3>
+<table class="conference-table"><tbody>
+<tr><td><b>J Skaza</b>, A Vashney, Z Wen, S Murlidaran, WY Wang, MP Eckstein, & M Beyeler (2025) <a href="/assets/posters/vss_2025_1.pdf">A Computational Virtual Patient Pipeline for Predicting Perceptual Capabilities with Visual Prostheses</a>, <em>Vision Sciences Society</em>, St. Pete Beach, FL, USA</td></tr>
+<tr><td>Z Wen, <b>J Skaza</b>, S Murlidaran, WY Wang, & MP Eckstein (2025) <a href="/assets/posters/vss_2025_2.pdf">Foveated Multi-Modal Large Language Model Maps to Predict Time to Understand Scenes</a>, <em>Vision Sciences Society</em>, St. Pete Beach, FL, USA</td></tr>
+<tr><td>S Murlidaran, Z Wen, <b>J Skaza</b>, & MP Eckstein (2025) <a href="/assets/posters/vss_2025_3.pdf">Scene Understanding Maps: Predicting Most Frequently Fixated Object during Scene Description with Multi-Modal Large Language Models</a>, <em>Vision Sciences Society</em>, St. Pete Beach, FL, USA</td></tr>
 </tbody></table>
-{% endfor %} 
+<h3>2024</h3>
+<table class="conference-table"><tbody>
+<tr><td><b>JS Skaza</b>, E Wong, A Matsliah, & BR Cowley (2024) <a href="/assets/posters/ccn_2024.pdf">Data-driven deep neural network models of visual processing in Drosophila</a>, <em>Cognitive Computational Neuroscience</em>, Boston, MA, USA</td></tr>
+</tbody></table>
+<p style="text-align: right; margin-top: 40px;"><small>Last updated <i>May 22, 2025</i></small></p>

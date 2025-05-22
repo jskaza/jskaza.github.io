@@ -10,23 +10,34 @@ library(httr)
 scholar_id <- "dAAMOqgAAAAJ"
 
 # Function to get publications with retries and rate limiting
-get_publications_with_retry <- function(scholar_id, max_attempts = 3) {
+get_publications_with_retry <- function(scholar_id, max_attempts = 5) {
   for (attempt in 1:max_attempts) {
     tryCatch({
-      # Add delay between attempts
+      # Add delay between attempts with exponential backoff
       if (attempt > 1) {
-        Sys.sleep(30 * attempt)  # Exponential backoff
+        Sys.sleep(60 * attempt)  # Increased delay between attempts
       }
       
       # Set a realistic user agent
-      options(scholar_user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+      options(scholar_user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
       
       # Get publications
       pubs <- get_publications(scholar_id)
       return(pubs)
     }, error = function(e) {
       if (attempt == max_attempts) {
-        stop("Failed to fetch publications after ", max_attempts, " attempts: ", e$message)
+        warning("Failed to fetch publications after ", max_attempts, " attempts: ", e$message)
+        # Return empty data frame with correct structure as fallback
+        return(data.frame(
+          title = character(),
+          author = character(),
+          journal = character(),
+          number = character(),
+          cites = integer(),
+          year = integer(),
+          cid = character(),
+          pubid = character()
+        ))
       }
       warning("Attempt ", attempt, " failed: ", e$message)
     })
@@ -34,23 +45,30 @@ get_publications_with_retry <- function(scholar_id, max_attempts = 3) {
 }
 
 # Function to get scholar links with retries and rate limiting
-get_scholar_links <- function(scholar_id, max_attempts = 3) {
+get_scholar_links <- function(scholar_id, max_attempts = 5) {
   for (attempt in 1:max_attempts) {
     tryCatch({
-      # Add delay between attempts
+      # Add delay between attempts with exponential backoff
       if (attempt > 1) {
-        Sys.sleep(30 * attempt)  # Exponential backoff
+        Sys.sleep(60 * attempt)  # Increased delay between attempts
       }
       
       url <- glue("https://scholar.google.com/citations?hl=en&user={scholar_id}&view_op=list_works&sortby=pubdate")
       
-      # Set headers to mimic a browser
+      # Set headers to mimic a browser more realistically
       response <- GET(url, 
                      add_headers(
-                       "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-                       "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-                       "Accept-Language" = "en-US,en;q=0.5",
-                       "Connection" = "keep-alive"
+                       "User-Agent" = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                       "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+                       "Accept-Language" = "en-US,en;q=0.9",
+                       "Accept-Encoding" = "gzip, deflate, br",
+                       "Connection" = "keep-alive",
+                       "Upgrade-Insecure-Requests" = "1",
+                       "Sec-Fetch-Dest" = "document",
+                       "Sec-Fetch-Mode" = "navigate",
+                       "Sec-Fetch-Site" = "none",
+                       "Sec-Fetch-User" = "?1",
+                       "Cache-Control" = "max-age=0"
                      ))
       
       if (status_code(response) != 200) {
@@ -73,7 +91,8 @@ get_scholar_links <- function(scholar_id, max_attempts = 3) {
       return(links)
     }, error = function(e) {
       if (attempt == max_attempts) {
-        stop("Failed to fetch scholar links after ", max_attempts, " attempts: ", e$message)
+        warning("Failed to fetch scholar links after ", max_attempts, " attempts: ", e$message)
+        return(character())  # Return empty vector as fallback
       }
       warning("Attempt ", attempt, " failed: ", e$message)
     })
@@ -86,23 +105,44 @@ html_1 <- get_publications_with_retry(scholar_id)
 # Get direct links to publications with retries
 publication_links <- get_scholar_links(scholar_id)
 
+# If we have no publications data, create a minimal version
+if (nrow(html_1) == 0) {
+  warning("No publications data available. Using fallback data.")
+  html_1 <- data.frame(
+    title = "Publications temporarily unavailable",
+    author = "J Skaza",
+    journal = "",
+    number = "",
+    cites = 0,
+    year = as.integer(format(Sys.Date(), "%Y")),
+    cid = "",
+    pubid = ""
+  )
+}
+
 # convert to html table
 html_2 <- html_1 %>%
   as_tibble %>% arrange(desc(year)) %>%
   mutate(
     author=str_replace_all(author, "([A-Z]) ([A-Z]) ", "\\1\\2 "),
     author=str_replace_all(author, ", \\.\\.\\.", " et al."),
-    author=str_replace_all(author, "J Skaza", "<b>J Skaza</b>"), # make my name bold
-    author=str_replace_all(author, "JS Skaza", "<b>JS Skaza</b>"), # make my name bold
+    author=str_replace_all(author, "J Skaza", "<b>J Skaza</b>"),
+    author=str_replace_all(author, "JS Skaza", "<b>JS Skaza</b>"),
     # Create HTML citation with direct links from scraping
     citation=pmap_chr(list(author, year, title, journal, number), function(author, year, title, journal, number) {
       # Find the direct link for this publication by matching title
       # Use fuzzy matching to handle slight differences in title formatting
-      best_match <- which.min(adist(title, names(publication_links)))
-      link <- if(length(best_match) > 0 && adist(title, names(publication_links)[best_match]) < 10) {
-        publication_links[best_match]
+      link <- if(length(publication_links) > 0) {
+        best_match <- which.min(adist(title, names(publication_links)))
+        if(length(best_match) > 0 && adist(title, names(publication_links)[best_match]) < 10) {
+          publication_links[best_match]
+        } else {
+          # Fallback to a search query if no match found
+          search_title <- URLencode(title, reserved=TRUE)
+          glue("https://scholar.google.com/scholar?q={search_title}")
+        }
       } else {
-        # Fallback to a search query if no match found
+        # If no links available, use a search query
         search_title <- URLencode(title, reserved=TRUE)
         glue("https://scholar.google.com/scholar?q={search_title}")
       }
@@ -165,8 +205,8 @@ cv_pubs <- html_1 %>%
       }
       base
     }),
-    citation=str_replace_all(citation, "J Skaza", "**J Skaza**"), # make my name bold
-    citation=str_replace_all(citation, "JS Skaza", "**JS Skaza**") # make my name bold
+    citation=str_replace_all(citation, "J Skaza", "**J Skaza**"),
+    citation=str_replace_all(citation, "JS Skaza", "**JS Skaza**")
   ) %>%
   pull(citation) %>%
   paste(collapse="\n\n")

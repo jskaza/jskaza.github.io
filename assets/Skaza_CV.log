@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.22)  21 MAY 2025 17:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.22)  22 MAY 2025 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -596,25 +596,26 @@ Package rerunfilecheck Info: File `Skaza_CV.out' has not changed.
 (rerunfilecheck)             Checksum: CDEAFDAEA9816A3276FD93F701BF747D;1033.
  ) 
 Here is how much of TeX's memory you used:
- 17567 strings out of 476025
- 299757 string characters out of 5790017
+ 17557 strings out of 476025
+ 299662 string characters out of 5790017
  1860388 words of memory out of 5000000
  37495 multiletter control sequences out of 15000+600000
- 555437 words of font info for 235 fonts, out of 8000000 for 9000
+ 554870 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,76p,1245b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
 me5Brands-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fo
 ntawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2023/texmf-dist/fonts
 /type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
-ublic/cm-super/sftt1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw
-/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palati
-no/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr
-i8a.pfb>
-Output written on Skaza_CV.pdf (4 pages, 123171 bytes).
+ublic/fpl/fplrij8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/c
+m-super/sftt1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palati
+no/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr
+8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
+>
+Output written on Skaza_CV.pdf (4 pages, 136147 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 131 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
  57425 words of extra memory for PDF output out of 61914 (max. 10000000)
 
