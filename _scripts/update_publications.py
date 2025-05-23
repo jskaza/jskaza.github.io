@@ -1,6 +1,7 @@
 import time
+import sys
 from datetime import datetime
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
 
 # Google Scholar ID from profile URL
 SCHOLAR_ID = "dAAMOqgAAAAJ"
@@ -66,18 +67,36 @@ def format_authors_markdown(authors_str):
 
 def get_publications_with_retry(max_attempts=5):
     """Get publications from Google Scholar with retries using scholarly package"""
+    # Set up proxy rotation
+    pg = ProxyGenerator()
+    success = pg.FreeProxies()
+    if success:
+        scholarly.use_proxy(pg)
+        print("Successfully configured proxy rotation")
+    else:
+        print("Warning: Could not configure proxy rotation")
+
     for attempt in range(max_attempts):
         try:
             if attempt > 0:
-                time.sleep(60 * attempt)  # Exponential backoff
+                wait_time = 180 * attempt  # Longer waits: 3 mins, 6 mins, 9 mins...
+                print(f"Waiting {wait_time} seconds before attempt {attempt + 1}")
+                time.sleep(wait_time)
+            
+            print(f"Fetching publications (attempt {attempt + 1}/{max_attempts})")
             
             # Get author by ID
+            print("Searching for author...")
             search_query = scholarly.search_author_id(SCHOLAR_ID)
+            print("Filling author details...")
             author = scholarly.fill(search_query)
             
             publications = []
+            print(f"Found {len(author['publications'])} publications, fetching details...")
+            
             # Get publications
-            for pub in author['publications']:
+            for i, pub in enumerate(author['publications'], 1):
+                print(f"Processing publication {i}/{len(author['publications'])}")
                 pub = scholarly.fill(pub)
                 
                 # Extract publication data
@@ -92,19 +111,25 @@ def get_publications_with_retry(max_attempts=5):
                 
                 publications.append({
                     'title': title,
-                    'author': authors,  # Keep original format here
+                    'author': authors,
                     'journal': journal,
-                    'number': "",  # Not directly available in scholarly
+                    'number': "",
                     'cites': cites,
                     'year': year,
                     'link': link
                 })
+                
+                # Small delay between publications to avoid rate limiting
+                if i < len(author['publications']):
+                    time.sleep(2)
             
+            print("Successfully fetched all publications")
             return publications
             
         except Exception as e:
+            print(f"Error during attempt {attempt + 1}: {str(e)}", file=sys.stderr)
             if attempt == max_attempts - 1:
-                print(f"Failed to fetch publications after {max_attempts} attempts: {str(e)}")
+                print(f"Failed to fetch publications after {max_attempts} attempts", file=sys.stderr)
                 return [{
                     'title': 'Publications temporarily unavailable',
                     'author': 'Skaza, Jonathan',
@@ -114,8 +139,6 @@ def get_publications_with_retry(max_attempts=5):
                     'year': datetime.now().year,
                     'link': f'https://scholar.google.com/citations?hl=en&user={SCHOLAR_ID}'
                 }]
-            print(f"Attempt {attempt + 1} failed: {str(e)}")
-            time.sleep(5)
 
 def generate_html(publications):
     """Generate HTML output from publications data"""
@@ -183,18 +206,30 @@ def generate_markdown(publications):
     return '\n\n'.join(md_parts) + '\n'
 
 def main():
+    print("Starting publications update...")
     # Get publications
     publications = get_publications_with_retry()
     
+    if not publications:
+        print("Error: No publications were fetched", file=sys.stderr)
+        sys.exit(1)
+    
+    print(f"Successfully fetched {len(publications)} publications")
+    
     # Generate HTML output
+    print("Generating HTML output...")
     html_output = generate_html(publications)
     with open('_includes/publications.html', 'w', encoding='utf-8') as f:
         f.write(html_output)
+    print("HTML output generated and saved")
     
     # Generate Markdown output for CV
+    print("Generating Markdown output...")
     md_output = generate_markdown(publications)
     with open('_includes/cv_publications.md', 'w', encoding='utf-8') as f:
         f.write(md_output)
+    print("Markdown output generated and saved")
+    print("Update completed successfully")
 
 if __name__ == "__main__":
     main() 
