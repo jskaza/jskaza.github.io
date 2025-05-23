@@ -50,8 +50,8 @@ def format_authors_list(authors, for_markdown=False):
             formatted_authors.append(format_author(first, middle, last))
     
     # Join authors with commas and & for last author
-    if len(formatted_authors) > 1:
-        formatted_authors[-1] = f"& {formatted_authors[-1]}"
+    # if len(formatted_authors) > 1:
+    #     formatted_authors[-1] = f"& {formatted_authors[-1]}"
     return ", ".join(formatted_authors)
 
 def generate_html(conferences):
