@@ -1,39 +1,40 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches: [ master ]
-  workflow_dispatch:
+  workflow_run:
+    workflows:            # the name: field from update-all.yml
+      - "Update publications & CV"
+    types:
+      - completed
 
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    needs: update
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
-          
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          
+
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
           npm install
-          
+
       - name: Build site
         run: bundle exec jekyll build
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site 
+          publish_dir: ./_site
