@@ -1,0 +1,849 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Economics of Shot Distribution | Jon Skaza</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="The Economics of Shot Distribution" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In basketball, we often hear that certain players need to get their fair share of shots during the game. Karl-Anthony Towns was criticized for his lack of shot attempts in a playoff game versus Houston this year. In that game, Towns took nine shots compared to 14 from Derrick Rose and 11 from Jamal Crawford. This distribution seems opposite of what it should be. Ideally, your best players should take a relatively larger proportion of the shots. For one, they should be on the floor more and therefore have more chances. Additionally, even controlling for playing time, the more skilled player should take more shots." />
+<meta property="og:description" content="In basketball, we often hear that certain players need to get their fair share of shots during the game. Karl-Anthony Towns was criticized for his lack of shot attempts in a playoff game versus Houston this year. In that game, Towns took nine shots compared to 14 from Derrick Rose and 11 from Jamal Crawford. This distribution seems opposite of what it should be. Ideally, your best players should take a relatively larger proportion of the shots. For one, they should be on the floor more and therefore have more chances. Additionally, even controlling for playing time, the more skilled player should take more shots." />
+<meta property="og:site_name" content="Jon Skaza" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Economics of Shot Distribution" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-05-03T00:00:00+00:00","datePublished":"2018-05-03T00:00:00+00:00","description":"In basketball, we often hear that certain players need to get their fair share of shots during the game. Karl-Anthony Towns was criticized for his lack of shot attempts in a playoff game versus Houston this year. In that game, Towns took nine shots compared to 14 from Derrick Rose and 11 from Jamal Crawford. This distribution seems opposite of what it should be. Ideally, your best players should take a relatively larger proportion of the shots. For one, they should be on the floor more and therefore have more chances. Additionally, even controlling for playing time, the more skilled player should take more shots.","headline":"The Economics of Shot Distribution","mainEntityOfPage":{"@type":"WebPage","@id":"/sports/2018/05/03/the-economics-of-shot-distribution.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"url":"/sports/2018/05/03/the-economics-of-shot-distribution.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/colors-auto.css?v=">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" href="/assets/css/publications.css?v=">
+    <link rel="stylesheet" href="/assets/css/conferences.css?v=">
+
+    <link rel="preload" href="/assets/img/logo.png" as="image">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+
+<!-- end custom head snippets -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+      </script>
+    
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+          displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+        //,
+        //displayAlign: "left",
+        //displayIndent: "2em"
+      });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+    
+      
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <header>
+          
+          <a href="/"><img class="img-circle" src="/assets/img/logo.png" alt="Logo"></a>
+          
+          <br>
+          
+          <h1>Jon Skaza</h1>
+          
+
+          
+            <p class="addr"><i class="fa-solid fa-envelope"></i>&nbsp;skaza (at) ucsb (dot) edu</p>
+          
+
+          <p></p>
+
+          <div class="link-wrapper">
+    <style scoped>
+      ul.link a {
+        color:var(--clr-h1-and-bold);
+        text-decoration:none;
+      }
+
+      ul.link a:hover, a:focus {
+        color: var(--clr-a-text-hvr);
+      }
+    </style>
+    <ul class="link">
+      <!-- <li><a href="/assets/Skaza_CV.pdf"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 384 512"><path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"/></svg>"></i> CV</a></li> -->
+       <li><a href="/assets/Skaza_CV.pdf"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 384 512"><path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"/></svg>&nbsp;CV</a></li>
+      <!-- <li><a href="/publications/"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>"></i> Publications</a></li> -->
+       <li><a href="/publications/"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>&nbsp;Publications</a></li>
+      <!-- <li><a href="/conferences/"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M0 32C0 14.3 14.3 0 32 0L480 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 384c17.7 0 32 14.3 32 32s-14.3 32-32 32l-176 0 0-48c0-26.5-21.5-48-48-48s-48 21.5-48 48l0 48L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32L32 64C14.3 64 0 49.7 0 32zm96 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM240 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM112 192c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM328 384c13.3 0 24.3-10.9 21-23.8c-10.6-41.5-48.2-72.2-93-72.2s-82.5 30.7-93 72.2c-3.3 12.8 7.8 23.8 21 23.8l144 0z"/></svg>"></i> Conferences</a></li> -->
+       <li><a href="/conferences/"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M0 32C0 14.3 14.3 0 32 0L480 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 384c17.7 0 32 14.3 32 32s-14.3 32-32 32l-176 0 0-48c0-26.5-21.5-48-48-48s-48 21.5-48 48l0 48L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32L32 64C14.3 64 0 49.7 0 32zm96 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM240 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM112 192c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM328 384c13.3 0 24.3-10.9 21-23.8c-10.6-41.5-48.2-72.2-93-72.2s-82.5 30.7-93 72.2c-3.3 12.8 7.8 23.8 21 23.8l144 0z"/></svg>&nbsp;Conferences</a></li>
+      <!-- <li><a href=""><i class=""></i> </a></li> -->
+       <li><a href="">&nbsp;</a></li>
+      <!-- <li><a href="https://scholar.google.com/citations?user=dAAMOqgAAAAJ&hl"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14a7 7 0 0 0 0-14z" fill="currentColor"/></svg>"></i> Google Scholar</a></li> -->
+       <li><a href="https://scholar.google.com/citations?user=dAAMOqgAAAAJ&hl"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14a7 7 0 0 0 0-14z" fill="currentColor"/></svg>&nbsp;Google Scholar</a></li>
+      <!-- <li><a href="https://github.com/jskaza"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="0.97em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9c1.6 2.3 4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2z"/></svg>"></i> GitHub</a></li> -->
+       <li><a href="https://github.com/jskaza"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="0.97em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9c1.6 2.3 4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2z"/></svg>&nbsp;GitHub</a></li>
+      <!-- <li><a href="https://x.com/JonSkaza"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg>"></i> X</a></li> -->
+       <li><a href="https://x.com/JonSkaza"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg>&nbsp;X</a></li>
+      <!-- <li><a href="https://www.linkedin.com/in/jonskaza/"><i class="<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>"></i> LinkedIn</a></li> -->
+       <li><a href="https://www.linkedin.com/in/jonskaza/"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>&nbsp;LinkedIn</a></li>
+    </ul>
+  </div>
+
+
+        </header>
+
+        <div class="link-wrapper-mobile" id="link-wrapper-mobile">
+    <style scoped>
+        #link-wrapper-mobile a {
+        color:var(--clr-h1-and-bold);
+        text-decoration:none;
+        }
+
+        #link-wrapper-mobile a:hover, a:focus {
+        color: var(--clr-a-text-hvr);
+        }
+    </style>
+    <nobr><a href="/assets/Skaza_CV.pdf" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 384 512"><path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"/></svg>&nbsp;CV</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="/publications/" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>&nbsp;Publications</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="/conferences/" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M0 32C0 14.3 14.3 0 32 0L480 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 384c17.7 0 32 14.3 32 32s-14.3 32-32 32l-176 0 0-48c0-26.5-21.5-48-48-48s-48 21.5-48 48l0 48L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32L32 64C14.3 64 0 49.7 0 32zm96 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM240 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM112 192c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM328 384c13.3 0 24.3-10.9 21-23.8c-10.6-41.5-48.2-72.2-93-72.2s-82.5 30.7-93 72.2c-3.3 12.8 7.8 23.8 21 23.8l144 0z"/></svg>&nbsp;Conferences</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="" rel="me">&nbsp;</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="https://scholar.google.com/citations?user=dAAMOqgAAAAJ&hl" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14a7 7 0 0 0 0-14z" fill="currentColor"/></svg>&nbsp;Google Scholar</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="https://github.com/jskaza" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="0.97em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9c1.6 2.3 4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2z"/></svg>&nbsp;GitHub</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="https://x.com/JonSkaza" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"/></svg>&nbsp;X</a><span style="margin-left: 6px;"></span></nobr>
+    <nobr><a href="https://www.linkedin.com/in/jonskaza/" rel="me"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" style="vertical-align:-0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>&nbsp;LinkedIn</a></nobr>
+</div>
+
+
+        <div class="sidebar-footer"><p><small>Logo generated using DALL·E 2 and prompt "sketch of a brain that blends human anatomy and computer hardware components"</small></p>
+
+<p><small>Theme adapted from <a href="https://github.com/BDHU/minimalist">Minimalist</a></small></p></div>
+      </div>
+      <section>
+
+      <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">The Economics of Shot Distribution</h1>
+  </header>
+
+  <div class="post-content">
+    <p>In basketball, we often hear that certain players need to get their fair share of shots during the game. Karl-Anthony Towns was criticized for his <a href="https://hoopshype.com/2018/04/18/minnesota-timberwolves-karl-anthony-towns-tom-thibodeau-coaching/">lack of shot attempts</a> in a playoff game versus Houston this year. In that game, Towns took nine shots compared to 14 from Derrick Rose and 11 from Jamal Crawford. This distribution seems opposite of what it should be. Ideally, your best players should take a relatively larger proportion of the shots. For one, they should be on the floor more and therefore have more chances. Additionally, even controlling for playing time, the more skilled player should take more shots.</p>
+
+<p>Here, I am going to take a deep dive into shot distribution among NBA teams and set out to answer the following question:</p>
+
+<p><em>Which teams have the most/least equitable distribution of field goal attempts (FGA)?</em></p>
+
+<p>The idea of inequality arises quite a bit in society, particularly in relation to the economy. A central tenet of the <a href="https://en.wikipedia.org/wiki/Occupy_movement">Occupy movement</a> is to attack social and economic inequality. A <a href="http://www.nber.org/papers/w24085">recent paper</a> by economist Edward N. Wolff estimates that the wealthiest one percent of American households hold 40 percent of the nation’s wealth. Econometric theory provides us with a toolkit to analyze inequality empirically. Here, I will use two ideas from the economic literature to examine the equality (or lack thereof) of FGA among teams: the <a href="https://en.wikipedia.org/wiki/Lorenz_curve">Lorenz curve</a> and the <a href="https://en.wikipedia.org/wiki/Gini_coefficient">Gini coefficient</a>.</p>
+
+<p>The Lorenz curve is a graph that depicts the proportion of $y$ held by the bottom $x\%$ of people. Perfect equality is represented by the line $y=x$. That is, the bottom 20% of the population owns 20% of the wealth, the bottom 60% of the population holds 60% of the wealth, and so on. The Gini coefficient can be derived using the Lorenz curve. The Gini coefficient is the ratio of the area between the line of perfect equality and the observed Lorenz curve to the total area beneath the line of perfect equality.</p>
+
+<p>Let’s use the shot distribution of the Timberwolves to illustrate how these concepts can be used to examine the distribution of FGA.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">RCurl</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ineq</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggrepel</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">getURL</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/jskaza/data/master/shot-distribution/nba_totals.csv"</span><span class="p">))</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Team</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'MIN'</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">Last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str_extract</span><span class="p">(</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="s2">"[^ ]+$"</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reorder</span><span class="p">(</span><span class="n">Last</span><span class="p">,</span><span class="o">-</span><span class="n">FGA</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">FGA</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s1">'identity'</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="s2">"#0C2340"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Timberwolves Field Goal Attempts"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FGA"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">1</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" /></p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Team</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'MIN'</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">do</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA</span><span class="p">)</span><span class="o">$</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA</span><span class="p">)</span><span class="o">$</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">unnest</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">geom_segment</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">xend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">yend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_polygon</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.3</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s2">"#78BE20"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Timberwolves Lorenz Curve"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of Team"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of FGA"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_area</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"#0C2340"</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" /></p>
+
+<p>Had the Timberwolves distributed their shots perfectly evenly, their Lorenz curve would fall along the reference line. However, due to inequality in field goal attempts, there is an area (shaded in green) between their Lorenz curve and the line of equality. The size of this area relative to the total area beneath the line of equality lends us the Timberwolves Gini coefficient, which is <code class="language-plaintext highlighter-rouge">0.534</code>.</p>
+
+<p>Now, let’s look at the Gini coefficients and Lorenz curves for all teams.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">summarize</span><span class="p">(</span><span class="n">Gini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">ineq</span><span class="p">(</span><span class="n">FGA</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">arrange</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="n">Gini</span><span class="p">))</span><span class="w">
+</span><span class="n">kable</span><span class="p">(</span><span class="n">gini</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Team</th>
+      <th style="text-align: right">Gini</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">HOU</td>
+      <td style="text-align: right">0.652</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NOP</td>
+      <td style="text-align: right">0.644</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIL</td>
+      <td style="text-align: right">0.638</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DAL</td>
+      <td style="text-align: right">0.597</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OKC</td>
+      <td style="text-align: right">0.594</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAL</td>
+      <td style="text-align: right">0.588</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PHI</td>
+      <td style="text-align: right">0.586</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IND</td>
+      <td style="text-align: right">0.557</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">UTA</td>
+      <td style="text-align: right">0.551</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BOS</td>
+      <td style="text-align: right">0.538</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">POR</td>
+      <td style="text-align: right">0.537</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIN</td>
+      <td style="text-align: right">0.534</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PHO</td>
+      <td style="text-align: right">0.521</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TOR</td>
+      <td style="text-align: right">0.517</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BRK</td>
+      <td style="text-align: right">0.515</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DEN</td>
+      <td style="text-align: right">0.514</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MEM</td>
+      <td style="text-align: right">0.508</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ATL</td>
+      <td style="text-align: right">0.503</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIA</td>
+      <td style="text-align: right">0.499</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CLE</td>
+      <td style="text-align: right">0.498</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHA</td>
+      <td style="text-align: right">0.485</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DET</td>
+      <td style="text-align: right">0.485</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NYK</td>
+      <td style="text-align: right">0.477</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAC</td>
+      <td style="text-align: right">0.468</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHI</td>
+      <td style="text-align: right">0.463</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">WAS</td>
+      <td style="text-align: right">0.448</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GSW</td>
+      <td style="text-align: right">0.438</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ORL</td>
+      <td style="text-align: right">0.431</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SAC</td>
+      <td style="text-align: right">0.430</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SAS</td>
+      <td style="text-align: right">0.413</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lorenz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">do</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA</span><span class="p">)</span><span class="o">$</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA</span><span class="p">)</span><span class="o">$</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">unnest</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="w">
+
+</span><span class="n">lorenz_gini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">lorenz</span><span class="p">,</span><span class="w"> </span><span class="n">gini</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Team'</span><span class="p">)</span><span class="w">
+
+</span><span class="n">lorenz_gini</span><span class="o">$</span><span class="n">Team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">lorenz_gini</span><span class="o">$</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="n">unique</span><span class="p">(</span><span class="n">lorenz_gini</span><span class="o">$</span><span class="n">Team</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="o">-</span><span class="n">lorenz_gini</span><span class="o">$</span><span class="n">Gini</span><span class="p">)]),</span><span class="w"> </span><span class="n">ordered</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lorenz_gini</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Team</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_segment</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">xend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">yend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NBA Lorenz Curves"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of Team"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of FGA"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">Team</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" /></p>
+
+<p>The Houston Rockets–the best team in the NBA this year–had the highest Gini coefficient in the league. In other words, they had the most unequal shot distribution in the league. This is partially attributable to the fact that Houston had 24 players attempt a field goal this year, tied for most in the league.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">kable</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">summarize</span><span class="p">(</span><span class="n">Players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">arrange</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="n">Players</span><span class="p">))))</span><span class="w">
+</span></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Team</th>
+      <th style="text-align: right">Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">HOU</td>
+      <td style="text-align: right">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAL</td>
+      <td style="text-align: right">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MEM</td>
+      <td style="text-align: right">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIL</td>
+      <td style="text-align: right">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DAL</td>
+      <td style="text-align: right">23</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NOP</td>
+      <td style="text-align: right">23</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This artificially inflates Houston’s Gini coefficient because they had relatively more “fringe” or “replacement” players play than other teams. Here is Houston’s shot distribution chart, in which we can see a prolonged tail.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Team</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'HOU'</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">Last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str_extract</span><span class="p">(</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="s2">"[^ ]+$"</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">Last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">if_else</span><span class="p">(</span><span class="n">Last</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Moute'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mbah a Moute'</span><span class="p">,</span><span class="w"> </span><span class="n">Last</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reorder</span><span class="p">(</span><span class="n">Last</span><span class="p">,</span><span class="o">-</span><span class="n">FGA</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">FGA</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s1">'identity'</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="s2">"#CE1141"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Rockets Field Goal Attempts"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FGA"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">1</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" /></p>
+
+<p>To address this issue, we can restrict our analysis to players who played in at least half of their team’s games (41) and repeat our analysis.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gini2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">G</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">40</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">summarize</span><span class="p">(</span><span class="n">Gini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">ineq</span><span class="p">(</span><span class="n">FGA</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">arrange</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="n">Gini</span><span class="p">))</span><span class="w">
+</span><span class="n">kable</span><span class="p">(</span><span class="n">gini2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Team</th>
+      <th style="text-align: right">Gini</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">OKC</td>
+      <td style="text-align: right">0.405</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GSW</td>
+      <td style="text-align: right">0.370</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIL</td>
+      <td style="text-align: right">0.370</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CLE</td>
+      <td style="text-align: right">0.369</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">UTA</td>
+      <td style="text-align: right">0.358</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NOP</td>
+      <td style="text-align: right">0.356</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">POR</td>
+      <td style="text-align: right">0.332</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAC</td>
+      <td style="text-align: right">0.323</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">HOU</td>
+      <td style="text-align: right">0.321</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIN</td>
+      <td style="text-align: right">0.311</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAL</td>
+      <td style="text-align: right">0.308</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHA</td>
+      <td style="text-align: right">0.303</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PHO</td>
+      <td style="text-align: right">0.303</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BOS</td>
+      <td style="text-align: right">0.302</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">WAS</td>
+      <td style="text-align: right">0.296</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TOR</td>
+      <td style="text-align: right">0.294</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DAL</td>
+      <td style="text-align: right">0.287</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ORL</td>
+      <td style="text-align: right">0.285</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ATL</td>
+      <td style="text-align: right">0.274</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PHI</td>
+      <td style="text-align: right">0.273</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DEN</td>
+      <td style="text-align: right">0.268</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SAS</td>
+      <td style="text-align: right">0.266</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IND</td>
+      <td style="text-align: right">0.258</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NYK</td>
+      <td style="text-align: right">0.251</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MEM</td>
+      <td style="text-align: right">0.250</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DET</td>
+      <td style="text-align: right">0.212</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SAC</td>
+      <td style="text-align: right">0.211</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHI</td>
+      <td style="text-align: right">0.210</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BRK</td>
+      <td style="text-align: right">0.178</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIA</td>
+      <td style="text-align: right">0.165</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lorenz2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">filter</span><span class="p">(</span><span class="n">G</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">40</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">do</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA</span><span class="p">)</span><span class="o">$</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA</span><span class="p">)</span><span class="o">$</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">unnest</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="w">
+
+</span><span class="n">lorenz_gini2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">lorenz2</span><span class="p">,</span><span class="w"> </span><span class="n">gini2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Team'</span><span class="p">)</span><span class="w">
+
+</span><span class="n">lorenz_gini2</span><span class="o">$</span><span class="n">Team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">lorenz_gini2</span><span class="o">$</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="n">unique</span><span class="p">(</span><span class="n">lorenz_gini2</span><span class="o">$</span><span class="n">Team</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="o">-</span><span class="n">lorenz_gini2</span><span class="o">$</span><span class="n">Gini</span><span class="p">)]),</span><span class="w"> </span><span class="n">ordered</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lorenz_gini2</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Team</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_segment</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">xend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">yend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NBA Lorenz Curves"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of Team"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of FGA"</span><span class="p">,</span><span class="w"> </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Min. 41 GP"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">Team</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" /></p>
+
+<p>OKC and their big three now become the team with the least equitable shot distribution. We can visualize how the Gini coefficients shift after implementing the minimum games requirement.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gini3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">gini</span><span class="p">,</span><span class="w"> </span><span class="n">gini2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Team'</span><span class="p">)</span><span class="w">
+</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ggplot</span><span class="p">(</span><span class="n">gini3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_segment</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">xend</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">Gini.x</span><span class="p">,</span><span class="n">yend</span><span class="o">=</span><span class="n">Gini.y</span><span class="p">),</span><span class="n">size</span><span class="o">=</span><span class="m">.75</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_classic</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_vline</span><span class="p">(</span><span class="n">xintercept</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="o">=</span><span class="s2">"dashed"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">.1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+                  </span><span class="n">geom_vline</span><span class="p">(</span><span class="n">xintercept</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="o">=</span><span class="s2">"dashed"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">.1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">labs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="s2">"Gini Coefficient"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">xlim</span><span class="p">(</span><span class="m">.9</span><span class="p">,</span><span class="w"> </span><span class="m">2.1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylim</span><span class="p">(</span><span class="m">.1</span><span class="p">,</span><span class="m">1.1</span><span class="o">*</span><span class="p">((</span><span class="nf">max</span><span class="p">(</span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.x</span><span class="p">,</span><span class="w"> </span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.y</span><span class="p">))))</span><span class="w">
+</span><span class="c1"># Add texts</span><span class="w">
+</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_text</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">gini3</span><span class="o">$</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">NROW</span><span class="p">(</span><span class="n">gini3</span><span class="p">)),</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">1.1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3.5</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.3</span><span class="p">)</span><span class="w">
+</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_text</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">gini3</span><span class="o">$</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">NROW</span><span class="p">(</span><span class="n">gini3</span><span class="p">)),</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">-0.1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3.5</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.3</span><span class="p">)</span><span class="w">
+</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_text</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"No Adjustment"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">1.1</span><span class="o">*</span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.x</span><span class="p">,</span><span class="w"> </span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.y</span><span class="p">)),</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">-.1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w"> 
+</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_text</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">"Adjustment"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">1.1</span><span class="o">*</span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.x</span><span class="p">,</span><span class="w"> </span><span class="n">gini3</span><span class="o">$</span><span class="n">Gini.y</span><span class="p">)),</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">-0.1</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w">  
+</span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">(),</span><span class="w"> 
+           </span><span class="n">panel.grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">(),</span><span class="w">
+           </span><span class="n">axis.ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">(),</span><span class="w">
+           </span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">(),</span><span class="w">
+           </span><span class="n">panel.border</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">())</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="100%" /></p>
+
+<p>All Gini coefficients decrease after the adjustment because we remove the “replacement” players who were artificially inflating teams’ inequality.</p>
+
+<p>We can add one more layer of adjustment. Looking at Houston, James Harden played in 72 games this season compared to 58 by Chris Paul and 74 by Clint Capela. This creates a problem because our population changes throughout the course of the season. We would expect James Harden to take more shots than Chris Paul not only because he is a better scorer but also because he appeared in more games. A natural idea would be to extrapolate FGA so that each player plays in a hypothetical 82 game season.  However, this creates a double-counting situation. Because Chris Paul missed 24 games, fringe players such as Tim Quarterman were credited with FGA that would not have occurred had Paul been in the lineup. In other words, it does not make sense to extrapolate FGA for Chris Paul and Tim Quarterman because Tim Quarterman would probably have 0 FGA if Chris Paul were healthy the entire year.</p>
+
+<p>To create a finite population which will allow for extrapolation, we limit the analysis to players on the opening day roster and extrapolate their FGA.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">open</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">getURL</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/jskaza/data/master/shot-distribution/opening_day.csv"</span><span class="p">))</span><span class="w">
+</span><span class="n">df2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">open</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'Team'</span><span class="p">,</span><span class="s1">'Player'</span><span class="p">))</span><span class="w">
+</span><span class="n">df2</span><span class="o">$</span><span class="n">FGA82</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df2</span><span class="o">$</span><span class="n">FGA</span><span class="o">/</span><span class="n">df2</span><span class="o">$</span><span class="n">G</span><span class="o">*</span><span class="m">82</span><span class="w">
+</span><span class="n">gini3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">summarize</span><span class="p">(</span><span class="n">Gini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">ineq</span><span class="p">(</span><span class="n">FGA82</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">arrange</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="n">Gini</span><span class="p">))</span><span class="w">
+</span><span class="n">kable</span><span class="p">(</span><span class="n">gini3</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Team</th>
+      <th style="text-align: right">Gini</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">OKC</td>
+      <td style="text-align: right">0.451</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NOP</td>
+      <td style="text-align: right">0.418</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">POR</td>
+      <td style="text-align: right">0.399</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">HOU</td>
+      <td style="text-align: right">0.395</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIN</td>
+      <td style="text-align: right">0.393</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIL</td>
+      <td style="text-align: right">0.386</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">GSW</td>
+      <td style="text-align: right">0.365</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">WAS</td>
+      <td style="text-align: right">0.356</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAC</td>
+      <td style="text-align: right">0.345</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NYK</td>
+      <td style="text-align: right">0.344</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BOS</td>
+      <td style="text-align: right">0.334</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PHO</td>
+      <td style="text-align: right">0.332</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">IND</td>
+      <td style="text-align: right">0.322</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DAL</td>
+      <td style="text-align: right">0.317</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TOR</td>
+      <td style="text-align: right">0.317</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHA</td>
+      <td style="text-align: right">0.316</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">LAL</td>
+      <td style="text-align: right">0.315</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">UTA</td>
+      <td style="text-align: right">0.315</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">PHI</td>
+      <td style="text-align: right">0.306</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CLE</td>
+      <td style="text-align: right">0.294</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DEN</td>
+      <td style="text-align: right">0.288</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SAS</td>
+      <td style="text-align: right">0.285</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DET</td>
+      <td style="text-align: right">0.282</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIA</td>
+      <td style="text-align: right">0.282</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHI</td>
+      <td style="text-align: right">0.281</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MEM</td>
+      <td style="text-align: right">0.258</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ATL</td>
+      <td style="text-align: right">0.247</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ORL</td>
+      <td style="text-align: right">0.245</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SAC</td>
+      <td style="text-align: right">0.229</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BRK</td>
+      <td style="text-align: right">0.195</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lorenz3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">do</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA82</span><span class="p">)</span><span class="o">$</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="n">Lc</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">FGA82</span><span class="p">)</span><span class="o">$</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">unnest</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">L</span><span class="p">)</span><span class="w">
+
+</span><span class="n">lorenz_gini3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">lorenz3</span><span class="p">,</span><span class="w"> </span><span class="n">gini3</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Team'</span><span class="p">)</span><span class="w">
+
+</span><span class="n">lorenz_gini3</span><span class="o">$</span><span class="n">Team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">lorenz_gini3</span><span class="o">$</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="n">unique</span><span class="p">(</span><span class="n">lorenz_gini3</span><span class="o">$</span><span class="n">Team</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="o">-</span><span class="n">lorenz_gini3</span><span class="o">$</span><span class="n">Gini</span><span class="p">)]),</span><span class="w"> </span><span class="n">ordered</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lorenz_gini3</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Team</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_segment</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">xend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">yend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"NBA Lorenz Curves"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of Team"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of FGA"</span><span class="p">,</span><span class="w"> </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"82 Game Extrapolation"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">Team</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" /></p>
+
+<p>Again, OKC emerges as the team with the least equitable shot distribution.</p>
+
+<p>We have seen that the rankings based on the Gini coefficient can be influenced by the tails of the distribution. Therefore, we can look at a “crude”” estimate of inequality that entirely eliminates the tails. Namely, we can examine the percent of team FGA held by the top $n$ players (a “poor man’s” Lorenz curve). Let’s arbitrarily examine $n = 1,2,\dots,7$.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cumfga</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">Team</span><span class="o">=</span><span class="n">character</span><span class="p">(),</span><span class="w">
+                    </span><span class="n">cum_fga</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeric</span><span class="p">(),</span><span class="w">
+                    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">integer</span><span class="p">())</span><span class="w"> 
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">7</span><span class="p">){</span><span class="w">
+</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">data.frame</span><span class="p">(</span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">arrange</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="n">FGA</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Team</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">cum_fga</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">FGA</span><span class="p">)</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">FGA</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">row_number</span><span class="p">()</span><span class="o">==</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">select</span><span class="p">(</span><span class="n">Team</span><span class="p">,</span><span class="w"> </span><span class="n">cum_fga</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">arrange</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="n">cum_fga</span><span class="p">)))</span><span class="w">
+</span><span class="n">temp</span><span class="o">$</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w">
+</span><span class="n">cumfga</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">cumfga</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">cumfga</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cumfga</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">if_else</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">Team</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'OKC'</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Team</span><span class="w"> </span><span class="o">==</span><span class="s1">'DET'</span><span class="p">),</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">cumfga</span><span class="o">$</span><span class="n">Team</span><span class="p">),</span><span class="w"> </span><span class="kc">NA_character_</span><span class="p">))</span><span class="w">
+
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cumfga</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">100</span><span class="o">*</span><span class="n">cum_fga</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Team</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="m">1</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of FGA by Top n Players"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Top n Players"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cumulative % of FGA"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_label_repel</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">label</span><span class="p">),</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" /></p>
+
+<p>The OKC curve sits above the rest, indicating a shot distribution biased toward the stars.</p>
+
+<p>We have seen four ways to quantify the equity of shot distribution:</p>
+
+<ol>
+  <li>Unadjusted Gini coefficient
+    <ul>
+      <li>SAS <em>most</em> equitable</li>
+      <li>HOU <em>least</em> equitable</li>
+    </ul>
+  </li>
+  <li>Gini coefficient with a minimum games requirement
+    <ul>
+      <li>MIA <em>most</em> equitable</li>
+      <li>OKC <em>least</em> equitable</li>
+    </ul>
+  </li>
+  <li>Gini coefficient with 82 game extrapolation
+    <ul>
+      <li>BRK <em>most</em> equitable</li>
+      <li>OKC <em>least</em> equitable</li>
+    </ul>
+  </li>
+  <li>Cumulative shots by top $n$ players
+    <ul>
+      <li>DET <em>most</em> equitable</li>
+      <li>OKC <em>least</em> equitable</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Interestingly, each analysis lends us a different answer to the question of which team has the most equitable shot distribution. However, we do have some signal regarding the least equitable team. That title goes to the OKC Thunder. Their big three account for 58.1 percent of the team’s total shot attempts. Here is the shot distribution for the Thunder.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Team</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'OKC'</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">Last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str_extract</span><span class="p">(</span><span class="n">Player</span><span class="p">,</span><span class="w"> </span><span class="s2">"[^ ]+$"</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reorder</span><span class="p">(</span><span class="n">Last</span><span class="p">,</span><span class="o">-</span><span class="n">FGA</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">FGA</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s1">'identity'</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="s2">"#007AC1"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Thunder Field Goal Attempts"</span><span class="p">,</span><span class="w">
+       </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Source: Basketball Reference"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FGA"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="o">=</span><span class="m">1</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p><img src="/images/fga-dist-unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" /></p>
+
+<p>For an example of their abnormal shot distribution, we need not look further than the box score from their last game of the season, a game in which Russell Westbrook hoisted 43 shots.</p>
+
+
+  </div>
+
+</article>
+
+
+      </section>
+      <footer><p><small>Logo generated using DALL·E 2 and prompt "sketch of a brain that blends human anatomy and computer hardware components"</small></p>
+
+<p><small>Theme adapted from <a href="https://github.com/BDHU/minimalist">Minimalist</a></small></p></footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+  </body>
+</html>

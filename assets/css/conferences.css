@@ -1,0 +1,70 @@
+.conference-table {
+    width: 100%;
+    margin: 1em 0;
+    border-collapse: collapse;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.conference-table td {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.conference-table tr:last-child td {
+    border-bottom: none;
+}
+
+.conference-table a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.conference-table a:hover {
+    text-decoration: underline;
+}
+
+.conference-table b {
+    color: #24292e;
+    font-weight: 600;
+}
+
+h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #24292e;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+small {
+    color: #6a737d;
+}
+
+small a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+small a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode text color improvements */
+@media (prefers-color-scheme: dark) {
+  /* Make headings more visible in dark mode */
+  h1, h2, h3, h4, h5, h6 {
+    color: #f5f8fa !important; /* Light gray-white color for better contrast */
+  }
+
+  /* Make author names more visible in dark mode */
+  .author, .conference-table b {
+    color: #ffffff !important; /* White color for better readability */
+  }
+
+  /* Improve general text contrast */
+  p, li, span {
+    color: #e1e8ed !important; /* Light gray for better readability */
+  }
+} 
