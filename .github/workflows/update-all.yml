@@ -40,14 +40,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install "httpx<0.28" scholarly        # 👈 add the pin
 
-    - name: Update publications (5 attempts, 10 min each)
+    - name: Update publications and conferences (5 attempts, 10 min each)
       shell: bash
       run: |
         set -e
         for i in {1..5}; do
           echo "::group::Attempt $i of 5"
-          if timeout 600 python _scripts/update_publications.py; then
-            echo "✓ Publications updated on attempt $i"
+          if timeout 600 python _scripts/update_publications.py && timeout 600 python _scripts/update_conferences.py; then
+            echo "✓ Publications and conferences updated on attempt $i"
             echo "::endgroup::"
             break
           else
@@ -55,7 +55,7 @@ jobs:
             echo "⚠️  Attempt $i failed (exit=$code)"
             echo "::endgroup::"
             if [[ $i -lt 5 ]]; then
-              echo "⏳ Waiting 300 s before retry…"
+              echo "⏳ Waiting 300 s before retry…"
               sleep 300
             else
               echo "❌ All attempts failed"
