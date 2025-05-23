@@ -2,7 +2,6 @@ import time
 import sys
 import os
 import json
-import requests
 from datetime import datetime
 from scholarly import scholarly, ProxyGenerator
 
