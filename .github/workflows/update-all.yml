@@ -40,12 +40,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install "httpx<0.28" scholarly        # 👈 add the pin
 
-    - name: Update publications and conferences (5 attempts, 10 min each)
+    - name: Update publications and conferences (up to 10 attempts)
       shell: bash
       run: |
         set -e
-        for i in {1..5}; do
-          echo "::group::Attempt $i of 5"
+        for i in {1..10}; do
+          echo "::group::Attempt $i of 10"
           if timeout 600 python _scripts/update_publications.py && timeout 600 python _scripts/update_conferences.py; then
             echo "✓ Publications and conferences updated on attempt $i"
             echo "::endgroup::"
@@ -54,15 +54,17 @@ jobs:
             code=$?
             echo "⚠️  Attempt $i failed (exit=$code)"
             echo "::endgroup::"
-            if [[ $i -lt 5 ]]; then
-              echo "⏳ Waiting 300 s before retry…"
-              sleep 300
+            if [[ $i -lt 10 ]]; then
+              sleep_time=$((RANDOM % 600 + 1))
+              echo "⏳ Waiting $sleep_time seconds before retry…"
+              sleep $sleep_time
             else
-              echo "❌ All attempts failed"
+              echo "❌ All 10 attempts failed"
               exit 1
             fi
           fi
         done
+
    # 3) ░░░░░░  R section  ░░░░░░
     - name: Install system libs for R markdown
       run: |
