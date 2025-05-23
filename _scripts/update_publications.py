@@ -1,5 +1,8 @@
 import time
 import sys
+import os
+import json
+import requests
 from datetime import datetime
 from scholarly import scholarly, ProxyGenerator
 
@@ -65,66 +68,67 @@ def format_authors_markdown(authors_str):
     
     return ", ".join(formatted)
 
-def get_publications_with_retry(max_attempts=5):
-    """Get publications from Google Scholar with retries using scholarly package"""
-    # Set up proxy rotation
+def init_proxy():
+    """Return a fresh ProxyGenerator and register it with scholarly."""
     pg = ProxyGenerator()
-    success = pg.FreeProxies()
-    if success:
-        scholarly.use_proxy(pg)
-        print("Successfully configured proxy rotation")
-    else:
-        print("Warning: Could not configure proxy rotation")
+    # Example: pick a fresh free proxy every time
+    if not pg.FreeProxies():
+        raise RuntimeError("Could not get a proxy")
+    scholarly.use_proxy(pg)
 
+
+def get_publications_with_retry(max_attempts=5):
     for attempt in range(max_attempts):
         try:
-            if attempt > 0:
-                wait_time = 180 * attempt  # Longer waits: 3 mins, 6 mins, 9 mins...
-                print(f"Waiting {wait_time} seconds before attempt {attempt + 1}")
-                time.sleep(wait_time)
-            
+            init_proxy()                  
+            if attempt:
+                backoff = 180 * attempt
+                print(f"Waiting {backoff}s before attempt {attempt + 1}")
+                time.sleep(backoff)
+
             print(f"Fetching publications (attempt {attempt + 1}/{max_attempts})")
-            
-            # Get author by ID
-            print("Searching for author...")
-            search_query = scholarly.search_author_id(SCHOLAR_ID)
-            print("Filling author details...")
-            author = scholarly.fill(search_query)
-            
+            author = scholarly.fill(scholarly.search_author_id(SCHOLAR_ID))
             publications = []
             print(f"Found {len(author['publications'])} publications, fetching details...")
             
             # Get publications
             for i, pub in enumerate(author['publications'], 1):
                 print(f"Processing publication {i}/{len(author['publications'])}")
-                pub = scholarly.fill(pub)
-                
-                # Extract publication data
-                title = pub['bib'].get('title', '')
-                authors = pub['bib'].get('author', '')
-                journal = pub['bib'].get('journal', '') or pub['bib'].get('venue', '')
-                year = int(pub['bib'].get('pub_year', datetime.now().year))
-                cites = pub.get('num_citations', 0)
-                
-                # Get link - either direct link or scholar link
-                link = pub['pub_url'] if 'pub_url' in pub else f"https://scholar.google.com/citations?view_op=view_citation&citation_for_view={pub['author_pub_id']}"
-                
-                publications.append({
-                    'title': title,
-                    'author': authors,
-                    'journal': journal,
-                    'number': "",
-                    'cites': cites,
-                    'year': year,
-                    'link': link
-                })
+                try:
+                    pub = scholarly.fill(pub)
+                    
+                    # Extract publication data
+                    title = pub['bib'].get('title', '')
+                    authors = pub['bib'].get('author', '')
+                    journal = pub['bib'].get('journal', '') or pub['bib'].get('venue', '')
+                    year = int(pub['bib'].get('pub_year', datetime.now().year))
+                    cites = pub.get('num_citations', 0)
+                    
+                    # Get link - either direct link or scholar link
+                    link = pub['pub_url'] if 'pub_url' in pub else f"https://scholar.google.com/citations?view_op=view_citation&citation_for_view={pub['author_pub_id']}"
+                    
+                    publications.append({
+                        'title': title,
+                        'author': authors,
+                        'journal': journal,
+                        'number': "",
+                        'cites': cites,
+                        'year': year,
+                        'link': link
+                    })
+                except Exception as e:
+                    print(f"Error processing publication {i}: {str(e)}", file=sys.stderr)
+                    continue
                 
                 # Small delay between publications to avoid rate limiting
                 if i < len(author['publications']):
                     time.sleep(2)
             
-            print("Successfully fetched all publications")
-            return publications
+            if publications:
+                print("Successfully fetched all publications")
+                return publications
+            else:
+                raise Exception("No publications were successfully processed")
             
         except Exception as e:
             print(f"Error during attempt {attempt + 1}: {str(e)}", file=sys.stderr)

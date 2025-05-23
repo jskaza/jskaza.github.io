@@ -1,4 +1,4 @@
-name: Update Publications and Data
+name: Update publications & CV
 
 on:
   schedule:
@@ -8,119 +8,103 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+# ──────────── Job ────────────────
 jobs:
-  update:
-    runs-on: ubuntu-22.04  # Updated to Ubuntu 22.04 LTS
-    timeout-minutes: 45  # Increased timeout to handle longer delays
-    # This ensures this job runs before any Pages deployment
-    outputs:
-      completed: ${{ steps.set-output.outputs.completed }}
-    
-    steps:
-    - uses: actions/checkout@v3
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write           # allow pushes from the last step
 
+    # Proxy secrets for scholarly (optional – delete if unused)
+    env:
+      HTTP_PROXY:  ${{ secrets.HTTP_PROXY }}
+      HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
+
+    steps:
+
+    # 1) Check out the repo -----------------------------------------------------
+    - name: Check out repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0          # keep history/tags for git commit
+
+    # 2) ░░░░░░  PYTHON section  ░░░░░░
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
+        cache: pip
 
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install scholarly requests beautifulsoup4
+        pip install "httpx<0.28" scholarly        # 👈 add the pin
 
-    - name: Run publications update script
+    - name: Update publications (3 attempts, 10 min each)
+      shell: bash
       run: |
+        set -e
         for i in {1..3}; do
-          echo "Attempt $i of 3 for publications update"
+          echo "::group::Attempt $i of 3"
           if timeout 600 python _scripts/update_publications.py; then
-            echo "Publications script completed successfully"
+            echo "✓ Publications updated on attempt $i"
+            echo "::endgroup::"
             break
           else
-            exit_code=$?
-            if [ $exit_code -eq 124 ]; then
-              echo "Publications script timed out after 10 minutes"
-            else
-              echo "Publications script failed with exit code $exit_code"
-            fi
-            if [ $i -lt 3 ]; then
-              echo "Waiting 300 seconds before retry..."
+            code=$?
+            echo "⚠️  Attempt $i failed (exit=$code)"
+            echo "::endgroup::"
+            if [[ $i -lt 3 ]]; then
+              echo "⏳ Waiting 300 s before retry…"
               sleep 300
             else
-              echo "All attempts failed"
+              echo "❌ All attempts failed"
               exit 1
             fi
           fi
         done
 
-    - name: Run conferences update script
+    # 3) ░░░░░░  R section  ░░░░░░
+    - name: Install system libs for R markdown
       run: |
-        for i in {1..3}; do
-          echo "Attempt $i of 3"
-          if python _scripts/update_conferences.py; then
-            echo "Conferences script completed successfully"
-            break
-          else
-            echo "Conferences script failed, waiting 120 seconds before retry..."
-            sleep 120
-          fi
-        done
+        sudo apt-get update -y
+        sudo apt-get install -y libharfbuzz-dev libfribidi-dev libfontconfig1-dev
 
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
       with:
-        r-version: '4.3.0'
-
-    - name: Set up Pandoc
-      uses: r-lib/actions/setup-pandoc@v2
-
-    - name: Set up TinyTeX
-      uses: r-lib/actions/setup-tinytex@v2
-
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libharfbuzz-dev libfribidi-dev libfontconfig1-dev libpng-dev libuv1-dev
+        r-version: '4.3'
 
     - name: Cache R packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.local/share/R
-        key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
-        restore-keys: ${{ runner.os }}-r-
+        key: ${{ runner.os }}-r-4.3-${{ hashFiles('_scripts/update_cv.R') }}
+        restore-keys: ${{ runner.os }}-r-4.3-
 
-    - name: Install R dependencies
-      run: |
-        options(repos = c(CRAN = "https://cloud.r-project.org"))
-        install_list <- c("tidyverse", "lubridate", "here", "rmarkdown", "knitr")
-        for (pkg in install_list) {
-          for (i in 1:3) {
-            tryCatch({
-              install.packages(pkg)
-              break
-            }, error = function(e) {
-              if (i == 3) stop(paste("Package", pkg, "installation failed after 3 attempts"))
-              Sys.sleep(10)
-            })
-          }
-        }
+    - name: Install R packages required by update_cv.R
       shell: Rscript {0}
+      run: |
+        pkgs <- c("rmarkdown", "knitr")   # add any others your script needs
+        for (p in pkgs) if (!requireNamespace(p, quietly = TRUE)) {
+            install.packages(p, type = "binary")
+        }
 
     - name: Render CV
       run: Rscript _scripts/update_cv.R
 
-    - name: Commit and push if changed
+    # 4) Commit & push any changes ---------------------------------------------
+    - name: Commit & push changes
+      shell: bash
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        if ! git diff --quiet HEAD; then
-          git commit -m "Update publications and data [skip ci]"
+        # Stage files that commonly change; adjust paths as needed
+        git add _includes/ docs/ *.html *.pdf 2>/dev/null || true
+        if [[ -n "$(git status --porcelain)" ]]; then
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: auto‑update publications & CV [skip ci]" --no-verify
           git push
         else
-          echo "No changes to commit"
+          echo "Nothing to commit."
         fi
-
-    - name: Set output
-      id: set-output
-      run: echo "completed=true" >> $GITHUB_OUTPUT 
