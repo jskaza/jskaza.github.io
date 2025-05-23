@@ -179,8 +179,8 @@ def generate_html(publications):
     # Add last updated text
     html_parts.append(
         f'<p style="text-align: right; margin-top: 40px;"><small>Last updated <i>'
-        f'{datetime.now().strftime("%B %d, %Y")}'
-        f'&ndash; Pulled automatically from my <a href="https://scholar.google.com/citations?hl=en&user={SCHOLAR_ID}">Google Scholar profile</a>.</small></p>'
+        f'{datetime.now().strftime("%B %d, %Y")}</i>'
+        f'&ndash; Pulled automatically from my <a href="https://scholar.google.com/citations?hl=en&user={SCHOLAR_ID}">Google Scholar profile</a>. </small></p>'
     )
     
     return '\n'.join(html_parts)

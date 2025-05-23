@@ -89,11 +89,11 @@ def generate_html(conferences):
         
         html_parts.append('</tbody></table>')
     
-    # Add last updated text
-    html_parts.append(
-        f'<p style="text-align: right; margin-top: 40px;"><small>Last updated <i>'
-        f'{datetime.now().strftime("%B %d, %Y")}</i></small></p>'
-    )
+    # # Add last updated text
+    # html_parts.append(
+    #     f'<p style="text-align: right; margin-top: 40px;"><small>Last updated <i>'
+    #     f'{datetime.now().strftime("%B %d, %Y")}</i></small></p>'
+    # )
     
     return '\n'.join(html_parts)
 
