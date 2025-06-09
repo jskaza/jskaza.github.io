@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <!-- Avatar section -->
+            <!-- <div class="avatar-section">
+                <img src="{{ get_url(path="avatar.jpg") }}" alt="{{ config.extra.name }}" class="avatar">
+            </div> -->
+            
+            <!-- Bio section -->
+            <div class="bio-section">
+                <h1 class="name">{{ config.extra.name | default(value=config.title) }}</h1>
+                <h2 class="role">{{ config.extra.role }}</h2>
+                {% if config.extra.organization %}
+                <p class="organization">{{ config.extra.organization }}</p>
+                {% endif %}
+                
+                {% if config.extra.bio %}
+                <div class="bio">
+                    <h3>About Me</h3>
+                    <div>{{ config.extra.bio | markdown(inline=false) | safe }}</div>
+                </div>
+                {% endif %}
+                
+                <!-- Download CV button -->
+                <div class="cv-download">
+                    <a href="{{ get_url(path="cv.pdf") }}" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                
+                <!-- Social links and Info sections horizontally aligned -->
+                <div class="social-info-section">
+                    <!-- Social links -->
+                    {% if config.extra.social %}
+                    <div class="social-links">
+                        {% for social in config.extra.social %}
+                        <a href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}">
+                            <i class="{{ social.icon }}"></i>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Interests and Education to the right of social links -->
+                    <div class="info-content">
+                        <div class="info-grid">
+                            <!-- Interests -->
+                            {% if config.extra.interests %}
+                            <div class="info-box">
+                                <h3>Interests</h3>
+                                <ul class="interests-list">
+                                    {% for interest in config.extra.interests %}
+                                    <li>{{ interest }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Education -->
+                            {% if config.extra.education %}
+                            <div class="info-box">
+                                <h3>Education</h3>
+                                <ul class="education-list">
+                                    {% for edu in config.extra.education %}
+                                    <li class="education-item">
+                                        <div class="education-content">
+                                            <div class="degree">{{ edu.degree }}</div>
+                                            <div class="institution">{{ edu.institution }}</div>
+                                            {% if edu.year %}
+                                            <div class="year-text">{{ edu.year }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %} 
