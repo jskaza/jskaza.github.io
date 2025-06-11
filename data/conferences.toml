@@ -60,7 +60,7 @@ author = [
 venue = "Vision Sciences Society"
 location = "St. Pete Beach, FL, USA"
 links = [
-    { name = "Poster", url = "/posters/vss_2025_1.pdf" }
+    { name = "Poster", url = "/posters/vss_2025_1.pdf" },
     { name = "Slides", url = "/slides/cvp_2025.pdf" }
 ]
 
