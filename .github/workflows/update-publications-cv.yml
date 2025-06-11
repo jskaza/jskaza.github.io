@@ -52,6 +52,6 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/publications.toml static/cv/cv.pdf
+        git add .
         git commit -m "Auto-update publications and CV [skip ci]"
         git push 
