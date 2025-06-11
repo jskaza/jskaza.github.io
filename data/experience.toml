@@ -1,0 +1,61 @@
+[[experience]]
+title = "Graduate Student Researcher"
+company = "University of California, Santa Barbara"
+location = "Santa Barbara, CA"
+start_date = 2024
+description = "The Vision and Image Understanding Laboratory at the University of California, Santa Barbara pursues computational modeling of behavioral, cognitive neuroscience, and physiological data to elucidate the mechanisms and neural substrates mediating perception, attention, and learning. We use the knowledge we acquire, in conjunction with tools from computer science and engineering, to improve human performance in life-critical decisions, aid the development of bio-inspired computer vision systems, and optimize the interactions between intelligent machines and humans."
+url = "https://viu.psych.ucsb.edu/"
+
+[[experience]]
+title = "Computational Science Developer"
+company = "Cold Spring Harbor Laboratory"
+location = "Cold Spring Harbor, NY"
+start_date = 2023
+end_date = 2024
+description = "Computational neuroscience and neuroAI research group. Built connectome-inspired DNNs to understand visual projection neurons (and the computations of visual processing in general) in Drosophila. Mentored a talented high school student interested in computational neuroscience."
+url = "https://cowleygroup.cshl.edu/"
+
+[[experience]]
+title = "Analyst II → Senior Analyst → Lead Analyst → Associate Director, Product"
+company = "Panalgo"
+location = "Boston, MA"
+start_date = 2018
+end_date = 2023
+description = "Panalgo develops software for Real-World Evidence (RWE) studies. The company maps massive healthcare claims and EHR datasets into a data model and provides a web application to drastically simplify and accelerate patient-level analysis."
+url = "https://panalgo.com/"
+
+[[experience]]
+title = "Data Scientist"
+company = "University of Michigan"
+location = "Ann Arbor, MI"
+start_date = 2017
+end_date = 2018
+description = "Conducted research involving longitudinal data analysis, functional data analysis, Bayesian hierarchical modeling, data visualization, and data wrangling. Collaborations with University of Michigan Department of Psychiatry and Drexel University Urban Health Collaborative."
+url = ""
+
+[[experience]]
+title = "Graduate Student Research Assistant"
+company = "University of Michigan"
+location = "Ann Arbor, MI"
+start_date = 2015
+end_date = 2017
+description = "Developed statistical methods and applications in modeling cortisol, a biomarker of stress, as part of a psychoneuroendocrinology study. Member of Biostatistics for Social Impact lab."
+url = ""
+
+[[experience]]
+title = "Undergraduate Research Assistant"
+company = "Bryant University"
+location = "Smithfield, RI"
+start_date = 2014
+end_date = 2014
+description = "Implemented econometric analyses concerning the economic impact of children, the education system, and the defense industry in the state of Rhode Island."
+url = ""
+
+[[experience]]
+title = "Summer Institute in Biostatistics Participant"
+company = "North Carolina State University & Duke University"
+location = "Raleigh, NC"
+start_date = 2014
+end_date = 2014
+description = "Explored the field of biostatistics through lectures, statistical computing labs, and data analysis projects. Sponsored by NHLBI and NCATS."
+url = "" 

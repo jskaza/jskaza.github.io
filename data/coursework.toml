@@ -1,0 +1,14 @@
+courses = [
+    "Philosophy of AI",
+    "Visual Perception", 
+    "Modeling and Optimization of Neural Networks",
+    "Statistical Computing",
+    "Machine Learning",
+    "Bayesian Inference",
+    "GLMs",
+    "Longitudinal Analysis",
+    "Survival Analysis",
+    "Probability",
+    "Neuroscience",
+    "Cognitive Psychology"
+]

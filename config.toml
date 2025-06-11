@@ -1,0 +1,81 @@
+# The URL the site will be built for
+base_url = "https://jskaza.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# The site title and description; they are used in feeds by default.
+title = "Jonathan Skaza"
+description = "Academic CV and Portfolio"
+
+[extra]
+# Put all your custom variables here
+
+# Personal information
+name = "Jonathan Skaza"
+role = "PhD Student"
+organization = "University of California, Santa Barbara"
+location = "Santa Barbara, CA"
+email = "skaza@ucsb.edu"
+last_name_identifier = "Skaza"
+# Bio/about section
+bio = """
+I am a PhD student studying [Mind and Machine Intelligence](https://mind-machine.ucsb.edu) in the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/) and [Dynamical Neuroscience](https://www.dyns.ucsb.edu/) program at UC Santa Barbara.
+Previously, I worked as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). Prior to that, I served as a Solutions Analyst and subsequently Associate Director of Product in industry at [Panalgo](https://panalgo.com/). I received my [MSc in Biostatistics](https://sph.umich.edu/biostat/) from the University of Michigan, during which I worked with the Department of Psychiatry, and BSc with a double major in Applied Mathematics & Statistics and Applied Economics from [Bryant University](https://www.bryant.edu/).
+"""
+interests = ["NeuroAI", "Machine Perception", "Computational Neuroscience", "Artificial Intelligence"]
+
+[[extra.menu]]
+name = "Publications"
+url = "/publications/"
+weight = 1
+
+[[extra.menu]]
+name = "Conferences & Talks"
+url = "/conferences/"
+weight = 2
+
+[[extra.menu]]
+name = "Experience"
+url = "/experience/"
+weight = 3
+
+
+
+
+
+
+# Features to enable
+enable_dark_mode = true
+enable_search = false
+
+# Color theme configuration
+[extra.colors]
+# Light mode colors
+primary_color = "#003660"      # UCSB Navy
+secondary_color = "#FEBC11"    # UCSB Gold  
+accent_color = "#09847A"       # UCSB Sea Green
+text_color = "#3D4952"         # UCSB Dark Gray
+background_color = "#ffffff"    # White
+card_background = "#ffffff"     # White
+border_color = "#DCE1E5"       # UCSB Light Gray
+light_background = "#EEF0F2"   # UCSB Light Light Gray
+
+# Dark mode colors
+dark_text_color = "#DCE1E5"        # UCSB Light Gray for dark mode text
+dark_background_color = "#111517"   # UCSB Light Gray Darken 80
+dark_card_background = "#1e1e1e"
+dark_border_color = "#333333"
+
+# Example: To use a different color scheme, uncomment and modify:
+# primary_color = "#2E3440"        # Nord Polar Night
+# secondary_color = "#5E81AC"      # Nord Frost  
+# accent_color = "#88C0D0"         # Nord Frost Light
+# text_color = "#3B4252"           # Nord Dark Gray
+# background_color = "#ECEFF4"     # Nord Snow Storm
+# card_background = "#E5E9F0"      # Nord Snow Storm Light
+# border_color = "#D8DEE9"         # Nord Snow Storm Medium
+# light_background = "#ECEFF4"     # Nord Snow Storm

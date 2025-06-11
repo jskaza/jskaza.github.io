@@ -1,0 +1,24 @@
+[[social]]
+name = "Email"
+url = "mailto:skaza@ucsb.edu"
+icon = "fas fa-envelope"
+
+[[social]]
+name = "X"
+url = "https://x.com/JonSkaza"
+icon = "fa-brands fa-x-twitter"
+
+[[social]]
+name = "Google Scholar"
+url = "https://scholar.google.com/citations?user=dAAMOqgAAAAJ&hl=en"
+icon = "ai ai-google-scholar"
+
+[[social]]
+name = "GitHub"
+url = "https://github.com/jskaza"
+icon = "fab fa-github"
+
+[[social]]
+name = "LinkedIn"
+url = "https://linkedin.com/in/jonskaza"
+icon = "fab fa-linkedin" 

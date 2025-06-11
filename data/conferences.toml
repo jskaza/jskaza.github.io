@@ -1,0 +1,66 @@
+[[conference]]
+title = "Data-driven deep neural network models of visual processing in Drosophila"
+date = 2024
+author = [
+    "Jonathan Skaza",
+    "Erin Wong",
+    "Arie Matsliah",
+    "Benjamin R Cowley"
+]
+venue = "Cognitive Computational Neuroscience"
+location = "Boston, MA, USA"
+links = [
+    { name = "Poster", url = "/posters/ccn_2024.pdf" }
+]
+
+[[conference]]
+title = "Scene Understanding Maps: Predicting Most Frequently Fixated Object during Scene Description with Multi-Modal Large Language Models"
+date = 2025
+author = [
+    "Shravan Murlidaran",
+    "Ziqi Wen",
+    "Jonathan Skaza",
+    "Miguel P Eckstein",
+]
+venue = "Vision Sciences Society"
+location = "St. Pete Beach, FL, USA"
+links = [
+    { name = "Poster", url = "/posters/vss_2025_3.pdf" }
+]
+
+[[conference]]
+title = "Foveated Multi-Modal Large Language Model Maps to Predict Time to Understand Scenes"
+date = 2025
+author = [
+    "Ziqi Wen",
+    "Jonathan Skaza",
+    "Shravan Murlidaran",
+    "William Yang Wang",
+    "Miguel P Eckstein",
+]
+venue = "Vision Sciences Society"
+location = "St. Pete Beach, FL, USA"
+links = [
+    { name = "Poster", url = "/posters/vss_2025_2.pdf" }
+]
+
+
+[[conference]]
+title = "A Computational Virtual Patient Pipeline for Predicting Perceptual Capabilities with Visual Prostheses"
+date = 2025
+author = [
+    "Jonathan Skaza",
+    "Shravan Murlidaran",
+    "Apurv Varshney",
+    "Ziqi Wen",
+    "William Yang Wang",
+    "Miguel P Eckstein",
+    "Michael Beyeler"
+]
+venue = "Vision Sciences Society"
+location = "St. Pete Beach, FL, USA"
+links = [
+    { name = "Poster", url = "/posters/vss_2025_1.pdf" }
+]
+
+
