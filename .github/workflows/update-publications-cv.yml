@@ -1,9 +1,6 @@
 name: Update Publications and CV
 
 on:
-  schedule:
-    # Run monthly on the 1st at 8:00 AM UTC
-    - cron: '0 8 1 * *'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
