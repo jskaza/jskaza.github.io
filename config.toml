@@ -20,8 +20,11 @@ email = "skaza@ucsb.edu"
 last_name_identifier = "Skaza"
 # Bio/about section
 bio = """
-I am a PhD student studying [Mind and Machine Intelligence](https://mind-machine.ucsb.edu) in the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/) and [Dynamical Neuroscience](https://www.dyns.ucsb.edu/) program at UC Santa Barbara.
-Previously, I worked as a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). Prior to that, I served as a Solutions Analyst and subsequently Associate Director of Product in industry at [Panalgo](https://panalgo.com/). I received my [MSc in Biostatistics](https://sph.umich.edu/biostat/) from the University of Michigan, during which I worked with the Department of Psychiatry, and BSc with a double major in Applied Mathematics & Statistics and Applied Economics from [Bryant University](https://www.bryant.edu/).
+I am a PhD student in the [Dynamical Neuroscience](https://www.dyns.ucsb.edu/) program at UC Santa Barbara, where I study [Mind and Machine Intelligence](https://mind-machine.ucsb.edu) in the [Vision and Image Understanding Lab](https://viu.psych.ucsb.edu/).
+
+Previously, I was a Computational Science Developer in the [Cowley Group](http://cowleygroup.cshl.edu/) at [Cold Spring Harbor Laboratory](https://www.cshl.edu/). Before that, I worked in industry at [Panalgo](https://panalgo.com/), first as a Solutions Analyst and later as Associate Director of Product.
+
+I hold an [MSc in Biostatistics](https://sph.umich.edu/biostat/) from the University of Michigan, where I conducted research in the Department of Psychiatry, and a BSc from [Bryant University](https://www.bryant.edu/) with a double major in Applied Mathematics & Statistics and Applied Economics.
 """
 interests = ["NeuroAI", "Machine Perception", "Computational Neuroscience", "Artificial Intelligence"]
 
