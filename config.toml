@@ -66,13 +66,3 @@ dark_text_color = "#DCE1E5"        # UCSB Light Gray for dark mode text
 dark_background_color = "#111517"   # UCSB Light Gray Darken 80
 dark_card_background = "#1e1e1e"
 dark_border_color = "#333333"
-
-# Example: To use a different color scheme, uncomment and modify:
-# primary_color = "#2E3440"        # Nord Polar Night
-# secondary_color = "#5E81AC"      # Nord Frost  
-# accent_color = "#88C0D0"         # Nord Frost Light
-# text_color = "#3B4252"           # Nord Dark Gray
-# background_color = "#ECEFF4"     # Nord Snow Storm
-# card_background = "#E5E9F0"      # Nord Snow Storm Light
-# border_color = "#D8DEE9"         # Nord Snow Storm Medium
-# light_background = "#ECEFF4"     # Nord Snow Storm
