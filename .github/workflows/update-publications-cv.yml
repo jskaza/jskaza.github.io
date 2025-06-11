@@ -2,8 +2,8 @@ name: Update Publications and CV
 
 on:
   schedule:
-    # Run weekly on Sundays at 8:00 AM UTC
-    - cron: '0 8 * * 0'
+    # Run monthly on the 1st at 8:00 AM UTC
+    - cron: '0 8 1 * *'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
         
     - name: Install Python dependencies
       run: |
-        pip install scholarly tomli-w tqdm
+        pip install scholarly tomli-w tqdm requests-cache
         
     - name: Set up Typst
       uses: typst-community/setup-typst@v3
