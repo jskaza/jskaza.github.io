@@ -2,26 +2,38 @@
 """
 Sync Google Scholar → publications.toml
   fields: title, pub_year, author, journal, volume, abstract, url
-Install: pip install scholarly tomli-w
+Install: pip install scholarly tomli-w requests-cache tqdm
 """
-import argparse, tomli_w
+import argparse
+import time
 from datetime import datetime
 from pathlib import Path
-from scholarly import scholarly
 from urllib.parse import quote_plus
+
+import requests_cache
+import tomli_w
+from scholarly import ProxyGenerator, scholarly
 from tqdm import tqdm
 
 def scholar_search_url(title: str) -> str:
     """Guaranteed fallback: Google Scholar search for the full title."""
     return f"https://scholar.google.com/scholar?q={quote_plus(title)}"
 
-def build_toml(scholar_id: str) -> dict:
+def build_toml(scholar_id: str, limit: int = None) -> dict:
+    # 1) Cache HTML pages for 1 day
+    requests_cache.install_cache('scholarly_cache', expire_after=86400)
+
+    # 2) Rotate through a pool of free proxies
+    pg = ProxyGenerator()
+    pg.FreeProxies()
+    scholarly.use_proxy(pg)
+
+    # 3) Fetch author + publication stubs
     author = scholarly.fill(
-        scholarly.search_author_id(scholar_id),
+        next(scholarly.search_author_id(scholar_id)),
         sections=["publications"],
     )
 
-    # Add metadata about when this was fetched and from where
     toml_data = {
         "metadata": {
             "last_updated": datetime.now().isoformat(),
@@ -32,50 +44,69 @@ def build_toml(scholar_id: str) -> dict:
         "publication": []
     }
 
-    for stub in tqdm(author["publications"], desc="Fetching publication data"):
-        pub = scholarly.fill(stub)          # one API call per paper
-        bib = pub["bib"]
+    pubs = author["publications"]
+    if limit:
+        pubs = pubs[:limit]
 
-        # -------- core fields -------------------------------------------------
-        title     = bib.get("title", "")
-        pub_year  = bib.get("pub_year") or bib.get("year")
-        authors   = [a.strip() for a in bib.get("author", "").split(" and ")]
-        journal   = bib.get("journal") or bib.get("booktitle") or bib.get("venue") or bib.get("conference")
-        volume    = bib.get("volume")
-        abstract  = bib.get("abstract")
+    for stub in tqdm(pubs, desc="Fetching publication data", unit="paper"):
+        try:
+            pub = scholarly.fill(stub)          # one API call per paper
+        except Exception as e:
+            tqdm.write(f"⚠️  Failed to fill stub: {e}")
+            continue
 
-        # -------- best‑available link -----------------------------------------
+        bib = pub.get("bib", {})
+        title    = bib.get("title", "")
+        year     = bib.get("pub_year") or bib.get("year")
+        authors  = [a.strip() for a in bib.get("author", "").split(" and ")]
+        journal  = (bib.get("journal") or bib.get("booktitle")
+                    or bib.get("venue") or bib.get("conference"))
+        volume   = bib.get("volume")
+        abstract = bib.get("abstract")
+
         url = (
             pub.get("pub_url")
             or pub.get("eprint_url")
-            or scholar_search_url(title) 
-)
+            or scholar_search_url(title)
+        )
 
         entry = {
-            "title":     title,
-            "pub_year":  int(pub_year) if str(pub_year).isdigit() else pub_year,
-            "author":    authors,
-            "journal":   journal,
-            "volume":    volume,
-            "abstract":  abstract,
-            "url":       url,
+            "title":    title,
+            "pub_year": int(year) if str(year).isdigit() else year,
+            "author":   authors,
+            "journal":  journal,
+            "volume":   volume,
+            "abstract": abstract,
+            "url":      url,
         }
 
-        entry = {k: v for k, v in entry.items() if v is not None} 
+        # drop any None-valued fields
+        entry = {k: v for k, v in entry.items() if v is not None}
         toml_data["publication"].append(entry)
+
+        time.sleep(1)   # throttle requests
 
     return toml_data
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Sync Google Scholar → TOML")
-    ap.add_argument("--scholar-id", default="dAAMOqgAAAAJ")
-    ap.add_argument("--out", default=Path(__file__).parent.parent / "data" / "publications.toml")
+    ap.add_argument("--scholar-id",
+                    default="dAAMOqgAAAAJ",
+                    help="Your Google Scholar author ID")
+    ap.add_argument("--out",
+                    default=Path(__file__).parent.parent / "data" / "publications.toml",
+                    type=Path,
+                    help="Output TOML file path")
+    ap.add_argument("--limit",
+                    type=int,
+                    default=None,
+                    help="Max number of publications to fetch")
     args = ap.parse_args()
 
-    data = build_toml(args.scholar_id)
+    data = build_toml(args.scholar_id, limit=args.limit)
 
-    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "wb") as fh:
         tomli_w.dump(data, fh)
 
