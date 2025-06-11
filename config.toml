@@ -1,6 +1,9 @@
 # The URL the site will be built for
 base_url = "https://jskaza.github.io"
 
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
 # The site title and description; they are used in feeds by default.
 title = "Jonathan Skaza"
 description = "Academic CV and Portfolio"
