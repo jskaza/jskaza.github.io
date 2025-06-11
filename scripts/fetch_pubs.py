@@ -23,16 +23,28 @@ def build_toml(scholar_id: str, limit: int = None) -> dict:
     # 1) Cache HTML pages for 1 day
     requests_cache.install_cache('scholarly_cache', expire_after=86400)
 
-    # 2) Rotate through a pool of free proxies
-    pg = ProxyGenerator()
-    pg.FreeProxies()
-    scholarly.use_proxy(pg)
+    # 2) Try to set up free proxies (optional, fallback to no proxy if it fails)
+    try:
+        pg = ProxyGenerator()
+        pg.FreeProxies()
+        scholarly.use_proxy(pg)
+        print("✅ Successfully configured free proxies")
+    except Exception as e:
+        print(f"⚠️  Failed to configure proxies, continuing without them: {e}")
+        # Continue without proxies - this should still work for reasonable request rates
 
     # 3) Fetch author + publication stubs
-    author = scholarly.fill(
-        next(scholarly.search_author_id(scholar_id)),
-        sections=["publications"],
-    )
+    try:
+        # Try the new API first (returns dict directly)
+        author_data = scholarly.search_author_id(scholar_id)
+        if isinstance(author_data, dict):
+            author = scholarly.fill(author_data, sections=["publications"])
+        else:
+            # Fallback to old API (returns iterator)
+            author = scholarly.fill(next(author_data), sections=["publications"])
+    except Exception as e:
+        print(f"❌ Failed to fetch author data: {e}")
+        raise
 
     toml_data = {
         "metadata": {
