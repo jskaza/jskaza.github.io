@@ -9,12 +9,25 @@
   --heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --max-width: 1200px;
   --content-width: 800px;
+  // Default color variables (overridden dynamically via templates if present)
+  --primary-color: #39444C;
+  --secondary-color: #C8102E;
+  --accent-color: #98A6AD;
+  --text-color: #2C2F33;
+  --background-color: #F8F9FA;
+  --card-background: #FFFFFF;
+  --border-color: #D0D3D4;
+  --light-background: #EDF0F2;
 }
 
 // Dark mode shadow adjustments
 .dark-mode {
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   --hover-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --text-color: #E0E0E0;
+  --background-color: #121212;
+  --card-background: #1E1E1E;
+  --border-color: #2C2C2C;
 }
 
 // Reset and base styles
@@ -52,6 +65,33 @@ h4 { font-size: 1.25rem; }
 p {
   margin-bottom: 1rem;
   color: var(--text-color);
+}
+
+// Code blocks and inline code
+pre, code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre {
+  padding: 1rem;
+  background-color: var(--light-background);
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  background-color: var(--light-background);
+  border-radius: 3px;
+  font-size: 0.9em;
 }
 
 a {
@@ -263,22 +303,28 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   border: none;
   cursor: pointer;
+  
+  i {
+    font-size: 1rem;
+  }
   
   &.btn-primary {
     background-color: var(--primary-color);
     color: white;
     
     &:hover {
-      background-color: var(--accent-color); // Use UCSB Sea Green on hover
-      transform: translateY(-2px);
-      box-shadow: var(--hover-shadow);
+      background-color: var(--primary-color-dark, #0056b3);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: white;
     }
   }
 }
@@ -799,6 +845,914 @@ a {
       }
     }
   }
+}
+
+// Publications CSS
+.publications-metadata {
+    max-width: 800px;
+    margin: 1rem auto 2rem auto;
+    padding: 1rem;
+    background: var(--secondary-background, #f8f9fa);
+    border-left: 4px solid var(--primary-color, #007bff);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.metadata-info {
+    margin: 0;
+    color: var(--text-secondary, #6c757d);
+}
+
+.metadata-label {
+    font-weight: 600;
+    color: var(--text-color, #212529);
+}
+
+.metadata-separator {
+    margin: 0 0.5rem;
+    color: var(--text-secondary, #6c757d);
+}
+
+.metadata-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.metadata-info a:hover {
+    text-decoration: underline;
+}
+
+.publications-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.publication-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-background);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.publication-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.publication-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.publication-title a:hover {
+    text-decoration: underline;
+}
+
+.publication-meta {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.publication-year {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.publication-venue {
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.publication-volume {
+    color: var(--text-color);
+}
+
+.publication-authors {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.author {
+    font-weight: 500;
+}
+
+.highlighted-author {
+    color: #FEBC11;
+    font-weight: 600;
+}
+
+.publication-abstract details {
+    margin-top: 1rem;
+}
+
+.publication-abstract summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+.publication-abstract summary:hover {
+    color: var(--primary-color);
+}
+
+.publication-abstract p {
+    margin: 0.5rem 0 0 0;
+    padding: 0.5rem 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.publication-footer {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+// Shared button styles for all sections
+.publication-link,
+.conference-link,
+.software-link,
+.experience-url a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    
+    i {
+        font-size: 1rem;
+    }
+    
+    &:hover {
+        background-color: var(--primary-color-dark, #0056b3);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+}
+
+@media (max-width: 768px) {
+    .publication-item {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .publication-title {
+        font-size: 1.1rem;
+    }
+}
+
+// Section CSS
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.item-card {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--hover-shadow);
+}
+
+.item-card h3 {
+    margin-bottom: 1rem;
+}
+
+.item-card h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.item-card h3 a:hover {
+    color: var(--primary-color);
+}
+
+.item-date {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.item-description, .item-summary {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.item-venue {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.item-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.item-link {
+    padding: 0.5rem 1rem;
+    background-color: var(--border-color);
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.item-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.subsection {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.subsection h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.subsection h2 a:hover {
+    color: var(--primary-color);
+}
+
+// Experience CSS
+.experience-metadata {
+    max-width: 800px;
+    margin: 1rem auto 2rem auto;
+    padding: 1rem;
+    background: var(--secondary-background, #f8f9fa);
+    border-left: 4px solid var(--primary-color, #007bff);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.metadata-info {
+    margin: 0;
+    color: var(--text-secondary, #6c757d);
+}
+
+.metadata-label {
+    font-weight: 600;
+    color: var(--text-color, #212529);
+}
+
+.metadata-separator {
+    margin: 0 0.5rem;
+    color: var(--text-secondary, #6c757d);
+}
+
+.experience-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.experience-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.experience-timeline-marker {
+    position: relative;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid var(--background-color);
+    box-shadow: 0 0 0 3px var(--primary-color);
+    z-index: 2;
+}
+
+.timeline-line {
+    width: 2px;
+    flex: 1;
+    min-height: 100px;
+    background-color: var(--border-color);
+    margin-top: 1rem;
+}
+
+.experience-content {
+    flex: 1;
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.experience-content:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.experience-header {
+    margin-bottom: 1.5rem;
+}
+
+.experience-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.experience-company {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.experience-company a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.experience-company a:hover {
+    text-decoration: underline;
+}
+
+.experience-location {
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.experience-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.experience-dates {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.experience-type {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.experience-description {
+    margin-bottom: 1.5rem;
+}
+
+.experience-description p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.experience-responsibilities,
+.experience-achievements,
+.experience-url {
+    margin-bottom: 1.5rem;
+}
+
+.experience-responsibilities h4,
+.experience-achievements h4,
+.experience-technologies h4,
+.experience-url h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: inline;
+}
+
+.experience-responsibilities ul,
+.experience-achievements ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.experience-responsibilities li,
+.experience-achievements li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.experience-url {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.experience-url a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color, #007bff);
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.experience-url a:hover {
+    background-color: var(--primary-color-dark, #0056b3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-technologies {
+    margin-bottom: 0;
+}
+
+// Page CSS
+.page-template {
+    padding: 4rem 0;
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.page-date {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.page-authors, .page-venue {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.page-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: darken(#2962ff, 10%);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.page-body {
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.page-body h2,
+.page-body h3,
+.page-body h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-body p {
+    margin-bottom: 1.5rem;
+}
+
+.page-body ul,
+.page-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.page-body li {
+    margin-bottom: 0.5rem;
+}
+
+.page-body blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.page-body pre {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.page-body code {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.page-body pre code {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.citation-box {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.citation-box h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.citation-text {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+}
+
+.copy-citation-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.copy-citation-btn:hover {
+    background-color: darken(#2962ff, 10%);
+}
+
+// Conferences CSS
+.conferences-list {
+    max-width: var(--content-width);
+    margin: 2rem auto;
+}
+
+.conference-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.conference-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.conference-header {
+    margin-bottom: 1rem;
+}
+
+.conference-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.conference-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.conference-title a:hover {
+    text-decoration: underline;
+}
+
+.conference-meta {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.conference-date {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.conference-venue {
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.conference-location {
+    color: var(--text-color);
+}
+
+.conference-authors {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.author {
+    font-weight: 500;
+}
+
+.highlighted-author {
+    color: #FEBC11;
+    font-weight: 600;
+}
+
+.conference-description {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.conference-abstract details {
+    margin-top: 1rem;
+}
+
+.conference-abstract summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+.conference-abstract summary:hover {
+    color: var(--primary-color);
+}
+
+.conference-abstract p {
+    margin: 0.5rem 0 0 0;
+    padding: 0.5rem 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.conference-footer {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+// Conference link styles are now using the shared button styles
+
+@media (max-width: 768px) {
+    .conference-item {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .conference-title {
+        font-size: 1.1rem;
+    }
+}
+
+// Software CSS
+.software-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.software-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.software-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.software-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.software-languages {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.language-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    background-color: var(--light-background);
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+}
+
+.language-item i {
+    font-size: 1.2rem;
+}
+
+.custom-icon {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: monospace;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typst-icon {
+    color: #239DAD;  /* Typst's brand color */
+}
+
+.language-name {
+    font-weight: 500;
+}
+
+.language-percent {
+    color: var(--accent-color);
+    font-size: 0.9em;
+}
+
+.software-readme details {
+    margin: 1rem 0;
+}
+
+.software-readme summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+.software-readme summary:hover {
+    color: var(--primary-color);
+}
+
+.readme-content {
+    margin: 0.5rem 0 0 0;
+    padding: 1rem 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.readme-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.software-footer {
+    margin-top: 1rem;
+}
+
+// Software link styles are now using the shared button styles
+
+@media (max-width: 768px) {
+    .software-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .software-title {
+        font-size: 1.1rem;
+    }
+    
+    .software-languages {
+        font-size: 0.8rem;
+    }
+}
+
+.publications-metadata {
+    max-width: 800px;
+    margin: 1rem auto 2rem auto;
+    padding: 1rem;
+    background: var(--secondary-background, #f8f9fa);
+    border-left: 4px solid var(--primary-color, #007bff);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.metadata-info {
+    margin: 0;
+    color: var(--text-secondary, #6c757d);
+}
+
+.metadata-label {
+    font-weight: 600;
+    color: var(--text-color, #212529);
+}
+
+.metadata-separator {
+    margin: 0 0.5rem;
+    color: var(--text-secondary, #6c757d);
 }
 
 // Responsive design

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% import "macros/icons.html" as icons %}
+
+{% block content %}
+<div class="section-template">
+    <div class="container">
+        <div class="section-header">
+            <h1>{{ section.title }}</h1>
+            {% if section.description %}
+            <p>{{ section.description }}</p>
+            {% endif %}
+        </div>
+
+        {% set software_data = load_data(path="data/software.toml") %}
+        {% set socials = load_data(path="data/social.toml") %}
+        
+
+        {% if software_data.metadata %}
+        <div class="publications-metadata">
+            <p class="metadata-info">
+                <span class="metadata-label">Last auto-update:</span> 
+                <time datetime="{{ software_data.metadata.last_updated }}">
+                    {{ software_data.metadata.last_updated | date(format="%B %d, %Y") }}
+                </time>
+                <span class="metadata-separator">•</span>
+                <span class="metadata-label">Source:</span> 
+                <a href="{{ socials.social | filter(attribute='name', value='GitHub') | first | get(key='url') }}" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </p>
+        </div>
+        {% endif %}
+
+        <div class="section-content">
+            {% if section.content %}
+                {{ section.content | safe }}
+            {% endif %}
+
+            <div class="software-list">
+                {% for item in software_data.software %}
+                <article class="software-item">
+                    <header class="software-header">
+                        <h3 class="software-title">
+                            {{ item.name }}
+                        </h3>
+                        {% if item.languages %}
+                        <div class="software-languages">
+                            {% for lang in item.languages.ordered %}
+                            <span class="language-item">
+                                {% if lang.lang|lower == "typst" %}
+                                    <span class="custom-icon typst-icon">Ty</span>
+                                {% elif lang.lang|lower == "html" %}
+                                    <i class="devicon-html5-plain colored"></i>
+                                {% elif lang.lang|lower == "scss" %}
+                                    <i class="devicon-sass-original colored"></i>
+                                {% else %}
+                                    <i class="devicon-{{ lang.lang | lower }}-plain colored"></i>
+                                {% endif %}
+                                <span class="language-name">{{ lang.lang }}</span>
+                                <span class="language-percent">{{ lang.percent | round(precision=1) }}%</span>
+                            </span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </header>
+
+                    {% if item.readme %}
+                    <div class="software-readme">
+                        <details>
+                            <summary>README</summary>
+                            <div class="readme-content">
+                                {{ item.readme | markdown | safe }}
+                            </div>
+                        </details>
+                    </div>
+                    {% endif %}
+
+                    {% if item.url %}
+                    <footer class="software-footer">
+                        <a href="{{ item.url }}" class="software-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> View Repo
+                        </a>
+                    </footer>
+                    {% endif %}
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %} 
