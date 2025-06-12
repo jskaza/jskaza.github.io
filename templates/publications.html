@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros/icons.html" as icons %}
 
 {% block content %}
 <div class="section-template">
@@ -73,9 +74,7 @@
                     
                     <footer class="publication-footer">
                         {% if pub.url %}
-                            <a href="{{ pub.url }}" class="publication-link" target="_blank" rel="noopener noreferrer">
-                                View Manuscript →
-                            </a>
+                            {{ icons::publication_anchor(url=pub.url) }}
                         {% endif %}
                     </footer>
                 </article>
@@ -218,21 +217,33 @@
 
 .publication-footer {
     margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .publication-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--border-color);
+    background-color: var(--primary-color, #007bff);
+    color: white;
     border-radius: 0.25rem;
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .publication-link:hover {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--primary-color-dark, #0056b3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.publication-link i {
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {

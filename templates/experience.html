@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros/icons.html" as icons %}
 
 {% block content %}
 <div class="section-template">
@@ -57,7 +58,7 @@
                         
                         {% if exp.url %}
                         <div class="experience-url">
-                            <h4>Website: </h4><a href="{{ exp.url }}" target="_blank" rel="noopener noreferrer">{{ exp.url }}</a>
+                            {{ icons::website_anchor(url=exp.url) }}
                         </div>
                         {% endif %}
                     </div>
@@ -253,6 +254,11 @@
     word-break: break-all;
 }
 
+.experience-url a.experience-link {
+    color: white;
+    word-break: normal;
+}
+
 .experience-url a:hover {
     text-decoration: underline;
 }
@@ -332,6 +338,30 @@
     .experience-company {
         font-size: 1rem;
     }
+}
+
+.experience-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color, #007bff);
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.experience-link:hover {
+    background-color: var(--primary-color-dark, #0056b3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-link i {
+    font-size: 1rem;
 }
 </style>
 {% endblock content %} 

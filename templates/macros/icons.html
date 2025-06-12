@@ -1,0 +1,76 @@
+{% macro publication_anchor(url) %}
+    {% set icon = "fas fa-file-alt" %}
+    {% set text = "View Paper" %}
+
+    {% if "arxiv" in url %}
+        {% set icon = "ai ai-arxiv" %}
+        {% set text = "arXiv" %}
+    {% elif "sciencedirect" in url or "elsevier" in url %}
+        {% set icon = "ai ai-elsevier" %}
+        {% set text = "Science Direct" %}
+    {% elif "scholar.google" in url %}
+        {% set icon = "ai ai-google-scholar" %}
+        {% set text = "Google Scholar" %}
+    {% elif "springer" in url %}
+        {% set icon = "ai ai-springer" %}
+        {% set text = "Springer" %}
+    {% elif "ieee" in url %}
+        {% set icon = "ai ai-ieee" %}
+        {% set text = "IEEE" %}
+    {% elif "pubmed" in url or "ncbi.nlm.nih" in url %}
+        {% set icon = "ai ai-pubmed" %}
+        {% set text = "PubMed" %}
+    {% elif "doi.org" in url %}
+        {% set icon = "ai ai-doi" %}
+        {% set text = "DOI" %}
+    {% elif "wiley" in url %}
+        {% set icon = "ai ai-wiley" %}
+        {% set text = "Wiley" %}
+    {% elif "acm.org" in url %}
+        {% set icon = "ai ai-acm" %}
+        {% set text = "ACM" %}
+    {% elif "ssrn" in url %}
+        {% set icon = "ai ai-ssrn" %}
+        {% set text = "SSRN" %}
+    {% elif "biorxiv" in url %}
+        {% set icon = "ai ai-biorxiv" %}
+        {% set text = "bioRxiv" %}
+    {% elif "researchgate" in url %}
+        {% set icon = "ai ai-researchgate" %}
+        {% set text = "ResearchGate" %}
+    {% elif "academia.edu" in url %}
+        {% set icon = "ai ai-academia" %}
+        {% set text = "Academia" %}
+    {% elif "digitalcommons" in url or "repository" in url %}
+        {% set icon = "fas fa-university" %}
+        {% set text = "Repository" %}
+    {% endif %}
+
+    <a href="{{ url }}" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="{{ icon }}"></i>
+        {{ text }}
+    </a>
+{% endmacro %}
+
+{% macro conference_anchor(name, url) %}
+    {%- set text = name -%}
+    {%- set icon = "fas fa-link" -%}
+
+    {%- if name|lower == "slides" -%}
+        {%- set icon = "fas fa-file-pdf" -%}
+    {%- elif name|lower == "poster" -%}
+        {%- set icon = "fas fa-image" -%}
+    {%- endif -%}
+
+    <a href="{{ url }}" class="conference-link" target="_blank" rel="noopener noreferrer">
+        <i class="{{ icon }}"></i>
+        {{ text }}
+    </a>
+{% endmacro %}
+
+{% macro website_anchor(url, text="Website") %}
+    <a href="{{ url }}" class="experience-link" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-globe"></i>
+        {{ text }}
+    </a>
+{% endmacro %} 
