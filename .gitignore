@@ -1,3 +1,4 @@
 public/
 *.sh
 *.log
+.DS_Store
