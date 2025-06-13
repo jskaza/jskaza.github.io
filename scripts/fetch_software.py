@@ -1,7 +1,6 @@
 import tomli
 import tomli_w
 import requests
-import base64
 from pathlib import Path
 from urllib.parse import urlparse
 from datetime import datetime
@@ -11,12 +10,12 @@ def extract_repo_name(url):
     path = urlparse(url).path
     return path.strip('/').split('/')[-1]
 
-def fetch_readme(owner, repo):
-    """Fetch README.md content from GitHub repository."""
-    api_url = f"https://api.github.com/repos/{owner}/{repo}/readme"
+def fetch_repo_description(owner, repo):
+    """Fetch repository description from GitHub."""
+    api_url = f"https://api.github.com/repos/{owner}/{repo}"
     response = requests.get(api_url)
     if response.status_code == 200:
-        return response.json().get('content', '')
+        return response.json().get('description', '')
     return None
 
 def fetch_languages(owner, repo):
@@ -66,17 +65,15 @@ def main():
         owner = urlparse(url).path.strip('/').split('/')[0]
         
         print(f"\nProcessing repository: {repo_name}")
-        readme_content = fetch_readme(owner, repo_name)
+        description = fetch_repo_description(owner, repo_name)
         languages_data = fetch_languages(owner, repo_name)
         
-        if readme_content:
-            # Decode base64 content
-            decoded_content = base64.b64decode(readme_content).decode('utf-8')
+        if description is not None:
             # Add as a new table in the array
             repo_data = {
                 'name': repo_name,
                 'url': url,
-                'readme': decoded_content
+                'description': description
             }
             
             # Add language information if available
@@ -88,7 +85,7 @@ def main():
             
             processed_data['software'].append(repo_data)
         else:
-            print(f"Failed to fetch README for {repo_name}")
+            print(f"Failed to fetch description for {repo_name}")
     
     # Save processed data to new TOML file
     output_path = Path(__file__).parent.parent / "data" / "software.toml"

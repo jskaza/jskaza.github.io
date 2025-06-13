@@ -64,15 +64,10 @@
                         {% endif %}
                     </header>
 
-                    {% if item.readme %}
-                    <div class="software-readme">
-                        <details>
-                            <summary>README</summary>
-                            <div class="readme-content">
-                                {{ item.readme | markdown | safe }}
-                            </div>
-                        </details>
-                    </div>
+                    {% if item.description %}
+                    <p class="software-description">
+                        {{ item.description }}
+                    </p>
                     {% endif %}
 
                     {% if item.url %}
