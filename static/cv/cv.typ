@@ -9,6 +9,7 @@
 #let awards_data = toml("../../data/awards.toml")
 #let coursework_data = toml("../../data/coursework.toml")
 #let support_data = toml("../../data/support.toml")
+#let software_data = toml("../../data/software.toml")
 #let site_url = toml("../../config.toml").base_url
 
 // Set document properties
@@ -136,6 +137,11 @@
   )
 ]
 
+#let softwareEntry(name: [], url: none) = [
+  #name#if url != none [ #link(url)[#text(fill: accent_color)[↗]]]
+  #v(4pt)
+]
+
 // Helper functions
 #let format_date_range(start, end: none) = {
   if end != none {
@@ -237,6 +243,16 @@ Talks])[
       links: conf.at("links", default: ()),
     )
   ]
+  ]
+]
+
+// Software Section
+#sectionBlock("Software")[
+  #for software in software_data.software [
+    #text(size: 9pt, fill: light_accent)[#softwareEntry(
+      name: software.name,
+      url: software.at("url", default: none),
+    )]
   ]
 ]
 
