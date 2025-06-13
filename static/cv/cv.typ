@@ -137,8 +137,8 @@
   )
 ]
 
-#let softwareEntry(name: [], url: none) = [
-  #name#if url != none [ #link(url)[#text(fill: accent_color)[↗]]]
+#let softwareEntry(name: [], description: [], url: none) = [
+  #raw(name): #description#if url != none [ #link(url)[#text(fill: accent_color)[↗]]]
   #v(4pt)
 ]
 
@@ -249,10 +249,11 @@ Talks])[
 // Software Section
 #sectionBlock("Software")[
   #for software in software_data.software [
-    #text(size: 9pt, fill: light_accent)[#softwareEntry(
+    #softwareEntry(
       name: software.name,
+      description: software.description,
       url: software.at("url", default: none),
-    )]
+    )
   ]
 ]
 
