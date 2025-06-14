@@ -125,15 +125,15 @@
   #grid(
     columns: 1fr,
     align: left,
-    [#author_text #year_text. "#title."#if venue != [] [ #emph(venue)]#if location != [] [, #location].#if links.len() > 0 [ #h(4pt) #for link_item in links [
+    [#author_text #year_text. "#title."#if venue != [] [ #emph(venue)]#if location != [] [, #location].#if links.len() > 0 [ #h(2pt) #for link_item in links [
       #let icon_symbol = if link_item.name == "Poster" {
         fa-icon("image")
       } else if link_item.name == "Slides" {
-        fa-icon("file-pdf")
+        fa-icon("display")
       } else {
         text(fill: accent_color)[↗]
       }
-      #link(site_url + link_item.url)[#icon_symbol]
+      #link(site_url + link_item.url)[#h(2pt) #icon_symbol]
     ]]]
   )
   #v(8pt)
