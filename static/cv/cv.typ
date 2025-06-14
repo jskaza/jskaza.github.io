@@ -8,7 +8,7 @@
 #let social_data = toml("../../data/social.toml")
 #let awards_data = toml("../../data/awards.toml")
 #let coursework_data = toml("../../data/coursework.toml")
-#let support_data = toml("../../data/support.toml")
+#let funding_data = toml("../../data/funding.toml")
 #let software_data = toml("../../data/software.toml")
 #let site_url = toml("../../config.toml").base_url
 
@@ -66,14 +66,14 @@
 ]
 
 
-#let experienceHeading(title: [], company: [], location: [], time: []) = [
+#let experienceHeading(title: [], company: [], location: [], time: [], url: none) = [
   #grid(
     columns: (60%, 40%),
     row-gutter: 8pt,
     align: (left, right),
     [#strong(title)],
     time,
-    if company != [] [#company],
+    if company != [] [#company] + if url != none and url != "" [ #h(4pt) #link(url)[#fa-icon("university")]],
     if location != [] [#location],
   )
 ]
@@ -137,11 +137,11 @@
   #v(8pt)
 ]
 
-#let supportEntry(name: [], year: [], url: none) = [
+#let fundingEntry(name: [], year: [], url: none) = [
   #grid(
     columns: (3fr, 1fr),
     align: (left, right),
-    [#name#if url != none [ #link(url)[#h(4pt) #fa-icon("globe")]]], 
+    [#name#if url != none and url != "" [ #link(url)[#h(4pt) #fa-icon("award")]]], 
     [#year],
   )
 ]
@@ -205,9 +205,10 @@
   #for exp in experience_data.experience [
     #experienceHeading(
       title: exp.title,
-      company: exp.company + if "url" in exp and exp.url != "" [ #h(4pt) #link(exp.url)[#fa-icon("globe")]],
+      company: exp.company,
       location: exp.location,
       time: format_date_range(exp.start_date, end: exp.at("end_date", default: none)),
+      url: exp.at("url", default: none),
     )
     #v(8pt)
     #text(size: 10pt)[#exp.description]
@@ -266,9 +267,9 @@ Talks])[
 #sectionBlock([Funding \ 
  &  \ 
 Support])[
-  #let support_sorted = support_data.support.sorted(key: support => {
+  #let funding_sorted = funding_data.funding.sorted(key: funding => {
     // Extract the end year from year range for sorting
-    let year_str = support.year
+    let year_str = funding.year
     if year_str.contains("-") {
       let parts = year_str.split("-")
       if parts.len() > 1 {
@@ -281,11 +282,11 @@ Support])[
     }
   })
 
-  #for support in support_sorted [
-    #supportEntry(
-      name: support.name,
-      year: support.year,
-      url: support.at("url", default: none),
+  #for funding in funding_sorted [
+    #fundingEntry(
+      name: funding.name,
+      year: funding.year,
+      url: funding.at("url", default: none),
     )
   ]
 ]
