@@ -1,5 +1,7 @@
 #import "@preview/fontawesome:0.5.0": *
 
+#show link: set text(fill: rgb("#09847A"))
+
 // Load all data files
 #let education_data = toml("../../data/education.toml")
 #let experience_data = toml("../../data/experience.toml")
