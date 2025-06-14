@@ -38,12 +38,6 @@
     {% elif "researchgate" in url %}
         {% set icon = "ai ai-researchgate" %}
         {% set text = "ResearchGate" %}
-    {% elif "academia.edu" in url %}
-        {% set icon = "ai ai-academia" %}
-        {% set text = "Academia" %}
-    {% elif "digitalcommons" in url or "repository" in url %}
-        {% set icon = "fas fa-university" %}
-        {% set text = "Repository" %}
     {% endif %}
 
     <a href="{{ url }}" class="publication-link" target="_blank" rel="noopener noreferrer">
