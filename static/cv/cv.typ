@@ -111,7 +111,7 @@
   #grid(
     columns: 1fr,
     align: left,
-    [#author_text #year_text. "#title."#if journal != none [ #emph(journal)]#if volume != none [, #volume].#if url != none [ #link(url)[#text(fill: accent_color)[↗]]]],
+    [#author_text #year_text. "#title."#if journal != none [ #emph(journal)]#if volume != none [, #volume].#if url != none [ #link(url)[ #h(4pt) #fa-icon("file-text")]]]
   )
   #v(8pt)
 ]
@@ -123,7 +123,16 @@
   #grid(
     columns: 1fr,
     align: left,
-    [#author_text #year_text. "#title."#if venue != [] [ #emph(venue)]#if location != [] [, #location].#if links.len() > 0 [ #for link_item in links [#link(site_url + link_item.url)[#text(fill: accent_color)[↗]] ]]]
+    [#author_text #year_text. "#title."#if venue != [] [ #emph(venue)]#if location != [] [, #location].#if links.len() > 0 [ #h(4pt) #for link_item in links [
+      #let icon_symbol = if link_item.name == "Poster" {
+        fa-icon("image")
+      } else if link_item.name == "Slides" {
+        fa-icon("file-pdf")
+      } else {
+        text(fill: accent_color)[↗]
+      }
+      #link(site_url + link_item.url)[#icon_symbol]
+    ]]]
   )
   #v(8pt)
 ]
@@ -132,13 +141,13 @@
   #grid(
     columns: (3fr, 1fr),
     align: (left, right),
-    [#name#if url != none [ #link(url)[#text(fill: accent_color)[↗]]]], 
+    [#name#if url != none [ #link(url)[#h(4pt) #fa-icon("globe")]]], 
     [#year],
   )
 ]
 
 #let softwareEntry(name: [], description: [], url: none) = [
-  #raw(name): #description#if url != none [ #link(url)[#text(fill: accent_color)[↗]]]
+  #fa-icon("code") #raw(name): #description#if url != none [ #link(url)[#h(4pt) #fa-icon("github")]]
   #v(4pt)
 ]
 
@@ -196,16 +205,12 @@
   #for exp in experience_data.experience [
     #experienceHeading(
       title: exp.title,
-      company: exp.company,
+      company: exp.company + if "url" in exp and exp.url != "" [ #h(4pt) #link(exp.url)[#fa-icon("globe")]],
       location: exp.location,
       time: format_date_range(exp.start_date, end: exp.at("end_date", default: none)),
     )
     #v(8pt)
     #text(size: 10pt)[#exp.description]
-    #if "url" in exp and exp.url != "" [
-      #v(4pt)
-      #link(exp.url)[#text(fill: accent_color, size: 9pt)[Website ↗]]
-    ]
     #v(15pt)
   ]
 ]
