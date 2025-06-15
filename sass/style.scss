@@ -350,37 +350,55 @@ a {
 // Social links
 .social-links {
   display: flex;
-  flex-direction: row;
   gap: 1rem;
+  align-items: center;
   
   @media (max-width: 768px) {
-    justify-content: center;
+    display: none;  // Hide desktop version on mobile
   }
   
   a {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: var(--border-color);
     color: var(--text-color);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
     
     &:hover {
-      background-color: var(--secondary-color); // Use UCSB Gold on hover
-      color: var(--primary-color); // Use UCSB Navy text on gold background
-      transform: translateY(-2px);
+      color: var(--accent-color);
+    }
+  }
+}
+
+.social-links-mobile {
+  display: none;  // Hidden by default
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  
+  @media (max-width: 768px) {
+    display: flex;  // Show on mobile only
+  }
+  
+  a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--accent-color);
     }
   }
 }
 
 // Info content (Interests & Education)
 .info-content {
-  min-width: 0; // Prevent grid overflow
-  margin-left: 2rem; // Push further right
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    display: none;  // Hide on mobile
+  }
 }
 
 .info-grid {

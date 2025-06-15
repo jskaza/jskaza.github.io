@@ -20,6 +20,17 @@
                 <p class="organization">{{ config.extra.organization }}</p>
                 {% endif %}
                 
+                <!-- Mobile-only social links -->
+                {% if social_data.social %}
+                <div class="social-links-mobile">
+                    {% for social in social_data.social %}
+                    <a href="{{ social.url }}" target="_blank" aria-label="{{ social.name }}">
+                        <i class="{{ social.icon }}"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
                 {% if config.extra.bio %}
                 <div class="bio">
                     <!-- <h3>About Me</h3> -->
