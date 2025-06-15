@@ -113,7 +113,7 @@
   #grid(
     columns: 1fr,
     align: left,
-    [#author_text #year_text. "#title."#if journal != none [ #emph(journal)]#if volume != none [, #volume].#if url != none [ #link(url)[ #h(4pt) #fa-icon("file-text")]]]
+    [#author_text #year_text. "#title."#if journal != none [ #emph(journal)]#if volume != none [, #volume].#if url != none [ #link(url)[ #h(2pt) #h(2pt) #fa-icon("file-text")]]]
   )
   #v(8pt)
 ]
