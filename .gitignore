@@ -2,3 +2,4 @@ public/
 *.sh
 *.log
 .DS_Store
+webhook.txt
