@@ -4,14 +4,14 @@ url = "mailto:skaza@ucsb.edu"
 icon = "fas fa-envelope"
 
 [[social]]
-name = "X"
-url = "https://x.com/JonSkaza"
-icon = "fa-brands fa-x-twitter"
-
-[[social]]
 name = "Google Scholar"
 url = "https://scholar.google.com/citations?user=dAAMOqgAAAAJ&hl=en"
 icon = "ai ai-google-scholar"
+
+[[social]]
+name = "ORCID"
+url = "https://orcid.org/0009-0000-0069-0695"
+icon = "ai ai-orcid" 
 
 [[social]]
 name = "GitHub"
@@ -19,6 +19,12 @@ url = "https://github.com/jskaza"
 icon = "fab fa-github"
 
 [[social]]
+name = "X"
+url = "https://x.com/JonSkaza"
+icon = "fa-brands fa-x-twitter"
+
+[[social]]
 name = "LinkedIn"
 url = "https://linkedin.com/in/jonskaza"
 icon = "fab fa-linkedin" 
+
