@@ -1,4 +1,6 @@
 #import "@preview/fontawesome:0.5.0": *
+#import "@preview/scienceicons:0.1.0": *
+
 
 #show link: set text(fill: rgb("#09847A"))
 
@@ -173,6 +175,10 @@
       contacts.push(link(item.url)[#fa-icon("linkedin") LinkedIn])
     } else if item.name == "Google Scholar" {
       contacts.push(link(item.url)[#fa-icon("graduation-cap") Google Scholar])
+    } else if item.name == "X" {
+      contacts.push(link(item.url)[#fa-icon("x-twitter") X])
+    } else if item.name == "ORCID" {
+      contacts.push(link(item.url)[#orcid-icon(color:  rgb("#09847A")) ORCID])
     }
   }
       // Add website link
