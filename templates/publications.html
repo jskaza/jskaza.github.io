@@ -76,6 +76,12 @@
                         {% if pub.url %}
                             {{ icons::publication_anchor(url=pub.url) }}
                         {% endif %}
+                        {% if pub.github_repo %}
+                        <a href="{{ pub.github_repo }}" class="publication-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                        {% endif %}
                     </footer>
                 </article>
                 {% endfor %}

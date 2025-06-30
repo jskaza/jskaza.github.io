@@ -108,14 +108,14 @@
 ]
 
 // Custom functions for CV
-#let pubEntry(authors: [], year: [], title: [], journal: none, volume: none, url: none) = [
+#let pubEntry(authors: [], year: [], title: [], journal: none, volume: none, url: none, github_repo: none) = [
   #let author_text = authors.join(", ")
   #let year_text = "(" + str(year) + ")"
 
   #grid(
     columns: 1fr,
     align: left,
-    [#author_text #year_text. "#title."#if journal != none [ #emph(journal)]#if volume != none [, #volume].#if url != none [ #link(url)[ #h(2pt) #h(2pt) #fa-icon("file-text")]]]
+    [#author_text #year_text. "#title."#if journal != none [ #emph(journal)]#if volume != none [, #volume].#if url != none [ #link(url)[ #h(2pt) #h(2pt) #fa-icon("file-text")]]#if github_repo != none [ #link(github_repo)[ #h(2pt) #h(2pt) #fa-icon("github")]]]
   )
   #v(8pt)
 ]
@@ -236,6 +236,7 @@
       journal: pub.at("journal", default: none),
       volume: pub.at("volume", default: none),
       url: pub.at("url", default: none),
+      github_repo: pub.at("github_repo", default: none),
     )
   ]
 ]
