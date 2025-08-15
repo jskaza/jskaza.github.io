@@ -1,5 +1,5 @@
 [metadata]
-last_updated = "2025-07-15T00:00:07.561388"
+last_updated = "2025-08-15T00:00:06.468656"
 source = "Google Scholar"
 scholar_id = "dAAMOqgAAAAJ"
 github_username = "jskaza"
@@ -79,6 +79,37 @@ author = [
 ]
 abstract = "Created in 2006, Twitter is an online social networking service in which users share and read 140-character messages called Tweets. The site has approximately 288 million monthly active users who produce about 500 million Tweets per day. This study applies dynamical and statistical modeling strategies to quantify the spread of information on Twitter. Parameter estimates for the rates of infection and recovery are obtained using Bayesian Markov Chain Monte Carlo (MCMC) methods. The methodological strategy employed is an extension of techniques traditionally used in an epidemiological and biomedical context (particularly in the spread of infectious disease). This study, which addresses information spread, presents case studies pertaining to the prevalence of several “trending” topics on Twitter over time. The study introduces a framework to compare information dynamics on Twitter based on the topical area as well as a framework for the prediction of topic prevalence. Additionally, methodological and results-based comparisons are drawn between the spread of information and the spread of infectious disease."
 url = "https://digitalcommons.bryant.edu/honors_mathematics/20/"
+
+[[publication]]
+title = "Foveated Multi-Modal Large Language Model Maps to Predict Time to Understand Scenes"
+pub_year = 2025
+author = [
+    "Ziqi Wen",
+    "Jonathan Skaza",
+    "Shravan Murlidaran",
+    "William Wang",
+    "Miguel Eckstein",
+]
+journal = "Journal of Vision"
+volume = "25"
+abstract = "▶(1) Response Time Study: Participants (N= 17) will do the free viewing until they understand the scene, and then type in the scene descriptions. Response time and collected eye-tracking data, including the total number of saccades, are collected.▶(2) Saccade-Limited Presentation Study: Each scene was displayed for a restricted number of eye movements, either 2 or 4 saccades. Participants (N= 16) were then instructed to provide descriptions of the scene based on what they observed.Method: Foveated Scene Understanding Map (F-SUM)"
+url = "https://jskaza.github.io/posters/vss_2025_2.pdf"
+
+[[publication]]
+title = "A Computational Virtual Patient Pipeline for Predicting Perceptual Capabilities with Visual Prostheses"
+pub_year = 2025
+author = [
+    "Jonathan Skaza",
+    "Shravan Murlidaran",
+    "Apurv Varshney",
+    "Ziqi Wen",
+    "Miguel P Eckstein",
+    "Michael Beyeler",
+]
+journal = "Journal of Vision"
+volume = "25"
+abstract = "Introduction Visual prostheses aim to restore sight, but current devices generate only rudimentary phosphenes with limited visual capabilities. Predicting patient perception before implantation is crucial for evaluating device performance, optimizing design, and setting realistic expectations. We present a novel Computational Virtual Patient (CVP) pipeline to predict perceptual performance. Methods The CVP pipeline simulates prosthetic perceptual experiences using two models: a traditional “scoreboard” approach and an “axon map” model that leverages the spatial layout of retinal ganglion cell axons (Beyeler et al., 2019). These simulations, constrained by psychophysical and neurophysiological data, allow customization of electrode configurations, including tests with 6x10 (Argus II), 6x15, and 12x20 arrays. Sighted participants (n= 18) completed shape and facial emotion classification tasks using simulated …"
+url = "https://jov.arvojournals.org/article.aspx?articleid=2809358"
 
 [[publication]]
 title = "Predicting Reaction Time to Comprehend Scenes with Foveated Scene Understanding Maps"
