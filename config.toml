@@ -26,7 +26,7 @@ Previously, I was a Computational Science Developer in the [Cowley Group](http:/
 
 I hold an MSc in [Biostatistics](https://sph.umich.edu/biostat/) from the University of Michigan, where I conducted research in the Department of Psychiatry, and a BSc from [Bryant University](https://www.bryant.edu/) with a double major in Applied Mathematics & Statistics and Applied Economics.
 """
-interests = ["NeuroAI", "Machine Perception", "Computational Neuroscience", "Artificial Intelligence"]
+interests = ["NeuroAI", "Machine Perception", "Computational Neuroscience", "Artificial Intelligence", "Computer Vision"]
 
 [[extra.menu]]
 name = "Publications"
