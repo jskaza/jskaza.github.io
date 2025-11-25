@@ -1,5 +1,5 @@
 [metadata]
-last_updated = "2025-08-15T00:00:06.468656"
+last_updated = "2025-11-25T13:02:57.930834"
 source = "Google Scholar"
 scholar_id = "dAAMOqgAAAAJ"
 github_username = "jskaza"
@@ -124,6 +124,18 @@ author = [
 journal = "arXiv preprint arXiv:2505.12660"
 abstract = "Although models exist that predict human response times (RTs) in tasks such as target search and visual discrimination, the development of image-computable predictors for scene understanding time remains an open challenge. Recent advances in vision-language models (VLMs), which can generate scene descriptions for arbitrary images, combined with the availability of quantitative metrics for comparing linguistic descriptions, offer a new opportunity to model human scene understanding. We hypothesize that the primary bottleneck in human scene understanding and the driving source of variability in response times across scenes is the interaction between the foveated nature of the human visual system and the spatial distribution of task-relevant visual information within an image. Based on this assumption, we propose a novel image-computable model that integrates foveated vision with VLMs to produce a spatially resolved map of scene understanding as a function of fixation location (Foveated Scene Understanding Map, or F-SUM), along with an aggregate F-SUM score. This metric correlates with average (N=17) human RTs (r=0.47) and number of saccades (r=0.51) required to comprehend a scene (across 277 scenes). The F-SUM score also correlates with average (N=16) human description accuracy (r=-0.56) in time-limited presentations. These correlations significantly exceed those of standard image-based metrics such as clutter, visual complexity, and scene ambiguity based on language entropy. Together, our work introduces a new image-computable metric for predicting human response times in scene understanding and …"
 url = "https://arxiv.org/abs/2505.12660"
+
+[[publication]]
+title = "Semantic Saliency from Multi-Modal Large Language Model Scene Understanding Maps"
+pub_year = 2025
+author = [
+    "Shravan Murlidaran",
+    "Ziqi Wen",
+    "Jonathan Skaza",
+    "William Wang",
+    "Miguel P Eckstein",
+]
+url = "https://scholar.google.com/scholar?q=Semantic+Saliency+from+Multi-Modal+Large+Language+Model+Scene+Understanding+Maps"
 
 [[publication]]
 title = "A Deep Learning Framework for Predicting Functional Visual Performance in Bionic Eye Users"
