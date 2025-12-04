@@ -1,5 +1,5 @@
 [metadata]
-last_updated = "2025-11-25T13:06:06.544059"
+last_updated = "2025-12-04T11:19:23.034168"
 source = "Google Scholar"
 scholar_id = "dAAMOqgAAAAJ"
 github_username = "jskaza"
@@ -79,6 +79,34 @@ author = [
 ]
 abstract = "Created in 2006, Twitter is an online social networking service in which users share and read 140-character messages called Tweets. The site has approximately 288 million monthly active users who produce about 500 million Tweets per day. This study applies dynamical and statistical modeling strategies to quantify the spread of information on Twitter. Parameter estimates for the rates of infection and recovery are obtained using Bayesian Markov Chain Monte Carlo (MCMC) methods. The methodological strategy employed is an extension of techniques traditionally used in an epidemiological and biomedical context (particularly in the spread of infectious disease). This study, which addresses information spread, presents case studies pertaining to the prevalence of several “trending” topics on Twitter over time. The study introduces a framework to compare information dynamics on Twitter based on the topical area as well as a framework for the prediction of topic prevalence. Additionally, methodological and results-based comparisons are drawn between the spread of information and the spread of infectious disease."
 url = "https://digitalcommons.bryant.edu/honors_mathematics/20/"
+
+[[publication]]
+title = "INTERLACE: Interleaved Layer Pruning and Efficient Adaptation in Large Vision-Language Models"
+pub_year = 2025
+author = [
+    "Parsa Madinei",
+    "Ryan Solgi",
+    "Ziqi Wen",
+    "Jonathan Skaza",
+    "Miguel Eckstein",
+    "Ramtin Pedarsani",
+]
+journal = "arXiv preprint arXiv:2511.19676"
+abstract = "We introduce INTERLACE, a novel framework that prunes redundant layers in VLMs while maintaining performance through sample-efficient finetuning. Existing layer pruning methods lead to significant performance drop when applied to VLMs. Instead, we analyze triplets of consecutive layers to identify local redundancy, removing the most redundant of the first two layers, finetune the remaining layer to compensate for the lost capacity, and freeze the third layer to serve as a stable anchor during finetuning. We found that this interleaved finetune-freeze design enables rapid convergence with minimal data after pruning. By finetuning only a subset of layers on just 1% of the FineVision dataset for one epoch, Interlace achieves 88.9% average performance retention after dropping 25% of the network, achieving SOTA performance. Our code is available at: https://github.com/pmadinei/Interlace.git"
+url = "https://arxiv.org/abs/2511.19676"
+
+[[publication]]
+title = "DReX: Pure Vision Fusion of Self-Supervised and Convolutional Representations for Image Complexity Prediction"
+pub_year = 2025
+author = [
+    "Jonathan Skaza",
+    "Parsa Madinei",
+    "Ziqi Wen",
+    "Miguel Eckstein",
+]
+journal = "arXiv preprint arXiv:2511.16991"
+abstract = "Visual complexity prediction is a fundamental problem in computer vision with applications in image compression, retrieval, and classification. Understanding what makes humans perceive an image as complex is also a long-standing question in cognitive science. Recent approaches have leveraged multimodal models that combine visual and linguistic representations, but it remains unclear whether language information is necessary for this task. We propose DReX (DINO-ResNet Fusion), a vision-only model that fuses self-supervised and convolutional representations through a learnable attention mechanism to predict image complexity. Our architecture integrates multi-scale hierarchical features from ResNet-50 with semantically rich representations from DINOv3 ViT-S/16, enabling the model to capture both low-level texture patterns and high-level semantic structure. DReX achieves state-of-the-art performance on the IC9600 benchmark (Pearson r = 0.9581), surpassing previous methods--including those trained on multimodal image-text data--while using approximately 21.5x fewer learnable parameters. Furthermore, DReX generalizes robustly across multiple datasets and metrics, achieving superior results on Pearson and Spearman correlation, Root Mean Square Error (RMSE), and Mean Absolute Error (MAE). Ablation and attention analyses confirm that DReX leverages complementary cues from both backbones, with the DINOv3 [CLS] token enhancing sensitivity to visual complexity. Our findings suggest that visual features alone can be sufficient for human-aligned complexity prediction and that, when properly fused, self-supervised …"
+url = "https://arxiv.org/abs/2511.16991"
 
 [[publication]]
 title = "Foveated Multi-Modal Large Language Model Maps to Predict Time to Understand Scenes"
