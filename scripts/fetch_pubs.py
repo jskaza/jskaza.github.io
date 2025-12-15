@@ -93,6 +93,7 @@ def build_toml(scholar_id: str, github_username: str = None) -> dict:
 
     for stub in tqdm(author["publications"], desc="Fetching publication data"):
         pub = scholarly.fill(stub)          # one API call per paper
+        
         bib = pub["bib"]
 
         # -------- core fields -------------------------------------------------
