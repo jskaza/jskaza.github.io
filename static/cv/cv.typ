@@ -34,7 +34,7 @@
       align: (left, center, right),
       [],
       [Last updated: #datetime.today().display("[month repr:long] [day], [year]")],
-      context [#counter(page).display()]
+      context [#counter(page).display()],
     )
   ],
 )
@@ -75,8 +75,7 @@
     columns: (60%, 40%),
     row-gutter: 8pt,
     align: (left, right),
-    [#strong(title)],
-    time,
+    [#strong(title)], time,
     if company != [] [#company] + if url != none and url != "" [ #h(4pt) #link(url)[#fa-icon("university")]],
     if location != [] [#location],
   )
@@ -98,12 +97,11 @@
   } else {
     ""
   }
-  
+
   #grid(
     columns: (3fr, 1fr),
     align: (left, right),
-    [#name#if description != none [ (#description)]], 
-    [#time_text],
+    [#name#if description != none [ (#description)]], [#time_text],
   )
 ]
 
@@ -128,15 +126,11 @@
     columns: 1fr,
     align: left,
     [#author_text #year_text. "#title."#if venue != [] [ #emph(venue)]#if location != [] [, #location].#if links.len() > 0 [ #h(2pt) #for link_item in links [
-      #let icon_symbol = if link_item.name == "Poster" {
-        fa-icon("image")
-      } else if link_item.name == "Slides" {
-        fa-icon("display")
-      } else {
-        text(fill: accent_color)[↗]
-      }
-      #link(site_url + link_item.url)[#h(2pt) #icon_symbol]
-    ]]]
+          #let icon_symbol = if link_item.name == "Poster" { fa-icon("image") } else if link_item.name == "Slides" {
+            fa-icon("display")
+          } else { text(fill: accent_color)[↗] }
+          #link(site_url + link_item.url)[#h(2pt) #icon_symbol]
+        ]]]
   )
   #v(8pt)
 ]
@@ -145,8 +139,7 @@
   #grid(
     columns: (3fr, 1fr),
     align: (left, right),
-    [#name#if url != none and url != "" [ #link(url)[#h(4pt) #fa-icon("award")]]], 
-    [#year],
+    [#name#if url != none and url != "" [ #link(url)[#h(4pt) #fa-icon("award")]]], [#year],
   )
 ]
 
@@ -178,11 +171,11 @@
     } else if item.name == "X" {
       contacts.push(link(item.url)[#fa-icon("x-twitter") X])
     } else if item.name == "ORCID" {
-      contacts.push(link(item.url)[#orcid-icon(color:  rgb("#09847A")) ORCID])
+      contacts.push(link(item.url)[#orcid-icon(color: rgb("#09847A")) ORCID])
     }
   }
-      // Add website link
-    contacts.push(link(site_url)[#fa-icon("globe") #site_url.replace("https://", "")])
+  // Add website link
+  contacts.push(link(site_url)[#fa-icon("globe") #site_url.replace("https://", "")])
   contacts.join("   ")
 }
 
@@ -230,34 +223,34 @@
 
   #for pub in pubs_sorted [
     #text(size: 9pt, fill: light_accent)[#pubEntry(
-      authors: pub.author,
-      year: pub.pub_year,
-      title: pub.title,
-      journal: pub.at("journal", default: none),
-      volume: pub.at("volume", default: none),
-      url: pub.at("url", default: none),
-      github_repo: pub.at("github_repo", default: none),
-    )
+        authors: pub.author,
+        year: pub.pub_year,
+        title: pub.title,
+        journal: pub.at("journal", default: none),
+        volume: pub.at("volume", default: none),
+        url: pub.at("url", default: none),
+        github_repo: pub.at("github_repo", default: none),
+      )
+    ]
   ]
-]
 ]
 
 // Conference Presentations Section
-#sectionBlock([Conferences \ 
- &  \ 
-Talks])[
+#sectionBlock([Conferences \
+  &  \
+  Talks])[
   #let confs_sorted = conferences_data.conference.sorted(key: conf => -conf.date)
 
   #for conf in confs_sorted [
     #text(size: 9pt, fill: light_accent)[#confEntry(
-      title: conf.title,
-      authors: conf.author,
-      venue: conf.venue,
-      location: conf.location,
-      year: conf.date,
-      links: conf.at("links", default: ()),
-    )
-  ]
+        title: conf.title,
+        authors: conf.author,
+        venue: conf.venue,
+        location: conf.location,
+        year: conf.date,
+        links: conf.at("links", default: ()),
+      )
+    ]
   ]
 ]
 
@@ -273,9 +266,9 @@ Talks])[
 ]
 
 // Funding and Support Section
-#sectionBlock([Funding \ 
- &  \ 
-Support])[
+#sectionBlock([Funding \
+  &  \
+  Support])[
   #let funding_sorted = funding_data.funding.sorted(key: funding => {
     // Extract the end year from year range for sorting
     let year_str = funding.year
@@ -330,7 +323,7 @@ Support])[
 
 // Coursework Section
 #sectionBlock("Select Coursework")[
-  #let courses = coursework_data.courses
+  #let courses = coursework_data.courses.sorted()
   #let course_list = courses.join(", ")
   #text(size: 10pt)[#course_list]
 ]

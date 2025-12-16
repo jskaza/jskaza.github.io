@@ -9,6 +9,8 @@ courses = [
     "Longitudinal Analysis",
     "Survival Analysis",
     "Probability",
-    "Neuroscience",
-    "Cognitive Psychology"
+    "Behavioral Neuroscience",
+    "Cognitive Psychology",
+    "Neural Circuits",
+    "Neuroanatomy"
 ]
