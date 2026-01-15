@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Jonathan Skaza</title>
+    <meta name="description" content="My publications and preprints">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://jskaza.github.io/style.css">
+    
+    <!-- Dynamic color configuration from config.toml -->
+    
+    <style>
+        :root {
+            --primary-color: #003660;
+            --secondary-color: #FEBC11;
+            --accent-color: #09847A;
+            --text-color: #3D4952;
+            --background-color: #ffffff;
+            --card-background: #ffffff;
+            --border-color: #DCE1E5;
+            --light-background: #EEF0F2;
+        }
+        
+        .dark-mode {
+            --text-color: #DCE1E5;
+            --background-color: #111517;
+            --card-background: #1e1e1e;
+            --border-color: #333333;
+        }
+    </style>
+    
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <!-- Devicon for programming language icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://jskaza.github.io/favicon.ico">
+    
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Mobile menu button -->
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <!-- Navigation links -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="https://jskaza.github.io" class="nav-link"><i class="fas fa-home"></i></a>
+                </li>
+                
+                    
+                    <li class="nav-item">
+                        <a href="https://jskaza.github.io/publications" class="nav-link">Publications</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="https://jskaza.github.io/conferences" class="nav-link">Conferences &amp; Talks</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="https://jskaza.github.io/experience" class="nav-link">Experience</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="https://jskaza.github.io/software" class="nav-link">Software</a>
+                    </li>
+                    
+                
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+        
+<div class="section-template">
+    <div class="container">
+        <div class="section-header">
+            <h1>Publications</h1>
+            
+            <p>My publications and preprints</p>
+            
+        </div>
+        
+        
+        
+        
+        <div class="publications-metadata">
+            <p class="metadata-info">
+                <span class="metadata-label">Last auto-update:</span> 
+                <time datetime="2026-01-15T00:00:06.335207">
+                    January 15, 2026
+                </time>
+                <span class="metadata-separator">•</span>
+                <span class="metadata-label">Source:</span> 
+                <a href="https://scholar.google.com/citations?user=dAAMOqgAAAAJ" target="_blank" rel="noopener noreferrer">
+                    Google Scholar
+                </a>
+            </p>
+        </div>
+        
+        
+        <div class="section-content">
+            
+            
+            <div class="publications-list">
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            A Deep Learning Framework for Predicting Functional Visual Performance in Bionic Eye Users
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                                <span class="publication-venue">bioRxiv</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Shravan Murlidaran</span>, 
+                                
+                            
+                                
+                                    <span class="author">Apurv Varshney</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author">William Wang</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel P Eckstein</span>, 
+                                
+                            
+                                
+                                    <span class="author">Michael Beyeler</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Efforts to restore vision via neural implants have outpaced the ability to predict what users will perceive, leaving patients and clinicians without reliable tools for surgical planning or device selection. To bridge this critical gap, we introduce a computational virtual patient (CVP) pipeline that integrates anatomically grounded phosphene simulation with task-optimized deep neural networks (DNNs) to forecast patient perceptual capabilities across diverse prosthetic designs and tasks. We evaluate performance across six visual tasks, six electrode configurations, and two artificial vision models, positioning our CVP approach as a scalable pre-implantation method. Several chosen tasks align with the Functional Low-Vision Observer Rated Assessment (FLORA), revealing correspondence between model-predicted difficulty and real-world patient outcomes. Further, DNNs exhibited strong correspondence with psychophysical data collected from normally sighted subjects viewing phosphene simulations, capturing both overall task difficulty and performance variation across implant configurations. While performance was generally aligned, DNNs sometimes diverged from humans in which specific stimuli were misclassified, reflecting differences in underlying decision strategies between artificial agents and human observers. The findings position CVP as a scientific tool for probing perception under prosthetic vision, an engine to inform device development, and a clinically relevant framework for pre-surgical forecasting.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;www.biorxiv.org&#x2F;content&#x2F;10.1101&#x2F;2025.06.23.660990.abstract" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-biorxiv"></i>
+        bioRxiv
+    </a>
+
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;jskaza&#x2F;deep-learning-bionic-eyes" class="publication-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Semantic Saliency from Multi-Modal Large Language Model Scene Understanding Maps
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">Shravan Murlidaran</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">William Wang</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel P Eckstein</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;scholar.google.com&#x2F;scholar?q=Semantic+Saliency+from+Multi-Modal+Large+Language+Model+Scene+Understanding+Maps" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-google-scholar"></i>
+        Google Scholar
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Predicting Reaction Time to Comprehend Scenes with Foveated Scene Understanding Maps
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                                <span class="publication-venue">arXiv preprint arXiv:2505.12660</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Shravan Murlidaran</span>, 
+                                
+                            
+                                
+                                    <span class="author">William Y Wang</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel P Eckstein</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Although models exist that predict human response times (RTs) in tasks such as target search and visual discrimination, the development of image-computable predictors for scene understanding time remains an open challenge. Recent advances in vision-language models (VLMs), which can generate scene descriptions for arbitrary images, combined with the availability of quantitative metrics for comparing linguistic descriptions, offer a new opportunity to model human scene understanding. We hypothesize that the primary bottleneck in human scene understanding and the driving source of variability in response times across scenes is the interaction between the foveated nature of the human visual system and the spatial distribution of task-relevant visual information within an image. Based on this assumption, we propose a novel image-computable model that integrates foveated vision with VLMs to produce a spatially resolved map of scene understanding as a function of fixation location (Foveated Scene Understanding Map, or F-SUM), along with an aggregate F-SUM score. This metric correlates with average (N=17) human RTs (r=0.47) and number of saccades (r=0.51) required to comprehend a scene (across 277 scenes). The F-SUM score also correlates with average (N=16) human description accuracy (r=-0.56) in time-limited presentations. These correlations significantly exceed those of standard image-based metrics such as clutter, visual complexity, and scene ambiguity based on language entropy. Together, our work introduces a new image-computable metric for predicting human response times in scene understanding and …</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2505.12660" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-arxiv"></i>
+        arXiv
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            A Computational Virtual Patient Pipeline for Predicting Perceptual Capabilities with Visual Prostheses
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                                <span class="publication-venue">Journal of Vision</span>
+                                
+                                    <span class="publication-volume">Vol. 25</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Shravan Murlidaran</span>, 
+                                
+                            
+                                
+                                    <span class="author">Apurv Varshney</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel P Eckstein</span>, 
+                                
+                            
+                                
+                                    <span class="author">Michael Beyeler</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Introduction Visual prostheses aim to restore sight, but current devices generate only rudimentary phosphenes with limited visual capabilities. Predicting patient perception before implantation is crucial for evaluating device performance, optimizing design, and setting realistic expectations. We present a novel Computational Virtual Patient (CVP) pipeline to predict perceptual performance. Methods The CVP pipeline simulates prosthetic perceptual experiences using two models: a traditional “scoreboard” approach and an “axon map” model that leverages the spatial layout of retinal ganglion cell axons (Beyeler et al., 2019). These simulations, constrained by psychophysical and neurophysiological data, allow customization of electrode configurations, including tests with 6x10 (Argus II), 6x15, and 12x20 arrays. Sighted participants (n= 18) completed shape and facial emotion classification tasks using simulated …</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;jov.arvojournals.org&#x2F;article.aspx?articleid=2809358" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        View Paper
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Foveated Multi-Modal Large Language Model Maps to Predict Time to Understand Scenes
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                                <span class="publication-venue">Journal of Vision</span>
+                                
+                                    <span class="publication-volume">Vol. 25</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Shravan Murlidaran</span>, 
+                                
+                            
+                                
+                                    <span class="author">William Wang</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel Eckstein</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>▶(1) Response Time Study: Participants (N= 17) will do the free viewing until they understand the scene, and then type in the scene descriptions. Response time and collected eye-tracking data, including the total number of saccades, are collected.▶(2) Saccade-Limited Presentation Study: Each scene was displayed for a restricted number of eye movements, either 2 or 4 saccades. Participants (N= 16) were then instructed to provide descriptions of the scene based on what they observed.Method: Foveated Scene Understanding Map (F-SUM)</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;jskaza.github.io&#x2F;posters&#x2F;vss_2025_2.pdf" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        View Paper
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            DReX: Pure Vision Fusion of Self-Supervised and Convolutional Representations for Image Complexity Prediction
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                                <span class="publication-venue">arXiv preprint arXiv:2511.16991</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Parsa Madinei</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel Eckstein</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Visual complexity prediction is a fundamental problem in computer vision with applications in image compression, retrieval, and classification. Understanding what makes humans perceive an image as complex is also a long-standing question in cognitive science. Recent approaches have leveraged multimodal models that combine visual and linguistic representations, but it remains unclear whether language information is necessary for this task. We propose DReX (DINO-ResNet Fusion), a vision-only model that fuses self-supervised and convolutional representations through a learnable attention mechanism to predict image complexity. Our architecture integrates multi-scale hierarchical features from ResNet-50 with semantically rich representations from DINOv3 ViT-S&#x2F;16, enabling the model to capture both low-level texture patterns and high-level semantic structure. DReX achieves state-of-the-art performance on the IC9600 benchmark (Pearson r = 0.9581), surpassing previous methods--including those trained on multimodal image-text data--while using approximately 21.5x fewer learnable parameters. Furthermore, DReX generalizes robustly across multiple datasets and metrics, achieving superior results on Pearson and Spearman correlation, Root Mean Square Error (RMSE), and Mean Absolute Error (MAE). Ablation and attention analyses confirm that DReX leverages complementary cues from both backbones, with the DINOv3 [CLS] token enhancing sensitivity to visual complexity. Our findings suggest that visual features alone can be sufficient for human-aligned complexity prediction and that, when properly fused, self-supervised …</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2511.16991" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-arxiv"></i>
+        arXiv
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            INTERLACE: Interleaved Layer Pruning and Efficient Adaptation in Large Vision-Language Models
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2025</span>
+                            
+                                <span class="publication-venue">arXiv preprint arXiv:2511.19676</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">Parsa Madinei</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ryan Solgi</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ziqi Wen</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Miguel Eckstein</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ramtin Pedarsani</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>We introduce INTERLACE, a novel framework that prunes redundant layers in VLMs while maintaining performance through sample-efficient finetuning. Existing layer pruning methods lead to significant performance drop when applied to VLMs. Instead, we analyze triplets of consecutive layers to identify local redundancy, removing the most redundant of the first two layers, finetune the remaining layer to compensate for the lost capacity, and freeze the third layer to serve as a stable anchor during finetuning. We found that this interleaved finetune-freeze design enables rapid convergence with minimal data after pruning. By finetuning only a subset of layers on just 1% of the FineVision dataset for one epoch, Interlace achieves 88.9% average performance retention after dropping 25% of the network, achieving SOTA performance. Our code is available at: https:&#x2F;&#x2F;github.com&#x2F;pmadinei&#x2F;Interlace.git</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2511.19676" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-arxiv"></i>
+        arXiv
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Data-driven deep neural network models of visual processing in Drosophila
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2024</span>
+                            
+                                <span class="publication-venue">Cognitive Computational Neuroscience</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan S Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Erin Wong</span>, 
+                                
+                            
+                                
+                                    <span class="author">Arie Matsliah</span>, 
+                                
+                            
+                                
+                                    <span class="author">Benjamin R Cowley</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;scholar.google.com&#x2F;scholar?q=Data-driven+deep+neural+network+models+of+visual+processing+in+Drosophila" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-google-scholar"></i>
+        Google Scholar
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Daily diurnal salivary curves: Are they too noisy to be useful?
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2019</span>
+                            
+                                <span class="publication-venue">Psychoneuroendocrinology</span>
+                                
+                                    <span class="publication-volume">Vol. 107</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">James L Abelson</span>, 
+                                
+                            
+                                
+                                    <span class="author">Clemens Kirschbaum</span>, 
+                                
+                            
+                                
+                                    <span class="author">James Herman</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Brisa Sanchez</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Background: Measurement of cortisol in saliva is used to quantify “biological stress,” as reflected in HPA axis activity. It is “noisy,” however, and strict guidelines are needed to optimally collect it. We have now carefully and simultaneously collected both saliva and hair cortisol, and lab-based probes of HPA reactivity and regulatory dynamics, yielding 180+ HPA axis data points across 6 days of home saliva collection, a dex suppression test, 4 lab probes (TSST, ACTH stimulation, dex-CRH, and metyrapone), and two hair collections.Methods: From this extensive biological data base, we have captured the full 180+ HPA data points on a single slide for each of 127 participants. We want to share these slides, to show our ISPNE audience more raw HPA data than they ever have seen before, in a form that highlights the consistencies and inconsistencies of our familiar methods, and the immense complexity of the patterns …</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;scholar.google.com&#x2F;scholar?cluster=4982104590688825322&amp;hl=en&amp;oi=scholarr" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-google-scholar"></i>
+        Google Scholar
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Does salivary cortisol reflect key regulatory control aspects HPA axis functioning in healthy humans?
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2019</span>
+                            
+                                <span class="publication-venue">Psychoneuroendocrinology</span>
+                                
+                                    <span class="publication-volume">Vol. 107</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">James L Abelson</span>, 
+                                
+                            
+                                
+                                    <span class="author">Brisa Sanchez</span>, 
+                                
+                            
+                                
+                                    <span class="author">Xingyu Zhang</span>, 
+                                
+                            
+                                
+                                    <span class="author">Israel Liberzon</span>, 
+                                
+                            
+                                
+                                    <span class="author">Hedieh Briggs</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Background: Saliva cortisol has been used extensively to identify links between psychosocial factors and “biological stress.” However, few studies have attempted to determine the biological meaning of HPA measures from saliva, in terms of the HPA regulatory signaling dynamics that shape health consequences. This study utilized established lab probes of HPA neurobiology to add biological meaning to field friendly cortisol measures from saliva.Methods: 180+ HPA axis data points were collected from 142 participants, including 9 saliva samples&#x2F;day over 6 days and these “laboratory” tests: Dexamethasone suppression test (negative feedback), dexamethasone&#x2F;CRH stimulation test (feedback and pituitary sensitivity), ACTH stimulation test (adrenal sensitivity), metyrapone test (central drive), and TSST (psychosocial stress reactivity). Diurnal curve components examined include cortisol awakening response (CAR …</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;scholar.google.com&#x2F;scholar?cluster=18302517099009867821&amp;hl=en&amp;oi=scholarr" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-google-scholar"></i>
+        Google Scholar
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function?
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2019</span>
+                            
+                                <span class="publication-venue">Psychoneuroendocrinology</span>
+                                
+                                    <span class="publication-volume">Vol. 107</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">Stefanie E Mayer</span>, 
+                                
+                            
+                                
+                                    <span class="author">James L Abelson</span>, 
+                                
+                            
+                                
+                                    <span class="author">Hedieh Briggs</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Clemens Kirschbaum</span>, 
+                                
+                            
+                                
+                                    <span class="author">Tobias Stalder</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Background: Hair cortisol is used to track longitudinal, integrated cortisol secretion over time (a month or more). Like saliva cortisol, it has been linked to numerous psychosocial stressors. As with saliva measures, it has been little studied in relation to HPA regulatory signaling dynamics that shape health consequences. This study utilized laboratory probes of HPA neurobiology to study the biological meaning of saliva cortisol measures and to link hair cortisol levels to both saliva cortisol and lab probes.Methods: Saliva cortisol was comprehensively sampled over 6 days within a month, and hair samples were obtained to assess cortisol levels over that month. Over the same month, the following “laboratory” tests were also performed: The dexamethasone suppression test (negative feedback), the dexamethasone&#x2F;CRH stimulation test (feedback and pituitary sensitivity), the ACTH stimulation test (adrenal sensitivity), the …</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;scholar.google.com&#x2F;scholar?cluster=17183909290165407625&amp;hl=en&amp;oi=scholarr" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-google-scholar"></i>
+        Google Scholar
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            The advantage of doubling: a deep reinforcement learning approach to studying the double team in the NBA
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2018</span>
+                            
+                                <span class="publication-venue">arXiv preprint arXiv:1803.02940</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">Jiaxuan Wang</span>, 
+                                
+                            
+                                
+                                    <span class="author">Ian Fox</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Nick Linck</span>, 
+                                
+                            
+                                
+                                    <span class="author">Satinder Singh</span>, 
+                                
+                            
+                                
+                                    <span class="author">Jenna Wiens</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>During the 2017 NBA playoffs, Celtics coach Brad Stevens was faced with a difficult decision when defending against the Cavaliers: &quot;Do you double and risk giving up easy shots, or stay at home and do the best you can?&quot; It&#x27;s a tough call, but finding a good defensive strategy that effectively incorporates doubling can make all the difference in the NBA. In this paper, we analyze double teaming in the NBA, quantifying the trade-off between risk and reward. Using player trajectory data pertaining to over 643,000 possessions, we identified when the ball handler was double teamed. Given these data and the corresponding outcome (i.e., was the defense successful), we used deep reinforcement learning to estimate the quality of the defensive actions. We present qualitative and quantitative results summarizing our learned defensive strategy for defending. We show that our policy value estimates are predictive of points per possession and win percentage. Overall, the proposed framework represents a step toward a more comprehensive understanding of defensive strategies in the NBA.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1803.02940" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-arxiv"></i>
+        arXiv
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Modeling the infectiousness of Twitter hashtags
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2017</span>
+                            
+                                <span class="publication-venue">Physica A: Statistical Mechanics and its Applications</span>
+                                
+                                    <span class="publication-volume">Vol. 465</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Brian Blais</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>This study applies dynamical and statistical modeling techniques to quantify the proliferation and popularity of trending hashtags on Twitter. Using time-series data reflecting actual tweets in New York City and San Francisco, we present estimates for the dynamics (i.e., rates of infection and recovery) of several hundred trending hashtags using an epidemic modeling framework coupled with Bayesian Markov Chain Monte Carlo (MCMC) methods. This methodological strategy is an extension of techniques traditionally used to model the spread of infectious disease. Using SIR-type models, we demonstrate that most hashtags are marginally infectious, while very few emerge as “trending”. In doing so we illustrate that hashtags can be grouped by infectiousness, possibly providing a method for quantifying the trendiness of a topic.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S0378437116305556" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-elsevier"></i>
+        Science Direct
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Mathematical modeling of trending topics on twitter
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2015</span>
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan S Skaza</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Created in 2006, Twitter is an online social networking service in which users share and read 140-character messages called Tweets. The site has approximately 288 million monthly active users who produce about 500 million Tweets per day. This study applies dynamical and statistical modeling strategies to quantify the spread of information on Twitter. Parameter estimates for the rates of infection and recovery are obtained using Bayesian Markov Chain Monte Carlo (MCMC) methods. The methodological strategy employed is an extension of techniques traditionally used in an epidemiological and biomedical context (particularly in the spread of infectious disease). This study, which addresses information spread, presents case studies pertaining to the prevalence of several “trending” topics on Twitter over time. The study introduces a framework to compare information dynamics on Twitter based on the topical area as well as a framework for the prediction of topic prevalence. Additionally, methodological and results-based comparisons are drawn between the spread of information and the spread of infectious disease.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;digitalcommons.bryant.edu&#x2F;honors_mathematics&#x2F;20&#x2F;" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        View Paper
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2015</span>
+                            
+                                <span class="publication-venue">Applied Economics</span>
+                                
+                                    <span class="publication-volume">Vol. 47</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author">L Beaudin</span>, 
+                                
+                            
+                                
+                                    <span class="author highlighted-author">J Skaza</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>Building upon previous studies that highlight considerable overlap in the influential factors of both obesity and depression, we employ a structural model to investigate the direct and indirect impacts of behavioural and demographic factors on obesity. We use new body mass index (BMI) to calculate the obesity status and find a significant relationship between an individual’s depression status and his&#x2F;her obesity status. The results and simulations imply that demographic and behavioural factors can significantly influence the obesity status both directly and indirectly through their impact on depression. Therefore, this study suggests that models which do not account for these various pathways of influence are most likely misrepresenting the impact of these factors on obesity.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;www.tandfonline.com&#x2F;doi&#x2F;abs&#x2F;10.1080&#x2F;00036846.2015.1061648" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        View Paper
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            Socioeconomic Determinants of Obesity in the United States
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2014</span>
+                            
+                                <span class="publication-venue">Empirical Economic Bulletin, An Undergraduate Journal</span>
+                                
+                                    <span class="publication-volume">Vol. 7</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>This paper investigates the socioeconomic determinants of obesity (as measured by BMI) in the United States. Logistic regression is employed on cross-sectional data from the 2011-2012 National Health and Nutrition Examination Survey (NHANES). The results show that, in general, holding other factors constant, individuals with a college diploma are less likely to be obese than those with a lesser education (except in extreme cases), married individuals are more likely to be obese than those that are not married, and females are more likely to be obese than males. Additionally, compared to white persons, Black and Hispanic persons have a greater probability of being obese, while Asians have a significantly lower probability of being obese. These findings are supported by the broader literature, in which different empirical techniques are often utilized.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;digitalcommons.bryant.edu&#x2F;eeb&#x2F;vol7&#x2F;iss1&#x2F;2&#x2F;" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        View Paper
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+                <article class="publication-item">
+                    <header class="publication-header">
+                        <h3 class="publication-title">
+                            The relationship between economic growth and environmental degradation: exploring models and questioning the existence of an environmental Kuznets curve
+                        </h3>
+                        
+                        <div class="publication-meta">
+                            <span class="publication-year">2013</span>
+                            
+                                <span class="publication-venue">The Center for Global and Economic Studies at Bryant University Working Paper</span>
+                                
+                            
+                        </div>
+                        
+                        <div class="publication-authors">
+                            
+                                
+                                    <span class="author highlighted-author">Jonathan Skaza</span>, 
+                                
+                            
+                                
+                                    <span class="author">Brian Blais</span>
+                                
+                            
+                        </div>
+                    </header>
+                    
+                    
+                    <div class="publication-abstract">
+                        <details>
+                            <summary>Abstract</summary>
+                            <p>In this paper, we explore a variety of models attempting to explain the pollution-income relationship (PIR). There has been much literature addressing the notion of an environmental Kuznets curve (EKC). Many researchers find an EKC relationship for certain pollutants, while others do not find evidence of an EKC relationship. There is also literature formally critiquing the EKC. We employ cross-sectional, panel, and time-series analysis to add insight into the relationship between economic growth and environmental degradation, a research area that is far from consensual and that has practical implications. We ultimately find that the clearest case of an EKC effect in our study arises in the analysis of organic water pollution, while there is modest evidence suggesting an EKC effect with regard to CO2, NO, and methane. We also present ample evidence suggesting an anti-EKC effect for PM10. Our analysis causes us to question the existence of an EKC effect throughout the environment in general.</p>
+                        </details>
+                    </div>
+                    
+                    
+                    <footer class="publication-footer">
+                        
+                            
+    
+    
+
+    
+        
+        
+    
+
+    <a href="https:&#x2F;&#x2F;papers.ssrn.com&#x2F;sol3&#x2F;papers.cfm?abstract_id=2346173" class="publication-link" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-ssrn"></i>
+        SSRN
+    </a>
+
+                        
+                        
+                    </footer>
+                </article>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p style="font-size: 0.8em;">&copy; 2026 Jonathan Skaza. <br> Built with <a href="https://www.getzola.org/">Zola</a> using the <a href="https://github.com/jskaza/peritus"><strong>peritus</strong></a> theme by <a href="https://jskaza.github.io/">Jonathan Skaza</a>.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('is-active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-active');
+            navMenu.classList.remove('active');
+        }));
+    </script>
+</body>
+</html> 
