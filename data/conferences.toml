@@ -64,4 +64,17 @@ links = [
     { name = "Slides", url = "/slides/cvp_2025.pdf" }
 ]
 
-
+[[conference]]
+title = "Data-driven, model-optimized stimuli to probe visual projection neurons in Drosophila"
+date = 2026
+author = [
+    "Jonathan Skaza",
+    "Rabia Gondur",
+    "Arie Matsliah",
+    "Benjamin R Cowley"
+]
+venue = "COSYNE"
+location = "Lisbon, Portugal"
+links = [
+    { name = "Poster", url = "/posters/cosyne_2026.pdf" }
+]
