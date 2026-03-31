@@ -12,5 +12,6 @@ courses = [
     "Behavioral Neuroscience",
     "Cognitive Psychology",
     "Models of Neural Circuits",
-    "Neuroanatomy"
+    "Neuroanatomy",
+    "Geometric and Dynamical Principles of Neural Computation"
 ]
