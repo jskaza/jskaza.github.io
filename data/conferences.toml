@@ -93,3 +93,15 @@ location = "St. Pete Beach, FL, USA"
 links = [
     { name = "Poster", url = "/posters/vss_2026.pdf" }
 ]
+
+[[conference]]
+title = "Contributions of Foveation, Scene Ambiguity, and Visual Complexity To Human Time to Comprehend Scenes"
+date = 2026
+author = [
+    "Ziqi Wen",
+    "Jonathan Skaza",
+    "Shravan Murlidaran",
+    "Miguel P Eckstein"
+]
+venue = "Vision Sciences Society"
+location = "St. Pete Beach, FL, USA"
