@@ -78,3 +78,18 @@ location = "Lisbon, Portugal"
 links = [
     { name = "Poster", url = "/posters/cosyne_2026.pdf" }
 ]
+
+
+[[conference]]
+title = "A Task-Optimized Vision–Language Neural Network Produces Human-Like Linguistic Cueing Despite Lacking Built-in Attention Mechanisms"
+date = 2026
+author = [
+    "Jonathan Skaza",
+    "Sana Shehabi",
+    "Miguel P Eckstein"
+]
+venue = "Vision Sciences Society"
+location = "St. Pete Beach, FL, USA"
+links = [
+    { name = "Poster", url = "/posters/vss_2026.pdf" }
+]
