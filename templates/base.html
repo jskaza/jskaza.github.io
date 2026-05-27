@@ -1,132 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}</title>
-    <meta name="description"
-        content="{% if page.description %}{{ page.description }}{% elif section.description %}{{ section.description }}{% else %}{{ config.description }}{% endif %}">
-
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% elif section.description %}{{ section.description }}{% else %}{{ config.description }}{% endif %}">
+    
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ get_url(path=" style.css") }}">
-
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+    
     <!-- Dynamic color configuration from config.toml -->
     {% if config.extra.colors %}
     <style>
         :root {
-            --primary-color: {
-                    {
-                    config.extra.colors.primary_color | default(value="#39444C")
-                }
-            }
-
-            ;
-
-            --secondary-color: {
-                    {
-                    config.extra.colors.secondary_color | default(value="#C8102E")
-                }
-            }
-
-            ;
-
-            --accent-color: {
-                    {
-                    config.extra.colors.accent_color | default(value="#98A6AD")
-                }
-            }
-
-            ;
-
-            --text-color: {
-                    {
-                    config.extra.colors.text_color | default(value="#2C2F33")
-                }
-            }
-
-            ;
-
-            --background-color: {
-                    {
-                    config.extra.colors.background_color | default(value="#F8F9FA")
-                }
-            }
-
-            ;
-
-            --card-background: {
-                    {
-                    config.extra.colors.card_background | default(value="#FFFFFF")
-                }
-            }
-
-            ;
-
-            --border-color: {
-                    {
-                    config.extra.colors.border_color | default(value="#D0D3D4")
-                }
-            }
-
-            ;
-
-            --light-background: {
-                    {
-                    config.extra.colors.light_background | default(value="#EDF0F2")
-                }
-            }
-
-            ;
+            --primary-color: {{ config.extra.colors.primary_color | default(value="#39444C") }};
+            --secondary-color: {{ config.extra.colors.secondary_color | default(value="#C8102E") }};
+            --accent-color: {{ config.extra.colors.accent_color | default(value="#98A6AD") }};
+            --text-color: {{ config.extra.colors.text_color | default(value="#2C2F33") }};
+            --background-color: {{ config.extra.colors.background_color | default(value="#F8F9FA") }};
+            --card-background: {{ config.extra.colors.card_background | default(value="#FFFFFF") }};
+            --border-color: {{ config.extra.colors.border_color | default(value="#D0D3D4") }};
+            --light-background: {{ config.extra.colors.light_background | default(value="#EDF0F2") }};
         }
-
+        
         .dark-mode {
-            --text-color: {
-                    {
-                    config.extra.colors.dark_text_color | default(value="#E0E0E0")
-                }
-            }
-
-            ;
-
-            --background-color: {
-                    {
-                    config.extra.colors.dark_background_color | default(value="#121212")
-                }
-            }
-
-            ;
-
-            --card-background: {
-                    {
-                    config.extra.colors.dark_card_background | default(value="#1E1E1E")
-                }
-            }
-
-            ;
-
-            --border-color: {
-                    {
-                    config.extra.colors.dark_border_color | default(value="#2C2C2C")
-                }
-            }
-
-            ;
+            --text-color: {{ config.extra.colors.dark_text_color | default(value="#E0E0E0") }};
+            --background-color: {{ config.extra.colors.dark_background_color | default(value="#121212") }};
+            --card-background: {{ config.extra.colors.dark_card_background | default(value="#1E1E1E") }};
+            --border-color: {{ config.extra.colors.dark_border_color | default(value="#2C2C2C") }};
         }
     </style>
     {% endif %}
-
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <!-- Devicon for programming language icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ get_url(path=" favicon.ico") }}">
-
+    <link rel="icon" type="image/x-icon" href="{{ get_url(path="favicon.ico") }}">
+    
     {% if config.extra.enable_dark_mode %}
     <script>
         // Dark mode toggle
@@ -134,7 +50,7 @@
             document.documentElement.classList.toggle('dark-mode');
             localStorage.setItem('darkMode', document.documentElement.classList.contains('dark-mode'));
         }
-
+        
         // Load dark mode preference
         if (localStorage.getItem('darkMode') === 'true') {
             document.documentElement.classList.add('dark-mode');
@@ -142,9 +58,10 @@
     </script>
     {% endif %}
     <script defer src="https://cloud.umami.is/script.js"
-        data-website-id="df4f407f-3418-49f5-98ea-0d9aa9307303"></script>
-</head>
+    data-website-id="df4f407f-3418-49f5-98ea-0d9aa9307303"></script>
 
+
+</head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -155,20 +72,20 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-
+            
             <!-- Navigation links -->
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="{{ get_url(path=" /") }}" class="nav-link"><i class="fas fa-home"></i></a>
+                    <a href="{{ get_url(path="/") }}" class="nav-link"><i class="fas fa-home"></i></a>
                 </li>
                 {% if config.extra.menu %}
-                {% for item in config.extra.menu %}
-                <li class="nav-item">
-                    <a href="{{ get_url(path=item.url) }}" class="nav-link">{{ item.name }}</a>
-                </li>
-                {% endfor %}
+                    {% for item in config.extra.menu %}
+                    <li class="nav-item">
+                        <a href="{{ get_url(path=item.url) }}" class="nav-link">{{ item.name }}</a>
+                    </li>
+                    {% endfor %}
                 {% endif %}
-
+                
                 {% if config.extra.enable_dark_mode %}
                 <li class="nav-item">
                     <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
@@ -188,10 +105,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p style="font-size: 0.8em;">&copy; {{ now() | date(format="%Y") }} {{ config.extra.name |
-                default(value=config.title) }}. <br> Built with <a href="https://www.getzola.org/">Zola</a> using the <a
-                    href="https://github.com/jskaza/peritus"><strong>peritus</strong></a> theme by <a
-                    href="https://jskaza.github.io/">Jonathan Skaza</a>.</p>
+            <p style="font-size: 0.8em;">&copy; {{ now() | date(format="%Y") }} {{ config.extra.name | default(value=config.title) }}. <br> Built with <a href="https://www.getzola.org/">Zola</a> using the <a href="https://github.com/jskaza/peritus"><strong>peritus</strong></a> theme by <a href="https://jskaza.github.io/">Jonathan Skaza</a>.</p>
         </div>
     </footer>
 
@@ -200,12 +114,12 @@
         // Mobile menu toggle
         const mobileMenu = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
-
-        mobileMenu.addEventListener('click', function () {
+        
+        mobileMenu.addEventListener('click', function() {
             mobileMenu.classList.toggle('is-active');
             navMenu.classList.toggle('active');
         });
-
+        
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
             mobileMenu.classList.remove('is-active');
@@ -213,5 +127,4 @@
         }));
     </script>
 </body>
-
-</html>
+</html> 
