@@ -1,5 +1,5 @@
 [metadata]
-last_updated = "2026-05-15T00:00:06.549182"
+last_updated = "2026-06-15T00:00:07.413099"
 source = "Google Scholar"
 scholar_id = "dAAMOqgAAAAJ"
 github_username = "jskaza"
@@ -44,6 +44,18 @@ abstract = "In this paper, we explore a variety of models attempting to explain 
 url = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2346173"
 
 [[publication]]
+title = "Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI"
+pub_year = 2015
+author = [
+    "L Beaudin",
+    "J Skaza",
+]
+journal = "Applied Economics"
+volume = "47"
+abstract = "Building upon previous studies that highlight considerable overlap in the influential factors of both obesity and depression, we employ a structural model to investigate the direct and indirect impacts of behavioural and demographic factors on obesity. We use new body mass index (BMI) to calculate the obesity status and find a significant relationship between an individual’s depression status and his/her obesity status. The results and simulations imply that demographic and behavioural factors can significantly influence the obesity status both directly and indirectly through their impact on depression. Therefore, this study suggests that models which do not account for these various pathways of influence are most likely misrepresenting the impact of these factors on obesity."
+url = "https://www.tandfonline.com/doi/abs/10.1080/00036846.2015.1061648"
+
+[[publication]]
 title = "How does hair cortisol assessment correspond to saliva measures and to lab-based probes of HPA axis regulatory function?"
 pub_year = 2019
 author = [
@@ -60,18 +72,6 @@ abstract = "Background: Hair cortisol is used to track longitudinal, integrated 
 url = "https://scholar.google.com/scholar?cluster=17183909290165407625&hl=en&oi=scholarr"
 
 [[publication]]
-title = "Measuring the total impact of demographic and behavioural factors on the risk of obesity accounting for the depression status: a structural model approach using new BMI"
-pub_year = 2015
-author = [
-    "L Beaudin",
-    "J Skaza",
-]
-journal = "Applied Economics"
-volume = "47"
-abstract = "Building upon previous studies that highlight considerable overlap in the influential factors of both obesity and depression, we employ a structural model to investigate the direct and indirect impacts of behavioural and demographic factors on obesity. We use new body mass index (BMI) to calculate the obesity status and find a significant relationship between an individual’s depression status and his/her obesity status. The results and simulations imply that demographic and behavioural factors can significantly influence the obesity status both directly and indirectly through their impact on depression. Therefore, this study suggests that models which do not account for these various pathways of influence are most likely misrepresenting the impact of these factors on obesity."
-url = "https://www.tandfonline.com/doi/abs/10.1080/00036846.2015.1061648"
-
-[[publication]]
 title = "Mathematical modeling of trending topics on twitter"
 pub_year = 2015
 author = [
@@ -81,8 +81,8 @@ abstract = "Created in 2006, Twitter is an online social networking service in w
 url = "https://digitalcommons.bryant.edu/honors_mathematics/20/"
 
 [[publication]]
-title = "INTERLACE: Interleaved Layer Pruning and Efficient Adaptation in Large Vision-Language Models"
-pub_year = 2025
+title = "Interlace: Interleaved layer pruning and efficient adaptation in large vision-language models"
+pub_year = 2026
 author = [
     "Parsa Madinei",
     "Ryan Solgi",
@@ -91,26 +91,24 @@ author = [
     "Miguel Eckstein",
     "Ramtin Pedarsani",
 ]
-journal = "arXiv preprint arXiv:2511.19676"
-abstract = "We introduce INTERLACE, a novel framework that prunes redundant layers in VLMs while maintaining performance through sample-efficient finetuning. Existing layer pruning methods lead to significant performance drop when applied to VLMs. Instead, we analyze triplets of consecutive layers to identify local redundancy, removing the most redundant of the first two layers, finetune the remaining layer to compensate for the lost capacity, and freeze the third layer to serve as a stable anchor during finetuning. We found that this interleaved finetune-freeze design enables rapid convergence with minimal data after pruning. By finetuning only a subset of layers on just 1% of the FineVision dataset for one epoch, Interlace achieves 88.9% average performance retention after dropping 25% of the network, achieving SOTA performance. Our code is available at: https://github.com/pmadinei/Interlace.git"
-url = "https://arxiv.org/abs/2511.19676"
+journal = "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+abstract = "We introduce Interlace, a novel framework that prunes redundant layers in VLMs while maintaining performance through sample-efficient finetuning. Our key insight is that existing layer pruning methods lead to significant performance drop when applied to VLMs. Instead, we analyze triplets of consecutive layers to identify local redundancy, removing the most redundant of the first two layers, finetune the remaining layer to compensate for the lost capacity, and freeze the third layer to serve as a stable anchor during finetuning. We found that this interleaved finetune-freeze design enables rapid convergence with minimal data after pruning. By finetuning only a subset of layers on just 1% of the FineVision dataset for one epoch, Interlace achieves 88.9% average performance retention after dropping 25% of the network, achieving state-of-the-art performance."
+url = "https://openaccess.thecvf.com/content/CVPR2026F/html/Madinei_INTERLACE_Interleaved_Layer_Pruning_and_Efficient_Adaptation_in_Large_Vision-Language_CVPRF_2026_paper.html"
 
 [[publication]]
-title = "A Deep Learning Framework for Predicting Functional Visual Performance in Bionic Eye Users"
+title = "Intact early visual representations, not phosphene-adapted features, account for human perceptual behavior with retinal prostheses"
 pub_year = 2025
 author = [
     "Jonathan Skaza",
     "Shravan Murlidaran",
     "Apurv Varshney",
     "Ziqi Wen",
-    "William Wang",
     "Miguel P Eckstein",
     "Michael Beyeler",
 ]
 journal = "bioRxiv"
-abstract = "Efforts to restore vision via neural implants have outpaced the ability to predict what users will perceive, leaving patients and clinicians without reliable tools for surgical planning or device selection. To bridge this critical gap, we introduce a computational virtual patient (CVP) pipeline that integrates anatomically grounded phosphene simulation with task-optimized deep neural networks (DNNs) to forecast patient perceptual capabilities across diverse prosthetic designs and tasks. We evaluate performance across six visual tasks, six electrode configurations, and two artificial vision models, positioning our CVP approach as a scalable pre-implantation method. Several chosen tasks align with the Functional Low-Vision Observer Rated Assessment (FLORA), revealing correspondence between model-predicted difficulty and real-world patient outcomes. Further, DNNs exhibited strong correspondence with psychophysical data collected from normally sighted subjects viewing phosphene simulations, capturing both overall task difficulty and performance variation across implant configurations. While performance was generally aligned, DNNs sometimes diverged from humans in which specific stimuli were misclassified, reflecting differences in underlying decision strategies between artificial agents and human observers. The findings position CVP as a scientific tool for probing perception under prosthetic vision, an engine to inform device development, and a clinically relevant framework for pre-surgical forecasting."
+abstract = "Efforts to restore vision via neural implants have outpaced the ability to predict what users will perceive, leaving patients and clinicians without reliable tools for surgical planning or device selection. To bridge this critical gap, we introduce a computational virtual patient (CVP) pipeline that integrates anatomically grounded phosphene simulation with task-optimized deep neural networks (DNNs) to forecast patient perceptual capabilities across diverse prosthetic designs and tasks. We evaluate performance across six visual tasks, six electrode configurations, and two artificial vision models, establishing our CVP approach as a scalable pre-implantation method. Several chosen tasks align with the Functional Low-Vision Observer Rated Assessment (FLORA), revealing correspondence between model-predicted difficulty and real-world patient outcomes. Further, the CVP paradigm exhibited strong correspondence with psychophysical data collected from normally sighted subjects viewing phosphene simulations, capturing both overall task difficulty and performance variation across implant configurations. Comparing frozen-feature linear probing with full end-to-end fine-tuning reveals that preserving natural-image representations—rather than adapting them to phosphene-specific statistics—better reproduces human perceptual behavior, consistent with the constrained plasticity of adult visual cortex. The findings position CVP as a scientific tool for probing perception under prosthetic vision, an engine to inform device development, and a clinically relevant framework for pre-surgical forecasting."
 url = "https://www.biorxiv.org/content/10.1101/2025.06.23.660990.abstract"
-github_repo = "https://github.com/jskaza/deep-learning-bionic-eyes"
 
 [[publication]]
 title = "DReX: Pure Vision Fusion of Self-Supervised and Convolutional Representations for Image Complexity Prediction"

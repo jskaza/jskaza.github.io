@@ -1,21 +1,11 @@
 [metadata]
-last_updated = "2026-05-15T00:00:33.766619"
+last_updated = "2026-06-15T00:00:35.571079"
 note = "Software data automatically fetched from GitHub repositories"
 
 [[software]]
 name = "peritus"
 url = "https://github.com/jskaza/peritus"
 description = "A Zola theme for academic CVs and research portfolios"
-
-[software.languages]
-ordered = [
-    { lang = "HTML", percent = 72.21 },
-    { lang = "SCSS", percent = 27.79 },
-]
-
-[software.languages.bytes]
-HTML = 38540
-SCSS = 14830
 
 [[software]]
 name = "preprintx"
