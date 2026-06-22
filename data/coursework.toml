@@ -13,5 +13,6 @@ courses = [
     "Cognitive Psychology",
     "Models of Neural Circuits",
     "Neuroanatomy",
-    "Geometric and Dynamical Principles of Neural Computation"
+    "Geometric and Dynamical Principles of Neural Computation",
+    "Computational Neuroscience"
 ]
