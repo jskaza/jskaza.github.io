@@ -266,7 +266,8 @@
 
 // Teaching Section
 #sectionBlock("Teaching")[
-  #for teaching in teaching_data.teaching [
+  #let teaching_sorted = teaching_data.teaching.sorted(key: teaching => -teaching.year)
+  #for teaching in teaching_sorted [
     #teachingEntry(
       title: teaching.title,
       year: teaching.year,
