@@ -9,6 +9,7 @@
 #let experience_data = toml("../../data/experience.toml")
 #let publications_data = toml("../../data/publications.toml")
 #let conferences_data = toml("../../data/conferences.toml")
+#let teaching_data = toml("../../data/teaching.toml")
 #let social_data = toml("../../data/social.toml")
 #let awards_data = toml("../../data/awards.toml")
 #let coursework_data = toml("../../data/coursework.toml")
@@ -148,6 +149,15 @@
   #v(4pt)
 ]
 
+#let teachingEntry(title: [], year: none, institution: [], role: []) = [
+  #grid(
+    columns: (3fr, 1fr),
+    align: (left, right),
+    [#title \ #emph(role) \ #institution], [#if year != none { str(year) }],
+  )
+  #v(4pt)
+]
+
 // Helper functions
 #let format_date_range(start, end: none) = {
   if end != none {
@@ -254,6 +264,19 @@
   ]
 ]
 
+// Teaching Section
+#sectionBlock("Teaching")[
+  #let teaching_sorted = teaching_data.teaching.sorted(key: teaching => -teaching.year)
+  #for teaching in teaching_sorted [
+    #teachingEntry(
+      title: teaching.title,
+      year: teaching.year,
+      institution: teaching.institution,
+      role: teaching.role,
+    )
+  ]
+]
+
 // Software Section
 #sectionBlock("Software")[
   #for software in software_data.software [
@@ -264,6 +287,8 @@
     )
   ]
 ]
+
+
 
 // Funding and Support Section
 #sectionBlock([Funding \
