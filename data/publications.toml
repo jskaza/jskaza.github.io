@@ -1,5 +1,5 @@
 [metadata]
-last_updated = "2026-07-28T12:25:16.445756"
+last_updated = "2026-08-15T00:00:07.468421"
 source = "Google Scholar"
 scholar_id = "dAAMOqgAAAAJ"
 github_username = "jskaza"
@@ -81,8 +81,8 @@ abstract = "Created in 2006, Twitter is an online social networking service in w
 url = "https://digitalcommons.bryant.edu/honors_mathematics/20/"
 
 [[publication]]
-title = "INTERLACE: Interleaved Layer Pruning and Efficient Adaptation in Large Vision-Language Models"
-pub_year = 2025
+title = "Interlace: Interleaved layer pruning and efficient adaptation in large vision-language models"
+pub_year = 2026
 author = [
     "Parsa Madinei",
     "Ryan Solgi",
@@ -91,24 +91,24 @@ author = [
     "Miguel Eckstein",
     "Ramtin Pedarsani",
 ]
-journal = "arXiv preprint arXiv:2511.19676"
-abstract = "We introduce INTERLACE, a novel framework that prunes redundant layers in VLMs while maintaining performance through sample-efficient finetuning. Existing layer pruning methods lead to significant performance drop when applied to VLMs. Instead, we analyze triplets of consecutive layers to identify local redundancy, removing the most redundant of the first two layers, finetune the remaining layer to compensate for the lost capacity, and freeze the third layer to serve as a stable anchor during finetuning. We found that this interleaved finetune-freeze design enables rapid convergence with minimal data after pruning. By finetuning only a subset of layers on just 1% of the FineVision dataset for one epoch, Interlace achieves 88.9% average performance retention after dropping 25% of the network, achieving SOTA performance. Our code is available at: https://github.com/pmadinei/Interlace.git"
-url = "https://arxiv.org/abs/2511.19676"
+journal = "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+abstract = "We introduce Interlace, a novel framework that prunes redundant layers in VLMs while maintaining performance through sample-efficient finetuning. Our key insight is that existing layer pruning methods lead to significant performance drop when applied to VLMs. Instead, we analyze triplets of consecutive layers to identify local redundancy, removing the most redundant of the first two layers, finetune the remaining layer to compensate for the lost capacity, and freeze the third layer to serve as a stable anchor during finetuning. We found that this interleaved finetune-freeze design enables rapid convergence with minimal data after pruning. By finetuning only a subset of layers on just 1% of the FineVision dataset for one epoch, Interlace achieves 88.9% average performance retention after dropping 25% of the network, achieving state-of-the-art performance."
+url = "https://openaccess.thecvf.com/content/CVPR2026F/html/Madinei_INTERLACE_Interleaved_Layer_Pruning_and_Efficient_Adaptation_in_Large_Vision-Language_CVPRF_2026_paper.html"
 
 [[publication]]
-title = "Intact early visual representations, not phosphene-adapted features, account for human perceptual behavior with retinal prostheses"
+title = "A Deep Learning Framework for Predicting Functional Visual Performance in Bionic Eye Users"
 pub_year = 2025
 author = [
-    "Jonathan Skaza",
-    "Shravan Murlidaran",
-    "Apurv Varshney",
-    "Ziqi Wen",
-    "Miguel P Eckstein",
-    "Michael Beyeler",
+    "J Skaza",
+    "S Murlidaran",
+    "A Varshney",
+    "Z Wen",
+    "W Wang",
+    "MP Eckstein",
+    "M Beyeler",
 ]
-journal = "bioRxiv"
-abstract = "Efforts to restore vision via neural implants have outpaced the ability to predict what users will perceive, leaving patients and clinicians without reliable tools for surgical planning or device selection. To bridge this critical gap, we introduce a computational virtual patient (CVP) pipeline that integrates anatomically grounded phosphene simulation with task-optimized deep neural networks (DNNs) to forecast patient perceptual capabilities across diverse prosthetic designs and tasks. We evaluate performance across six visual tasks, six electrode configurations, and two artificial vision models, establishing our CVP approach as a scalable pre-implantation method. Several chosen tasks align with the Functional Low-Vision Observer Rated Assessment (FLORA), revealing correspondence between model-predicted difficulty and real-world patient outcomes. Further, the CVP paradigm exhibited strong correspondence with psychophysical data collected from normally sighted subjects viewing phosphene simulations, capturing both overall task difficulty and performance variation across implant configurations. Comparing frozen-feature linear probing with full end-to-end fine-tuning reveals that preserving natural-image representations—rather than adapting them to phosphene-specific statistics—better reproduces human perceptual behavior, consistent with the constrained plasticity of adult visual cortex. The findings position CVP as a scientific tool for probing perception under prosthetic vision, an engine to inform device development, and a clinically relevant framework for pre-surgical forecasting."
-url = "https://www.biorxiv.org/content/10.1101/2025.06.23.660990.abstract"
+abstract = "Efforts to restore vision via neural implants have outpaced the ability to predict what users will perceive, leaving patients and clinicians without reliable tools for surgical planning or device selection. To bridge this critical gap, we introduce a computational virtual patient (CVP) pipeline that integrates anatomically grounded phosphene simulation with task-optimized deep neural networks (DNNs) to forecast patient perceptual capabilities across diverse prosthetic designs and tasks. We evaluate performance across six visual tasks, six electrode configurations, and two artificial vision models, positioning our CVP approach as a scalable pre-implantation method. Several chosen tasks align with the Functional Low-Vision Observer Rated Assessment (FLORA), revealing correspondence between model-predicted difficulty and real-world patient outcomes. Further, DNNs exhibited strong correspondence with psychophysical data collected from normally sighted subjects viewing phosphene simulations, capturing both overall task difficulty and performance variation across implant configurations. While performance was generally aligned, DNNs sometimes diverged from humans in which specific stimuli were misclassified, reflecting differences in underlying decision strategies between artificial agents and human observers. The findings position CVP as a scientific tool for probing perception under prosthetic vision, an engine to inform device development, and a clinically relevant framework for pre-surgical forecasting."
+url = "https://europepmc.org/article/ppr/ppr1041099"
 
 [[publication]]
 title = "DReX: Pure Vision Fusion of Self-Supervised and Convolutional Representations for Image Complexity Prediction"
@@ -155,6 +155,21 @@ abstract = "Introduction Visual prostheses aim to restore sight, but current dev
 url = "https://jov.arvojournals.org/article.aspx?articleid=2809358"
 
 [[publication]]
+title = "Intact early visual representations, not phosphene-adapted features, account for human perceptual behavior with retinal prostheses"
+pub_year = 2025
+author = [
+    "Jonathan Skaza",
+    "Shravan Murlidaran",
+    "Apurv Varshney",
+    "Ziqi Wen",
+    "Miguel P Eckstein",
+    "Michael Beyeler",
+]
+journal = "bioRxiv"
+abstract = "Efforts to restore vision via neural implants have outpaced the ability to predict what users will perceive, leaving patients and clinicians without reliable tools for surgical planning or device selection. To bridge this critical gap, we introduce a computational virtual patient (CVP) pipeline that integrates anatomically grounded phosphene simulation with task-optimized deep neural networks (DNNs) to forecast patient perceptual capabilities across diverse prosthetic designs and tasks. We evaluate performance across six visual tasks, six electrode configurations, and two artificial vision models, establishing our CVP approach as a scalable pre-implantation method. Several chosen tasks align with the Functional Low-Vision Observer Rated Assessment (FLORA), revealing correspondence between model-predicted difficulty and real-world patient outcomes. Further, the CVP paradigm exhibited strong correspondence with psychophysical data collected from normally sighted subjects viewing phosphene simulations, capturing both overall task difficulty and performance variation across implant configurations. Comparing frozen-feature linear probing with full end-to-end fine-tuning reveals that preserving natural-image representations—rather than adapting them to phosphene-specific statistics—better reproduces human perceptual behavior, consistent with the constrained plasticity of adult visual cortex. The findings position CVP as a scientific tool for probing perception under prosthetic vision, an engine to inform device development, and a clinically relevant framework for pre-surgical forecasting."
+url = "https://www.biorxiv.org/content/10.1101/2025.06.23.660990.abstract"
+
+[[publication]]
 title = "Predicting Reaction Time to Comprehend Scenes with Foveated Scene Understanding Maps"
 pub_year = 2025
 author = [
@@ -179,7 +194,7 @@ author = [
     "Miguel P Eckstein",
 ]
 abstract = "Image-computable low-level image saliency has shaped perceptual psychology and computer science, but is limited by its inability to capture human high-level cognitive factors that influence attention and eye movements. A recent paper has shown that while free-viewing scenes, participants fixate on objects that are critical to the understanding of scenes. Here, we propose a fully automated method (with no fitting parameters or training) to create scene understanding maps (SUMs) that visualize the quantitative contribution of an object to the human comprehension of the scene. The method (AUTO-SUM) uses auto-segmentation and removal of different objects from scenes, Multi-Modal Large Language Models (MLLMs) to describe the scenes, and semantic similarity measures using large language embedding representations of scene descriptions. We show that AUTO-SUMs can approximate H-SUMs estimated using human-operated segmentation and object removal, human scene descriptions, and sentence similarity ratings. We also show that AUTO-SUM can predict the object most fixated by human observers during free viewing and scene description tasks better than a saliency model (GBVS) and comparable to DeepGaze. We contend that AUTO-SUM can be used as a semantic saliency model that complements lower-level saliency models."
-url = "https://files.osf.io/v1/resources/x3mfa_v1/providers/osfstorage/688c5952b34ad7895b2341f5?action=download&direct&version=1"
+url = "https://osf.io/preprints/psyarxiv/x3mfa"
 
 [[publication]]
 title = "Data-driven deep neural network models of visual processing in Drosophila"
